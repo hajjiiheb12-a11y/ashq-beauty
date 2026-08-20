@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>عشق | AŞQ Beauty</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#faf7f3;
+    color:#211b19;
+}
+
+/* NAVBAR */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 7%;
+    background:rgba(250,247,243,.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #e9ded6;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    letter-spacing:4px;
+}
+
+.logo small{
+    display:block;
+    font-size:9px;
+    letter-spacing:5px;
+    text-align:center;
+    margin-top:3px;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#211b19;
+    font-size:14px;
+}
+
+.nav-links a:hover{
+    opacity:.55;
+}
+
+/* HERO */
+
+.hero{
+    min-height:88vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:60px 20px;
+
+    background:
+    radial-gradient(circle at 20% 20%,#ead8ca 0,transparent 30%),
+    radial-gradient(circle at 80% 80%,#dfc7b8 0,transparent 30%),
+    #f8f1eb;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.hero-subtitle{
+    letter-spacing:7px;
+    font-size:12px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(70px,15vw,150px);
+    letter-spacing:12px;
+    margin-bottom:10px;
+}
+
+.hero h2{
+    font-weight:normal;
+    font-size:25px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    line-height:2;
+    max-width:600px;
+    margin:auto;
+    color:#665c57;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 32px;
+    background:#211b19;
+    color:white;
+    border-radius:40px;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    font-size:15px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    opacity:.85;
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#756b66;
+}
+
+/* COLLECTIONS */
+
+.collections{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.collection{
+    min-height:280px;
+    padding:30px;
+    border-radius:25px;
+    background:white;
+    border:1px solid #eadfd7;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    transition:.3s;
+}
+
+.collection:hover{
+    transform:translateY(-8px);
+}
+
+.collection-icon{
+    font-size:55px;
+    margin-bottom:auto;
+}
+
+.collection h3{
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.collection p{
+    color:#756b66;
+    line-height:1.7;
+}
+
+/* ROUTINE */
+
+#routine{
+    background:#211b19;
+    color:white;
+}
+
+.quiz{
+    max-width:800px;
+    margin:auto;
+}
+
+.quiz h2{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.quiz-intro{
+    text-align:center;
+    color:#d4cbc6;
+    margin-bottom:40px;
+}
+
+.question{
+    margin-bottom:30px;
+}
+
+.question-title{
+    font-size:18px;
+    margin-bottom:12px;
+}
+
+.option{
+    display:block;
+    padding:15px 18px;
+    background:#302824;
+    border:1px solid #443a35;
+    border-radius:14px;
+    margin:9px 0;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#403530;
+}
+
+.option input{
+    margin-left:8px;
+}
+
+.quiz-button{
+    width:100%;
+    margin-top:10px;
+}
+
+.result{
+    display:none;
+    margin-top:30px;
+    padding:30px;
+    background:#faf7f3;
+    color:#211b19;
+    border-radius:22px;
+    text-align:center;
+}
+
+.result h3{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.result p{
+    line-height:1.8;
+    color:#665c57;
+}
+
+/* QR */
+
+.qr-section{
+    text-align:center;
+}
+
+.qr-box{
+    max-width:600px;
+    margin:auto;
+    padding:45px 25px;
+    background:white;
+    border:1px solid #eadfd7;
+    border-radius:25px;
+}
+
+.qr-placeholder{
+    width:180px;
+    height:180px;
+    margin:25px auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#211b19;
+    color:white;
+    font-weight:bold;
+    border-radius:12px;
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+    background:#f0e6de;
+}
+
+.contact p{
+    color:#756b66;
+    margin-top:10px;
+}
+
+.socials{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.social{
+    padding:13px 25px;
+    background:#211b19;
+    color:white;
+    border-radius:30px;
+    text-decoration:none;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#756b66;
+    border-top:1px solid #e6dad2;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .collections{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .nav-links{
+        display:none;
+    }
+}
+
+@media(max-width:550px){
+
+    section{
+        padding:65px 5%;
+    }
+
+    .collections{
+        grid-template-columns:1fr;
+    }
+
+    .collection{
+        min-height:230px;
+    }
+
+    .hero{
+        min-height:80vh;
+    }
+
+    .hero h2{
+        font-size:20px;
+    }
+
+    .section-title h2,
+    .quiz h2{
+        font-size:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <a href="#" class="logo">
+        عشق
+        <small>AŞQ BEAUTY</small>
+    </a>
+
+    <div class="nav-links">
+        <a href="#collections">Collections</a>
+        <a href="#routine">Routine</a>
+        <a href="#qr">QR Code</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-subtitle">
+            BEAUTY • CARE • RITUAL
+        </div>
+
+        <h1>عشق</h1>
+
+        <h2>AŞQ Beauty</h2>
+
+        <p>
+            جمالك عندو روتينو الخاص.
+            اكتشفي عالم عشق واختاري المنتجات المناسبة ليك.
+        </p>
+
+        <a href="#routine" class="btn">
+            اكتشفي الـRoutine متاعك
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- COLLECTIONS -->
+
+<section id="collections">
+
+    <div class="section-title">
+
+        <h2>Our Collections</h2>
+
+        <p>
+            أربعة عوالم للعناية والجمال
+        </p>
+
+    </div>
+
+
+    <div class="collections">
+
+
+        <div class="collection">
+
+            <div class="collection-icon">
+                ✨
+            </div>
+
+            <h3>Glow</h3>
+
+            <p>
+                روتين للإشراقة والنضارة
+                والمظهر الصحي للبشرة.
+            </p>
+
+        </div>
+
+
+        <div class="collection">
+
+            <div class="collection-icon">
+                🌸
+            </div>
+
+            <h3>Care</h3>
+
+            <p>
+                أساسيات العناية اليومية
+                لروتين بسيط ومنظم.
+            </p>
+
+        </div>
+
+
+        <div class="collection">
+
+            <div class="collection-icon">
+                💆
+            </div>
+
+            <h3>Hair</h3>
+
+            <p>
+                عناية بالشعر وروتين
+                مناسب لاحتياجاتك.
+            </p>
+
+        </div>
+
+
+        <div class="collection">
+
+            <div class="collection-icon">
+                🌙
+            </div>
+
+            <h3>Night</h3>
+
+            <p>
+                طقوس الليل للعناية
+                والاسترخاء قبل النوم.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ROUTINE QUIZ -->
+
+<section id="routine">
+
+    <div class="quiz">
+
+        <h2>
+            اكتشفي الـRoutine المناسب ليك
+        </h2>
+
+        <p class="quiz-intro">
+            جاوبي على الأسئلة، وعشق تقترح عليك
+            الروتين المناسب كبداية.
+        </p>
+
+
+        <!-- QUESTION 1 -->
+
+        <div class="question">
+
+            <div class="question-title">
+                1. شنوّة أكثر حاجة تحبي تركزي عليها؟
+            </div>
+
+
+            <label class="option">
+                <input type="radio" name="goal" value="glow">
+                الإشراقة والنضارة ✨
+            </label>
+
+
+            <label class="option">
+                <input type="radio" name="goal" value="care">
+                العناية اليومية 🌸
+            </label>
+
+
+            <label class="option">
+                <input type="radio" name="goal" value="hair">
+                العناية بالشعر 💆
+            </label>
+
+
+            <label class="option">
+                <input type="radio" name="goal" value="night">
+                روتين الليل 🌙
+            </label>
+
+        </div>
+
+
+        <!-- QUESTION 2 -->
+
+        <div class="question">
+
+            <div class="question-title">
+                2. وقتاش تحبي تستعملي الـRoutine؟
+            </div>
+
+
+            <label class="option">
+                <input type="radio" name="time" value="morning">
+                الصباح ☀️
+            </label>
+
+
+            <label class="option">
+                <input type="radio" name="time" value="night">
+                الليل 🌙
+            </label>
+
+        </div>
+
+
+        <!-- BUTTON -->
+
+        <button
+            class="btn quiz-button"
+            onclick="discoverRoutine()">
+
+            اكتشفي الـRoutine متاعي
+
+        </button>
+
+
+        <!-- RESULT -->
+
+        <div id="result" class="result">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- QR CODE -->
+
+<section id="qr" class="qr-section">
+
+    <div class="section-title">
+
+        <h2>
+            QR × AŞQ
+        </h2>
+
+        <p>
+            امسحي الكود واكتشفي الـRoutine المناسب ليك
+        </p>
+
+    </div>
+
+
+    <div class="qr-box">
+
+        <h3>
+            Your Beauty Routine
+        </h3>
+
+        <div class="qr-placeholder">
+            QR CODE
+        </div>
+
+        <p>
+            هذا المكان مخصص للـQR Code
+            اللي باش يتحط على علبة عشق.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+    <div class="section-title">
+
+        <h2>
+            تواصلي مع عشق
+        </h2>
+
+        <p>
+            للطلب والاستفسار
+        </p>
+
+    </div>
+
+
+    <div class="socials">
+
+        <!-- بدّل الرابط برقم WhatsApp متاعك -->
+
+        <a
+            class="social"
+            href="https://wa.me/"
+            target="_blank">
+
+            WhatsApp
+        </a>
+
+
+        <!-- بدّل الرابط بحساب Instagram متاعك -->
+
+        <a
+            class="social"
+            href="#"
+            target="_blank">
+
+            Instagram
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 AŞQ Beauty — عشق
+
+</footer>
+
+
+<script>
+
+/* ROUTINE SYSTEM */
+
+function discoverRoutine(){
+
+    const goal =
+        document.querySelector(
+            'input[name="goal"]:checked'
+        );
+
+    const time =
+        document.querySelector(
+            'input[name="time"]:checked'
+        );
+
+
+    const result =
+        document.getElementById("result");
+
+
+    if(!goal || !time){
+
+        result.style.display = "block";
+
+        result.innerHTML = `
+            <h3>لحظة 💗</h3>
+
+            <p>
+                اختاري الإجابات الكل
+                باش نكتشفولك الـRoutine المناسب.
+            </p>
+        `;
+
+        return;
+    }
+
+
+    let title = "";
+    let description = "";
+
+
+    if(goal.value === "glow"){
+
+        title = "Glow Routine ✨";
+
+        description =
+        "روتين مخصص كبداية للتركيز على الإشراقة والنضارة.";
+
+    }
+
+
+    if(goal.value === "care"){
+
+        title = "Care Routine 🌸";
+
+        description =
+        "روتين يومي بسيط للعناية والمحافظة على نظافة وترطيب البشرة.";
+
+    }
+
+
+    if(goal.value === "hair"){
+
+        title = "Hair Routine 💆";
+
+        description =
+        "روتين مخصص للعناية بالشعر حسب احتياجاتك.";
+
+    }
+
+
+    if(goal.value === "night"){
+
+        title = "Night Routine 🌙";
+
+        description =
+        "روتين مسائي للعناية والاسترخاء قبل النوم.";
+
+    }
+
+
+    const timing =
+        time.value === "morning"
+        ? "الصباح ☀️"
+        : "الليل 🌙";
+
+
+    result.style.display = "block";
+
+
+    result.innerHTML = `
+
+        <h3>
+            ${title}
+        </h3>
+
+        <p>
+            ${description}
+        </p>
+
+        <p style="margin-top:12px">
+            <strong>
+                الوقت المقترح:
+            </strong>
+
+            ${timing}
+        </p>
+
+        <p style="margin-top:15px">
+            قريباً باش نربطولك الـRoutine
+            مباشرة بمنتجات عشق والأسعار متاعهم.
+        </p>
+
+    `;
+
+
+    result.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+}
+
+</script>
+
+
+</body>
+          </html>
