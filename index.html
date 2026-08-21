@@ -1,1197 +1,1609 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>عشق | Ishq Beauty</title>
-
-  <meta name="description"
-        content="عشق Ishq - Découvrez votre routine beauté idéale : Glow, Care, Hair & Night.">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: #fffaf8;
-      color: #292323;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    /* ================= HEADER ================= */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #eee;
-    }
-
-    .navbar {
-      max-width: 1200px;
-      margin: auto;
-      height: 75px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 20px;
-    }
-
-    .logo {
-      font-size: 32px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      color: #9b5367;
-    }
-
-    .logo small {
-      display: block;
-      font-size: 9px;
-      text-align: center;
-      letter-spacing: 4px;
-      color: #777;
-    }
-
-    nav {
-      display: flex;
-      gap: 28px;
-      font-size: 15px;
-    }
-
-    nav a {
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #b5657b;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .cart {
-      border: none;
-      background: #f7e9ed;
-      padding: 11px 14px;
-      border-radius: 50px;
-      font-size: 16px;
-    }
-
-    .menu-btn {
-      display: none;
-      border: none;
-      background: none;
-      font-size: 26px;
-    }
-
-    /* ================= HERO ================= */
-
-    .hero {
-      min-height: 650px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background:
-        radial-gradient(circle at 85% 20%, #f4d9df 0%, transparent 28%),
-        radial-gradient(circle at 10% 80%, #f8e7dd 0%, transparent 30%),
-        #fffaf8;
-      padding: 70px 20px;
-    }
-
-    .hero-content {
-      max-width: 1200px;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 60px;
-    }
-
-    .hero-text span {
-      color: #a5586d;
-      font-size: 15px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .hero-text h1 {
-      font-size: clamp(45px, 7vw, 82px);
-      line-height: 1;
-      margin: 18px 0;
-      font-weight: 800;
-    }
-
-    .hero-text h1 i {
-      color: #a5586d;
-      font-family: Georgia, serif;
-      font-weight: normal;
-    }
-
-    .hero-text p {
-      max-width: 480px;
-      line-height: 1.8;
-      color: #666;
-      font-size: 17px;
-    }
-
-    .hero-buttons {
-      margin-top: 30px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 15px 25px;
-      border-radius: 50px;
-      border: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .btn-primary {
-      background: #9b5367;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      background: #804254;
-    }
-
-    .btn-light {
-      background: white;
-      border: 1px solid #ddd;
-    }
-
-    .btn-light:hover {
-      transform: translateY(-3px);
-    }
-
-    .hero-visual {
-      height: 480px;
-      border-radius: 250px 250px 30px 30px;
-      background: linear-gradient(145deg, #f4d8de, #ead1c4);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .product-display {
-      width: 220px;
-      height: 310px;
-      background: white;
-      border-radius: 25px;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.12);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transform: rotate(-5deg);
-    }
-
-    .product-display .ishq {
-      color: #9b5367;
-      font-size: 42px;
-      font-family: Georgia, serif;
-    }
-
-    .product-display p {
-      letter-spacing: 4px;
-      font-size: 10px;
-      color: #777;
-    }
-
-    .floating {
-      position: absolute;
-      background: white;
-      padding: 15px 20px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      font-size: 14px;
-    }
-
-    .floating.one {
-      top: 50px;
-      left: 20px;
-    }
-
-    .floating.two {
-      bottom: 50px;
-      right: 20px;
-    }
-
-    /* ================= CATEGORIES ================= */
-
-    section {
-      padding: 85px 20px;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title span {
-      color: #a5586d;
-      font-size: 13px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .section-title h2 {
-      font-size: 40px;
-      margin-top: 10px;
-    }
-
-    .categories {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .category {
-      height: 260px;
-      border-radius: 25px;
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      transition: 0.4s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .category:hover {
-      transform: translateY(-8px);
-    }
-
-    .category h3 {
-      font-size: 28px;
-      margin-bottom: 7px;
-    }
-
-    .category p {
-      color: #666;
-    }
-
-    .glow {
-      background: linear-gradient(145deg, #f7dfe2, #fff1e5);
-    }
-
-    .care {
-      background: linear-gradient(145deg, #dcecea, #eef8f4);
-    }
-
-    .hair {
-      background: linear-gradient(145deg, #e7dccd, #f7efe4);
-    }
-
-    .night {
-      background: linear-gradient(145deg, #d9d5e8, #efedf7);
-    }
-
-    .category-icon {
-      position: absolute;
-      top: 25px;
-      right: 25px;
-      font-size: 50px;
-    }
-
-    /* ================= PRODUCTS ================= */
-
-    .products-section {
-      background: #fff;
-    }
-
-    .products {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .product-card {
-      background: #fffaf8;
-      border-radius: 22px;
-      padding: 15px;
-      border: 1px solid #eee;
-      transition: 0.3s;
-    }
-
-    .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-    }
-
-    .product-image {
-      height: 230px;
-      border-radius: 18px;
-      background: #f5e8e8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 18px;
-      font-size: 65px;
-    }
-
-    .product-card h3 {
-      font-size: 17px;
-      margin-bottom: 8px;
-    }
-
-    .product-card p {
-      color: #777;
-      font-size: 13px;
-      margin-bottom: 12px;
-    }
-
-    .price {
-      color: #9b5367;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .add-cart {
-      float: right;
-      border: none;
-      background: #9b5367;
-      color: white;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      font-size: 18px;
-    }
-
-    /* ================= ROUTINE ================= */
-
-    .routine {
-      max-width: 1100px;
-      margin: auto;
-      background: linear-gradient(135deg, #9b5367, #c37c8f);
-      border-radius: 35px;
-      padding: 60px;
-      color: white;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .routine h2 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
-
-    .routine p {
-      line-height: 1.8;
-      opacity: .9;
-      max-width: 600px;
-    }
-
-    .scan {
-      background: white;
-      color: #9b5367;
-      width: 150px;
-      height: 150px;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-weight: bold;
-      padding: 20px;
-    }
-
-    /* ================= WHY US ================= */
-
-    .features {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
-      text-align: center;
-    }
-
-    .feature {
-      padding: 25px;
-    }
-
-    .feature-icon {
-      font-size: 35px;
-      margin-bottom: 15px;
-    }
-
-    .feature h3 {
-      margin-bottom: 8px;
-    }
-
-    .feature p {
-      color: #777;
-      line-height: 1.6;
-      font-size: 14px;
-    }
-
-    /* ================= NEWSLETTER ================= */
-
-    .newsletter {
-      background: #f5e8e8;
-      text-align: center;
-    }
-
-    .newsletter h2 {
-      font-size: 35px;
-      margin-bottom: 12px;
-    }
-
-    .newsletter p {
-      color: #666;
-      margin-bottom: 25px;
-    }
-
-    .newsletter-form {
-      max-width: 500px;
-      margin: auto;
-      display: flex;
-      background: white;
-      padding: 6px;
-      border-radius: 50px;
-    }
-
-    .newsletter-form input {
-      flex: 1;
-      border: none;
-      outline: none;
-      padding: 12px 18px;
-      background: transparent;
-    }
-
-    .newsletter-form button {
-      border: none;
-      background: #9b5367;
-      color: white;
-      padding: 12px 22px;
-      border-radius: 50px;
-    }
-
-    /* ================= FOOTER ================= */
-
-    footer {
-      background: #292323;
-      color: white;
-      padding: 60px 20px 25px;
-    }
-
-    .footer-content {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 40px;
-    }
-
-    footer h3 {
-      margin-bottom: 18px;
-    }
-
-    footer p,
-    footer a {
-      color: #bbb;
-      line-height: 2;
-      font-size: 14px;
-    }
-
-    footer a:hover {
-      color: white;
-    }
-
-    .footer-logo {
-      font-size: 38px;
-      color: #e8a9b9;
-      font-family: Georgia, serif;
-    }
-
-    .copyright {
-      max-width: 1100px;
-      margin: 40px auto 0;
-      padding-top: 20px;
-      border-top: 1px solid #444;
-      text-align: center;
-      color: #888;
-      font-size: 13px;
-    }
-
-    /* ================= CART MESSAGE ================= */
-
-    .cart-message {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background: #292323;
-      color: white;
-      padding: 15px 20px;
-      border-radius: 15px;
-      opacity: 0;
-      transform: translateY(20px);
-      pointer-events: none;
-      transition: .3s;
-      z-index: 2000;
-    }
-
-    .cart-message.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ================= MOBILE ================= */
-
-    @media (max-width: 900px) {
-
-      nav {
-        display: none;
-      }
-
-      .menu-btn {
-        display: block;
-      }
-
-      .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .hero-text p {
-        margin: auto;
-      }
-
-      .hero-buttons {
-        justify-content: center;
-      }
-
-      .hero-visual {
-        height: 400px;
-      }
-
-      .categories,
-      .products {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .features {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .footer-content {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .routine {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding: 40px 25px;
-      }
-
-      .routine p {
-        margin: auto;
-      }
-
-      .scan {
-        margin: auto;
-      }
-    }
-
-    @media (max-width: 550px) {
-
-      .navbar {
-        height: 65px;
-      }
-
-      .logo {
-        font-size: 27px;
-      }
-
-      .hero {
-        padding-top: 50px;
-      }
-
-      .hero-text h1 {
-        font-size: 52px;
-      }
-
-      .hero-visual {
-        height: 350px;
-      }
-
-      .product-display {
-        transform: scale(.8) rotate(-5deg);
-      }
-
-      .categories,
-      .products {
-        grid-template-columns: 1fr;
-      }
-
-      .category {
-        height: 210px;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-content {
-        grid-template-columns: 1fr;
-      }
-
-      .newsletter-form {
-        flex-direction: column;
-        background: transparent;
-        gap: 10px;
-      }
-
-      .newsletter-form input {
-        background: white;
-        border-radius: 50px;
-      }
-
-      .newsletter-form button {
-        width: 100%;
-      }
-
-      section {
-        padding: 60px 15px;
-      }
-
-      .routine h2 {
-        font-size: 32px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>عشق | ISHQ Beauty</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:#fffaf8;
+  color:#292323;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #eee;
+}
+
+.navbar{
+  max-width:1200px;
+  margin:auto;
+  height:75px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+}
+
+.logo{
+  font-size:32px;
+  font-weight:bold;
+  color:#9b5367;
+  letter-spacing:2px;
+}
+
+.logo small{
+  display:block;
+  font-size:9px;
+  text-align:center;
+  letter-spacing:4px;
+  color:#777;
+}
+
+nav{
+  display:flex;
+  gap:25px;
+  font-size:15px;
+}
+
+nav a:hover{
+  color:#a5586d;
+}
+
+.cart{
+  border:0;
+  background:#f7e9ed;
+  padding:11px 15px;
+  border-radius:50px;
+  font-size:16px;
+}
+
+.menu-btn{
+  display:none;
+  border:0;
+  background:none;
+  font-size:25px;
+}
+
+/* HERO */
+
+.hero{
+  min-height:650px;
+  display:flex;
+  align-items:center;
+  padding:70px 20px;
+  background:
+  radial-gradient(circle at 85% 20%,#f4d9df 0%,transparent 28%),
+  radial-gradient(circle at 10% 80%,#f8e7dd 0%,transparent 30%),
+  #fffaf8;
+}
+
+.hero-content{
+  max-width:1200px;
+  width:100%;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:60px;
+}
+
+.hero-text span{
+  color:#a5586d;
+  letter-spacing:3px;
+  font-size:14px;
+}
+
+.hero-text h1{
+  font-size:clamp(48px,7vw,82px);
+  line-height:1;
+  margin:20px 0;
+}
+
+.hero-text h1 i{
+  color:#a5586d;
+  font-family:Georgia,serif;
+  font-weight:normal;
+}
+
+.hero-text p{
+  max-width:480px;
+  color:#666;
+  line-height:1.8;
+  font-size:17px;
+}
+
+.hero-buttons{
+  margin-top:30px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:15px 25px;
+  border-radius:50px;
+  border:0;
+  font-weight:bold;
+}
+
+.btn-primary{
+  background:#9b5367;
+  color:white;
+}
+
+.btn-light{
+  background:white;
+  border:1px solid #ddd;
+}
+
+.hero-visual{
+  height:480px;
+  border-radius:250px 250px 30px 30px;
+  background:linear-gradient(145deg,#f4d8de,#ead1c4);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+
+.product-display{
+  width:220px;
+  height:310px;
+  background:white;
+  border-radius:25px;
+  box-shadow:0 25px 50px rgba(0,0,0,.12);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  transform:rotate(-5deg);
+}
+
+.product-display .ishq{
+  color:#9b5367;
+  font-size:45px;
+  font-family:Georgia,serif;
+}
+
+.product-display p{
+  font-size:10px;
+  letter-spacing:4px;
+  color:#777;
+}
+
+.floating{
+  position:absolute;
+  background:white;
+  padding:15px 20px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.floating.one{
+  top:50px;
+  left:20px;
+}
+
+.floating.two{
+  bottom:50px;
+  right:20px;
+}
+
+/* SECTIONS */
+
+section{
+  padding:85px 20px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-title span{
+  color:#a5586d;
+  letter-spacing:3px;
+  font-size:13px;
+}
+
+.section-title h2{
+  font-size:40px;
+  margin-top:10px;
+}
+
+/* CATEGORIES */
+
+.categories{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.category{
+  height:260px;
+  border-radius:25px;
+  padding:25px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  position:relative;
+  transition:.3s;
+}
+
+.category:hover{
+  transform:translateY(-7px);
+}
+
+.category h3{
+  font-size:28px;
+}
+
+.category p{
+  color:#666;
+  margin-top:7px;
+}
+
+.category-icon{
+  position:absolute;
+  top:25px;
+  right:25px;
+  font-size:50px;
+}
+
+.glow{
+  background:linear-gradient(145deg,#f7dfe2,#fff1e5);
+}
+
+.care{
+  background:linear-gradient(145deg,#dcecea,#eef8f4);
+}
+
+.hair{
+  background:linear-gradient(145deg,#e7dccd,#f7efe4);
+}
+
+.night{
+  background:linear-gradient(145deg,#d9d5e8,#efedf7);
+}
+
+/* PRODUCTS */
+
+.products-section{
+  background:white;
+}
+
+.products{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.product-card{
+  background:#fffaf8;
+  border:1px solid #eee;
+  border-radius:22px;
+  padding:15px;
+  transition:.3s;
+}
+
+.product-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.product-image{
+  height:220px;
+  border-radius:18px;
+  background:#f5e8e8;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:65px;
+  margin-bottom:18px;
+}
+
+.product-card h3{
+  margin-bottom:8px;
+}
+
+.product-card p{
+  color:#777;
+  font-size:13px;
+  margin-bottom:12px;
+}
+
+.price{
+  color:#9b5367;
+  font-size:19px;
+  font-weight:bold;
+}
+
+.add-cart{
+  float:right;
+  border:0;
+  background:#9b5367;
+  color:white;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  font-size:20px;
+}
+
+/* ROUTINE */
+
+.routine{
+  max-width:1100px;
+  margin:auto;
+  background:linear-gradient(135deg,#9b5367,#c37c8f);
+  border-radius:35px;
+  padding:60px;
+  color:white;
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:30px;
+}
+
+.routine h2{
+  font-size:42px;
+  margin-bottom:15px;
+}
+
+.routine p{
+  max-width:600px;
+  line-height:1.8;
+  opacity:.9;
+}
+
+.scan{
+  width:150px;
+  height:150px;
+  background:white;
+  color:#9b5367;
+  border-radius:20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  font-weight:bold;
+}
+
+/* QUIZ */
+
+.quiz-section{
+  background:#fff;
+}
+
+.quiz{
+  max-width:700px;
+  margin:auto;
+  background:#fffaf8;
+  border:1px solid #eee;
+  border-radius:30px;
+  padding:35px;
+  box-shadow:0 15px 40px rgba(0,0,0,.06);
+}
+
+.progress{
+  height:7px;
+  background:#eee;
+  border-radius:20px;
+  overflow:hidden;
+  margin-bottom:30px;
+}
+
+.progress-bar{
+  height:100%;
+  width:25%;
+  background:#9b5367;
+  transition:.3s;
+}
+
+.question-number{
+  color:#9b5367;
+  font-size:13px;
+  letter-spacing:2px;
+}
+
+.question{
+  font-size:27px;
+  margin:15px 0 25px;
+}
+
+.options{
+  display:grid;
+  gap:12px;
+}
+
+.option{
+  padding:17px;
+  border:1px solid #ddd;
+  background:white;
+  border-radius:15px;
+  text-align:left;
+  font-size:16px;
+  transition:.2s;
+}
+
+.option:hover{
+  border-color:#9b5367;
+  background:#fdf1f4;
+}
+
+.option.selected{
+  background:#9b5367;
+  color:white;
+  border-color:#9b5367;
+}
+
+.quiz-buttons{
+  margin-top:25px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.quiz-buttons button{
+  border:0;
+  border-radius:50px;
+  padding:13px 22px;
+}
+
+.next-btn{
+  background:#9b5367;
+  color:white;
+}
+
+.back-btn{
+  background:#eee;
+}
+
+/* RESULT */
+
+.result{
+  display:none;
+  max-width:700px;
+  margin:30px auto 0;
+  background:#f7e9ed;
+  border-radius:30px;
+  padding:35px;
+  text-align:center;
+}
+
+.result-icon{
+  font-size:60px;
+}
+
+.result h2{
+  color:#9b5367;
+  font-size:34px;
+  margin:10px 0;
+}
+
+.result p{
+  color:#666;
+  line-height:1.7;
+}
+
+.result-products{
+  margin-top:20px;
+  display:grid;
+  gap:10px;
+}
+
+.result-product{
+  background:white;
+  border-radius:15px;
+  padding:15px;
+  text-align:left;
+}
+
+/* FEATURES */
+
+.features{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+  text-align:center;
+}
+
+.feature{
+  padding:25px;
+}
+
+.feature-icon{
+  font-size:35px;
+  margin-bottom:15px;
+}
+
+.feature p{
+  color:#777;
+  line-height:1.6;
+  font-size:14px;
+}
+
+/* NEWSLETTER */
+
+.newsletter{
+  background:#f5e8e8;
+  text-align:center;
+}
+
+.newsletter h2{
+  font-size:35px;
+  margin-bottom:12px;
+}
+
+.newsletter p{
+  color:#666;
+  margin-bottom:25px;
+}
+
+.newsletter-form{
+  max-width:500px;
+  margin:auto;
+  display:flex;
+  background:white;
+  padding:6px;
+  border-radius:50px;
+}
+
+.newsletter-form input{
+  flex:1;
+  border:0;
+  outline:0;
+  padding:12px 18px;
+}
+
+.newsletter-form button{
+  border:0;
+  background:#9b5367;
+  color:white;
+  padding:12px 22px;
+  border-radius:50px;
+}
+
+/* FOOTER */
+
+footer{
+  background:#292323;
+  color:white;
+  padding:60px 20px 25px;
+}
+
+.footer-content{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:40px;
+}
+
+.footer-logo{
+  font-size:40px;
+  color:#e8a9b9;
+  font-family:Georgia,serif;
+}
+
+footer h3{
+  margin-bottom:15px;
+}
+
+footer p,
+footer a{
+  color:#bbb;
+  line-height:2;
+  font-size:14px;
+}
+
+.copyright{
+  max-width:1100px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #444;
+  text-align:center;
+  color:#888;
+  font-size:13px;
+}
+
+/* CART MESSAGE */
+
+.cart-message{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#292323;
+  color:white;
+  padding:15px 20px;
+  border-radius:15px;
+  opacity:0;
+  transform:translateY(20px);
+  pointer-events:none;
+  transition:.3s;
+  z-index:2000;
+}
+
+.cart-message.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+nav{
+  display:none;
+}
+
+.menu-btn{
+  display:block;
+}
+
+.hero-content{
+  grid-template-columns:1fr;
+  text-align:center;
+}
+
+.hero-text p{
+  margin:auto;
+}
+
+.hero-buttons{
+  justify-content:center;
+}
+
+.categories,
+.products{
+  grid-template-columns:repeat(2,1fr);
+}
+
+.features{
+  grid-template-columns:repeat(2,1fr);
+}
+
+.footer-content{
+  grid-template-columns:repeat(2,1fr);
+}
+
+.routine{
+  grid-template-columns:1fr;
+  text-align:center;
+}
+
+.routine p{
+  margin:auto;
+}
+
+.scan{
+  margin:auto;
+}
+
+}
+
+@media(max-width:550px){
+
+.logo{
+  font-size:27px;
+}
+
+.hero{
+  padding-top:50px;
+}
+
+.hero-text h1{
+  font-size:52px;
+}
+
+.hero-visual{
+  height:350px;
+}
+
+.categories,
+.products,
+.features{
+  grid-template-columns:1fr;
+}
+
+.footer-content{
+  grid-template-columns:1fr;
+}
+
+.quiz{
+  padding:25px 18px;
+}
+
+.question{
+  font-size:23px;
+}
+
+.routine{
+  padding:40px 25px;
+}
+
+.routine h2{
+  font-size:32px;
+}
+
+.newsletter-form{
+  flex-direction:column;
+  background:transparent;
+  gap:10px;
+}
+
+.newsletter-form input{
+  background:white;
+  border-radius:50px;
+}
+
+.newsletter-form button{
+  width:100%;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 
 <header>
-  <div class="navbar">
 
-    <a href="#" class="logo">
-      عشق
-      <small>ISHQ BEAUTY</small>
-    </a>
+<div class="navbar">
 
-    <nav>
-      <a href="#home">Accueil</a>
-      <a href="#categories">Catégories</a>
-      <a href="#products">Produits</a>
-      <a href="#routine">Ma Routine</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<a href="#home" class="logo">
+عشق
+<small>ISHQ BEAUTY</small>
+</a>
 
-    <div class="nav-right">
-      <button class="cart">
-        🛒 <span id="cartCount">0</span>
-      </button>
+<nav>
+<a href="#home">Accueil</a>
+<a href="#categories">Catégories</a>
+<a href="#products">Produits</a>
+<a href="#routine">Ma Routine</a>
+<a href="#contact">Contact</a>
+</nav>
 
-      <button class="menu-btn">☰</button>
-    </div>
+<div>
 
-  </div>
+<button class="cart">
+🛒 <span id="cartCount">0</span>
+</button>
+
+<button class="menu-btn">☰</button>
+
+</div>
+
+</div>
+
 </header>
 
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
-  <div class="hero-content">
+<div class="hero-content">
 
-    <div class="hero-text">
+<div class="hero-text">
 
-      <span>ISHQ BEAUTY</span>
+<span>ISHQ BEAUTY</span>
 
-      <h1>
-        Ta beauté.<br>
-        Ton <i>rituel.</i>
-      </h1>
+<h1>
+Ta beauté.<br>
+Ton <i>rituel.</i>
+</h1>
 
-      <p>
-        Bienvenue chez عشق. Découvrez une sélection de produits
-        beauté pour prendre soin de votre peau, vos cheveux
-        et votre bien-être au quotidien.
-      </p>
+<p>
+Bienvenue chez عشق. Découvrez une sélection de produits
+beauté pour prendre soin de votre peau, vos cheveux
+et votre bien-être au quotidien.
+</p>
 
-      <div class="hero-buttons">
+<div class="hero-buttons">
 
-        <a href="#products" class="btn btn-primary">
-          Découvrir les produits
-        </a>
+<a href="#products" class="btn btn-primary">
+Découvrir les produits
+</a>
 
-        <a href="#routine" class="btn btn-light">
-          Trouver ma routine
-        </a>
+<a href="#routine" class="btn btn-light">
+Trouver ma routine
+</a>
 
-      </div>
+</div>
 
-    </div>
+</div>
 
+<div class="hero-visual">
 
-    <div class="hero-visual">
+<div class="floating one">
+✨ Glow
+</div>
 
-      <div class="floating one">
-        ✨ Glow
-      </div>
+<div class="product-display">
 
-      <div class="product-display">
-        <div class="ishq">عشق</div>
-        <p>ISHQ BEAUTY</p>
-      </div>
+<div class="ishq">
+عشق
+</div>
 
-      <div class="floating two">
-        🌙 Night Care
-      </div>
+<p>ISHQ BEAUTY</p>
 
-    </div>
+</div>
 
-  </div>
+<div class="floating two">
+🌙 Night Care
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ================= CATEGORIES ================= -->
+<!-- CATEGORIES -->
 
 <section id="categories">
 
-  <div class="section-title">
+<div class="section-title">
 
-    <span>Découvrir</span>
+<span>Découvrir</span>
 
-    <h2>Nos univers beauté</h2>
+<h2>Nos univers beauté</h2>
 
-  </div>
+</div>
 
+<div class="categories">
 
-  <div class="categories">
+<a href="#" class="category glow">
 
-    <a href="#" class="category glow">
+<div class="category-icon">✨</div>
 
-      <div class="category-icon">✨</div>
+<h3>Glow</h3>
 
-      <h3>Glow</h3>
+<p>Pour une peau lumineuse</p>
 
-      <p>Pour une peau lumineuse</p>
+</a>
 
-    </a>
+<a href="#" class="category care">
 
+<div class="category-icon">💧</div>
 
-    <a href="#" class="category care">
+<h3>Care</h3>
 
-      <div class="category-icon">💧</div>
+<p>Prendre soin de ta peau</p>
 
-      <h3>Care</h3>
+</a>
 
-      <p>Prendre soin de ta peau</p>
+<a href="#" class="category hair">
 
-    </a>
+<div class="category-icon">💆</div>
 
+<h3>Hair</h3>
 
-    <a href="#" class="category hair">
+<p>Des cheveux soignés</p>
 
-      <div class="category-icon">💆</div>
+</a>
 
-      <h3>Hair</h3>
+<a href="#" class="category night">
 
-      <p>Des cheveux soignés</p>
+<div class="category-icon">🌙</div>
 
-    </a>
+<h3>Night</h3>
 
+<p>Ton rituel du soir</p>
 
-    <a href="#" class="category night">
+</a>
 
-      <div class="category-icon">🌙</div>
-
-      <h3>Night</h3>
-
-      <p>Ton rituel du soir</p>
-
-    </a>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- ================= PRODUCTS ================= -->
+<!-- PRODUCTS -->
 
 <section class="products-section" id="products">
 
-  <div class="section-title">
+<div class="section-title">
 
-    <span>Nos favoris</span>
+<span>Nos favoris</span>
 
-    <h2>Produits populaires</h2>
+<h2>Produits populaires</h2>
 
-  </div>
+</div>
 
+<div class="products">
 
-  <div class="products">
+<div class="product-card">
 
+<div class="product-image">
+✨
+</div>
 
-    <div class="product-card">
+<h3>Garnier SkinActive</h3>
 
-      <div class="product-image">
-        ✨
-      </div>
+<p>Routine éclat & hydratation</p>
 
-      <h3>Garnier SkinActive</h3>
+<span class="price">24,900 DT</span>
 
-      <p>Routine éclat & hydratation</p>
+<button class="add-cart"
+onclick="addToCart('Garnier SkinActive')">
++
+</button>
 
-      <span class="price">24,900 DT</span>
-
-      <button class="add-cart"
-              onclick="addToCart('Garnier SkinActive')">
-        +
-      </button>
-
-    </div>
+</div>
 
 
-    <div class="product-card">
+<div class="product-card">
 
-      <div class="product-image">
-        🌸
-      </div>
+<div class="product-image">
+🌸
+</div>
 
-      <h3>NIVEA Soft</h3>
+<h3>NIVEA Soft</h3>
 
-      <p>Crème hydratante</p>
+<p>Crème hydratante</p>
 
-      <span class="price">12,900 DT</span>
+<span class="price">12,900 DT</span>
 
-      <button class="add-cart"
-              onclick="addToCart('NIVEA Soft')">
-        +
-      </button>
+<button class="add-cart"
+onclick="addToCart('NIVEA Soft')">
++
+</button>
 
-    </div>
-
-
-    <div class="product-card">
-
-      <div class="product-image">
-        💆
-      </div>
-
-      <h3>Elseve Dream Long</h3>
-
-      <p>Soin cheveux</p>
-
-      <span class="price">18,900 DT</span>
-
-      <button class="add-cart"
-              onclick="addToCart('Elseve Dream Long')">
-        +
-      </button>
-
-    </div>
+</div>
 
 
-    <div class="product-card">
+<div class="product-card">
 
-      <div class="product-image">
-        🌙
-      </div>
+<div class="product-image">
+💆
+</div>
 
-      <h3>Balea Night Care</h3>
+<h3>Elseve Dream Long</h3>
 
-      <p>Soin de nuit</p>
+<p>Soin cheveux</p>
 
-      <span class="price">21,900 DT</span>
+<span class="price">18,900 DT</span>
 
-      <button class="add-cart"
-              onclick="addToCart('Balea Night Care')">
-        +
-      </button>
+<button class="add-cart"
+onclick="addToCart('Elseve Dream Long')">
++
+</button>
 
-    </div>
+</div>
 
 
-  </div>
+<div class="product-card">
+
+<div class="product-image">
+🌙
+</div>
+
+<h3>Balea Night Care</h3>
+
+<p>Soin de nuit</p>
+
+<span class="price">21,900 DT</span>
+
+<button class="add-cart"
+onclick="addToCart('Balea Night Care')">
++
+</button>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ================= ROUTINE ================= -->
+<!-- ROUTINE INTRO -->
 
 <section id="routine">
 
-  <div class="routine">
+<div class="routine">
 
-    <div>
+<div>
 
-      <h2>
-        Trouve ta routine idéale ✨
-      </h2>
+<h2>
+اكتشفي الـRoutine متاعك ✨
+</h2>
 
-      <p>
-        Tu ne sais pas quels produits choisir ?
-        Réponds à quelques questions et découvre
-        une routine adaptée à tes besoins.
-      </p>
+<p>
+جاوبي على 4 أسئلة بسيطة، وعشق يقترح عليك
+الـRoutine الأقرب لاحتياجاتك.
+</p>
 
-      <br>
+<br>
 
-      <button class="btn btn-light"
-              onclick="startRoutine()">
-        Commencer maintenant →
-      </button>
+<a href="#quiz" class="btn btn-light">
+ابدئي الآن →
+</a>
 
-    </div>
+</div>
 
+<div class="scan">
+SCAN<br>
+TON CODE<br>
+💗
+</div>
 
-    <div class="scan">
-      SCAN<br>
-      TON CODE<br>
-      💗
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- ================= WHY US ================= -->
+<!-- QUIZ -->
+
+<section class="quiz-section" id="quiz">
+
+<div class="section-title">
+
+<span>ISHQ ROUTINE</span>
+
+<h2>اكتشفي روتينك</h2>
+
+</div>
+
+<div class="quiz">
+
+<div class="progress">
+
+<div class="progress-bar" id="progressBar"></div>
+
+</div>
+
+<div class="question-number"
+id="questionNumber">
+QUESTION 1 / 4
+</div>
+
+<h3 class="question" id="question">
+شنوّة تحبّي تركّزي عليه أكثر؟
+</h3>
+
+<div class="options" id="options"></div>
+
+<div class="quiz-buttons">
+
+<button class="back-btn"
+onclick="previousQuestion()">
+← Retour
+</button>
+
+<button class="next-btn"
+onclick="nextQuestion()">
+Suivant →
+</button>
+
+</div>
+
+</div>
+
+
+<!-- RESULT -->
+
+<div class="result" id="result">
+
+<div class="result-icon" id="resultIcon">
+✨
+</div>
+
+<h2 id="resultTitle">
+Ton Routine
+</h2>
+
+<p id="resultText">
+</p>
+
+<div class="result-products"
+id="resultProducts">
+</div>
+
+<br>
+
+<button class="btn btn-primary"
+onclick="restartQuiz()">
+Refaire le test
+</button>
+
+</div>
+
+</section>
+
+
+<!-- FEATURES -->
 
 <section>
 
-  <div class="section-title">
+<div class="section-title">
 
-    <span>Pourquoi عشق ?</span>
+<span>Pourquoi عشق ?</span>
 
-    <h2>Une beauté simple</h2>
+<h2>Une beauté simple</h2>
 
-  </div>
+</div>
 
+<div class="features">
 
-  <div class="features">
+<div class="feature">
 
+<div class="feature-icon">💗</div>
 
-    <div class="feature">
+<h3>Sélection</h3>
 
-      <div class="feature-icon">
-        💗
-      </div>
+<p>
+Des produits sélectionnés avec soin.
+</p>
 
-      <h3>Sélection</h3>
+</div>
 
-      <p>
-        Des produits sélectionnés avec soin.
-      </p>
+<div class="feature">
 
-    </div>
+<div class="feature-icon">🚚</div>
 
+<h3>Livraison</h3>
 
-    <div class="feature">
+<p>
+Livraison partout en Tunisie.
+</p>
 
-      <div class="feature-icon">
-        🚚
-      </div>
+</div>
 
-      <h3>Livraison</h3>
+<div class="feature">
 
-      <p>
-        Livraison partout en Tunisie.
-      </p>
+<div class="feature-icon">💰</div>
 
-    </div>
+<h3>Prix accessibles</h3>
 
+<p>
+Une beauté accessible à tous.
+</p>
 
-    <div class="feature">
+</div>
 
-      <div class="feature-icon">
-        💰
-      </div>
+<div class="feature">
 
-      <h3>Prix accessibles</h3>
+<div class="feature-icon">✨</div>
 
-      <p>
-        Une beauté accessible à tous.
-      </p>
+<h3>Routine</h3>
 
-    </div>
+<p>
+Des conseils pour mieux choisir.
+</p>
 
+</div>
 
-    <div class="feature">
-
-      <div class="feature-icon">
-        ✨
-      </div>
-
-      <h3>Routine</h3>
-
-      <p>
-        Des conseils pour mieux choisir.
-      </p>
-
-    </div>
-
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- ================= NEWSLETTER ================= -->
+<!-- NEWSLETTER -->
 
 <section class="newsletter">
 
-  <h2>Rejoins la communauté عشق</h2>
+<h2>
+Rejoins la communauté عشق
+</h2>
 
-  <p>
-    Découvre nos nouveautés et offres exclusives.
-  </p>
+<p>
+Découvre nos nouveautés et offres exclusives.
+</p>
 
-  <form class="newsletter-form"
-        onsubmit="subscribe(event)">
+<form class="newsletter-form"
+onsubmit="subscribe(event)">
 
-    <input
-      type="email"
-      placeholder="Ton adresse email"
-      required
-    >
+<input
+type="email"
+placeholder="Ton adresse email"
+required
+>
 
-    <button type="submit">
-      S'inscrire
-    </button>
+<button type="submit">
+S'inscrire
+</button>
 
-  </form>
+</form>
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
 <footer id="contact">
 
-  <div class="footer-content">
+<div class="footer-content">
 
+<div>
 
-    <div>
+<div class="footer-logo">
+عشق
+</div>
 
-      <div class="footer-logo">
-        عشق
-      </div>
+<p>
+Ton univers beauté tunisien.
+Glow, Care, Hair & Night.
+</p>
 
-      <p>
-        Ton univers beauté tunisien.
-        Glow, Care, Hair & Night.
-      </p>
+</div>
 
-    </div>
+<div>
 
+<h3>Navigation</h3>
 
-    <div>
+<a href="#home">Accueil</a><br>
+<a href="#categories">Catégories</a><br>
+<a href="#products">Produits</a><br>
+<a href="#routine">Routine</a>
 
-      <h3>Navigation</h3>
+</div>
 
-      <a href="#home">Accueil</a><br>
-      <a href="#categories">Catégories</a><br>
-      <a href="#products">Produits</a><br>
-      <a href="#routine">Routine</a>
+<div>
 
-    </div>
+<h3>Catégories</h3>
 
+<a href="#">Glow</a><br>
+<a href="#">Care</a><br>
+<a href="#">Hair</a><br>
+<a href="#">Night</a>
 
-    <div>
+</div>
 
-      <h3>Catégories</h3>
+<div>
 
-      <a href="#">Glow</a><br>
-      <a href="#">Care</a><br>
-      <a href="#">Hair</a><br>
-      <a href="#">Night</a>
+<h3>Contact</h3>
 
-    </div>
+<p>📍 Tunisie</p>
+<p>📱 WhatsApp</p>
+<p>📸 Instagram</p>
+<p>✉️ contact@ishq.tn</p>
 
+</div>
 
-    <div>
+</div>
 
-      <h3>Contact</h3>
+<div class="copyright">
 
-      <p>📍 Tunisie</p>
-      <p>📱 WhatsApp</p>
-      <p>📸 Instagram</p>
-      <p>✉️ contact@ishq.tn</p>
+© 2026 عشق | ISHQ BEAUTY — Tous droits réservés.
 
-    </div>
-
-
-  </div>
-
-
-  <div class="copyright">
-    © 2026 عشق | ISHQ BEAUTY — Tous droits réservés.
-  </div>
+</div>
 
 </footer>
 
 
-<!-- ================= CART MESSAGE ================= -->
+<!-- CART MESSAGE -->
 
 <div class="cart-message" id="cartMessage">
-  Produit ajouté au panier 🛒
+Produit ajouté au panier 🛒
 </div>
 
 
-<!-- ================= JAVASCRIPT ================= -->
-
 <script>
 
-  let cartCount = 0;
+/* ================= CART ================= */
+
+let cartCount = 0;
+
+function addToCart(product){
+
+cartCount++;
+
+document.getElementById("cartCount").textContent = cartCount;
+
+const message =
+document.getElementById("cartMessage");
+
+message.textContent =
+product + " ajouté au panier 🛒";
+
+message.classList.add("show");
+
+setTimeout(()=>{
+
+message.classList.remove("show");
+
+},2500);
+
+}
 
 
-  function addToCart(productName) {
+/* ================= QUIZ ================= */
 
-    cartCount++;
+const questions = [
 
-    document.getElementById("cartCount").textContent = cartCount;
+{
+question:"شنوّة تحبّي تركّزي عليه أكثر؟",
+options:[
+"✨ Glow / إشراقة",
+"💧 Care / روتين متكامل",
+"💆 Hair / الشعر",
+"🌙 Night / الليل"
+]
+},
 
-    const message =
-      document.getElementById("cartMessage");
+{
+question:"شنوّة نوع الـRoutine اللي تحبّيه؟",
+options:[
+"⚡ سريع وبسيط",
+"🌸 متوازن",
+"✨ كامل ومتكامل"
+]
+},
 
-    message.textContent =
-      productName + " ajouté au panier 🛒";
+{
+question:"قدّاش عندك وقت للعناية؟",
+options:[
+"⏱️ 5 دقايق",
+"🕐 10–15 دقيقة",
+"💆 نحب ناخذ وقتي"
+]
+},
 
-    message.classList.add("show");
+{
+question:"وقتاش تحبّي تعملي الـRoutine؟",
+options:[
+"☀️ الصباح",
+"🌙 الليل",
+"☀️🌙 الصباح والليل"
+]
+}
 
-    setTimeout(
+];
+
+
+let currentQuestion = 0;
+
+let answers = [];
+
+
+function loadQuestion(){
+
+const q = questions[currentQuestion];
+
+document.getElementById("question").textContent =
+q.question;
+
+document.getElementById("questionNumber").textContent =
+"QUESTION " + (currentQuestion+1) + " / 4";
+
+document.getElementById("progressBar").style.width =
+((currentQuestion+1)/4*100)+"%";
+
+const options =
+document.getElementById("options");
+
+options.innerHTML = "";
+
+
+q.options.forEach((option,index)=>{
+
+const button =
+document.createElement("button");
+
+button.className="option";
+
+button.textContent=option;
+
+
+if(answers[currentQuestion]===index){
+
+button.classList.add("selected");
+
+}
+
+
+button.onclick=()=>{
+
+answers[currentQuestion]=index;
+
+document.querySelectorAll(".option")
+.forEach(btn=>btn.classList.remove("selected"));
+
+button.classList.add("selected");
+
+};
+
+
+options.appendChild(button);
+
+});
+
+}
+
+
+function nextQuestion(){
+
+if(answers[currentQuestion]===undefined){
+
+alert("اختاري إجابة قبل ما تكمّلي 💗");
+
+return;
+
+}
+
+if(currentQuestion < questions.length-1){
+
+currentQuestion++;
+
+loadQuestion();
+
+}else{
+
+showResult();
+
+}
+
+}
+
+
+function previousQuestion(){
+
+if(currentQuestion>0){
+
+currentQuestion--;
+
+loadQuestion();
+
+}
+
+}
+
+
+function showResult(){
+
+document.querySelector(".quiz").style.display="none";
+
+const result =
+document.getElementById("result");
+
+result.style.display="block";
+
+
+let focus = answers[0];
+
+let title;
+let icon;
+let text;
+let products;
+
+
+if(focus===0){
+
+title="Glow Routine ✨";
+
+icon="✨";
+
+text=
+"روتينك يركّز على الإشراقة والعناية اليومية باش تعطي بشرتك مظهر أكثر حيوية.";
+
+products=[
+"Garnier SkinActive",
+"NIVEA Soft"
+];
+
+}
+
+else if(focus===1){
+
+title="Care Routine 💧";
+
+icon="💧";
+
+text=
+"روتين متوازن للعناية اليومية والترطيب والمحافظة على نعومة البشرة.";
+
+products=[
+"NIVEA Soft",
+"Garnier SkinActive"
+];
+
+}
+
+else if(focus===2){
+
+title="Hair Routine 💆";
+
+icon="💆";
+
+text=
+"روتين مخصّص أكثر للعناية بالشعر والحفاظ على مظهره الصحي.";
+
+products=[
+"Elseve Dream Long"
+];
+
+}
+
+else{
+
+title="Night Routine 🌙";
+
+icon="🌙";
+
+text=
+"روتين مسائي هادئ للعناية بالبشرة قبل النوم.";
+
+products=[
+"Balea Night Care",
+"NIVEA Soft"
+];
+
+}
+
+
+document.getElementById("resultIcon").textContent=icon;
+
+document.getElementById("resultTitle").textContent=title;
+
+document.getElementById("resultText").textContent=text;
+
+
+const productsBox =
+document.getElementById("resultProducts");
+
+productsBox.innerHTML="";
+
+
+products.forEach(product=>{
+
+const div=document.createElement("div");
+
+div.className="result-product";
+
+div.innerHTML=
+"🛍️ <strong>"+product+"</strong>";
+
+productsBox.appendChild(div);
+
+});
+
+result.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+function restartQuiz(){
+
+currentQuestion=0;
+
+answers=[];
+
+document.querySelector(".quiz").style.display="block";
+
+document.getEle
