@@ -5,312 +5,1937 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="عشق - اكتشفي روتين العناية المناسب ليك">
 <title>عشق | Glow • Care • Hair • Night</title>
+
 <style>
 :root{
-  --pink:#c96888;--pink2:#f9dce6;--pink3:#fff4f7;--ink:#30252a;
-  --muted:#75666d;--white:#fff;--line:#eedbe2;--green:#2f8055;
+  --pink:#c96888;
+  --pink2:#f9dce6;
+  --pink3:#fff4f7;
+  --ink:#30252a;
+  --muted:#75666d;
+  --white:#fff;
+  --line:#eedbe2;
+  --green:#2f8055;
 }
+
 *{box-sizing:border-box}
+
 html{scroll-behavior:smooth}
-body{margin:0;background:linear-gradient(180deg,#fff8fa,#fff);color:var(--ink);font-family:Tahoma,Arial,sans-serif}
+
+body{
+  margin:0;
+  background:linear-gradient(180deg,#fff8fa,#fff);
+  color:var(--ink);
+  font-family:Tahoma,Arial,sans-serif;
+}
+
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
-.container{width:min(100% - 28px,1050px);margin:auto}
-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.logo{font-size:31px;font-weight:900;color:var(--pink)}
-.nav-links{display:flex;gap:8px;flex-wrap:wrap}
-.nav-links button{border:0;background:transparent;color:var(--ink);padding:9px 11px;border-radius:12px}
-.nav-links button:hover{background:var(--pink3)}
-.cart-pill{border:0;background:var(--pink);color:#fff;padding:10px 14px;border-radius:999px;font-weight:800}
-.hero{padding:70px 0 45px;text-align:center}
-.hero-card{background:radial-gradient(circle at 15% 15%,#ffeaf1,transparent 35%),linear-gradient(135deg,#fff,#fff2f6);border:1px solid var(--line);border-radius:34px;padding:48px 22px;box-shadow:0 20px 60px rgba(150,70,100,.10)}
-.kicker{display:inline-block;background:var(--pink2);color:#a54f6e;padding:8px 14px;border-radius:999px;font-size:13px;font-weight:800}
-.hero h1{font-size:clamp(34px,7vw,60px);margin:18px 0 10px}
-.hero p{max-width:650px;margin:0 auto 24px;color:var(--muted);line-height:1.9;font-size:17px}
-.btn{border:0;border-radius:16px;padding:14px 20px;font-weight:900}
-.btn-primary{background:var(--pink);color:#fff}
-.btn-light{background:var(--pink3);color:var(--pink);border:1px solid var(--pink2)}
-.btn:disabled{opacity:.45;cursor:not-allowed}
-.section{padding:25px 0 55px}
-.section-title{text-align:center;margin-bottom:22px}
-.section-title h2{margin:0 0 7px;font-size:28px}
-.section-title p{margin:0;color:var(--muted)}
-.categories,.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.category{background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px;text-align:center}
-.category .icon{font-size:32px}
-.category h3{margin:9px 0 4px}.category p{color:var(--muted);font-size:13px;line-height:1.6}
-.panel{background:#fff;border:1px solid var(--line);border-radius:26px;padding:24px;box-shadow:0 10px 35px rgba(150,70,100,.06)}
-.quiz-head{display:flex;justify-content:space-between;gap:12px;align-items:center}
-.progress{height:9px;background:#f4e7eb;border-radius:99px;overflow:hidden;margin:15px 0 24px}
-.progress span{display:block;height:100%;width:0;background:var(--pink);transition:.3s}
-.answers{display:grid;gap:11px}
-.answer{width:100%;text-align:right;background:#fff;border:2px solid var(--line);padding:15px;border-radius:15px}
-.answer.selected{border-color:var(--pink);background:var(--pink3)}
-.quiz-actions{display:flex;gap:10px;margin-top:20px}.quiz-actions .btn{flex:1}
-.result{background:linear-gradient(135deg,#fff0f5,#fff);border:1px solid var(--pink2);border-radius:22px;padding:22px;margin-top:18px}
-.products-grid{grid-template-columns:repeat(2,1fr)}
-.product{background:#fff;border:1px solid var(--line);border-radius:23px;overflow:hidden}
-.product-img{height:180px;background:linear-gradient(135deg,#ffe8f0,#fff);display:grid;place-items:center;font-size:55px}
-.product-body{padding:18px}.product h3{margin:0 0 7px}.product p{color:var(--muted);line-height:1.7;font-size:14px}
-.price{font-size:20px;color:var(--pink);font-weight:900;margin:10px 0}
-.details{background:var(--pink3);border-radius:15px;padding:13px;font-size:13px;line-height:1.8;margin:12px 0}
-.details b{color:#9e4c68}
-.product-actions{display:flex;gap:8px}.product-actions .btn{flex:1}
-.cart-list{display:grid;gap:10px}
-.cart-item{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:10px;border-bottom:1px solid var(--line);padding:12px 0}
-.qty{display:flex;align-items:center;gap:7px}.qty button{border:1px solid var(--line);background:#fff;border-radius:9px;padding:5px 9px}
-.delivery{margin:15px 0;padding:14px;border-radius:15px;text-align:center;background:var(--pink3);color:var(--pink);font-weight:900}
-.delivery.free{background:#effaf3;color:var(--green)}
-.summary{border-top:1px solid var(--line);margin-top:18px;padding-top:15px}
-.row{display:flex;justify-content:space-between;gap:15px;margin:9px 0}.grand{font-size:22px;font-weight:900}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-label{font-size:13px;font-weight:800}
-.field{display:grid;gap:6px}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:13px;padding:13px;background:#fff;outline:0}input:focus,select:focus,textarea:focus{border-color:var(--pink)}textarea{min-height:100px;resize:vertical}.full{grid-column:1/-1}
-.payment{border:1px solid var(--pink2);background:var(--pink3);padding:15px;border-radius:15px;margin:15px 0;font-weight:800}
-.success{text-align:center;padding:35px 15px}.success .check{font-size:55px}
-.empty{text-align:center;color:var(--muted);padding:25px}
-footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:var(--muted);font-size:13px}
-.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(100px);background:#30252a;color:#fff;padding:12px 18px;border-radius:999px;z-index:50;transition:.3s;opacity:0}.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
-@media(max-width:760px){
- .nav{min-height:64px}.nav-links{display:none}.categories{grid-template-columns:1fr 1fr}.products-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}
- .hero{padding:35px 0}.hero-card{padding:35px 16px}.hero h1{font-size:37px}.cart-item{grid-template-columns:1fr auto}.cart-item .remove{grid-column:2}
+
+.container{
+  width:min(100% - 28px,1050px);
+  margin:auto;
 }
-.hidden{display:none!important}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.logo{
+  font-size:31px;
+  font-weight:900;
+  color:var(--pink);
+}
+
+.nav-links{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.nav-links button{
+  border:0;
+  background:transparent;
+  color:var(--ink);
+  padding:9px 11px;
+  border-radius:12px;
+}
+
+.nav-links button:hover{
+  background:var(--pink3);
+}
+
+.cart-pill{
+  border:0;
+  background:var(--pink);
+  color:#fff;
+  padding:10px 14px;
+  border-radius:999px;
+  font-weight:800;
+}
+
+.hero{
+  padding:70px 0 45px;
+  text-align:center;
+}
+
+.hero-card{
+  background:
+    radial-gradient(circle at 15% 15%,#ffeaf1,transparent 35%),
+    linear-gradient(135deg,#fff,#fff2f6);
+  border:1px solid var(--line);
+  border-radius:34px;
+  padding:48px 22px;
+  box-shadow:0 20px 60px rgba(150,70,100,.10);
+}
+
+.kicker{
+  display:inline-block;
+  background:var(--pink2);
+  color:#a54f6e;
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:800;
+}
+
+.hero h1{
+  font-size:clamp(34px,7vw,60px);
+  margin:18px 0 10px;
+}
+
+.hero p{
+  max-width:650px;
+  margin:0 auto 24px;
+  color:var(--muted);
+  line-height:1.9;
+  font-size:17px;
+}
+
+.btn{
+  border:0;
+  border-radius:16px;
+  padding:14px 20px;
+  font-weight:900;
+}
+
+.btn-primary{
+  background:var(--pink);
+  color:#fff;
+}
+
+.btn-light{
+  background:var(--pink3);
+  color:var(--pink);
+  border:1px solid var(--pink2);
+}
+
+.btn:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+.section{
+  padding:25px 0 55px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:22px;
+}
+
+.section-title h2{
+  margin:0 0 7px;
+  font-size:28px;
+}
+
+.section-title p{
+  margin:0;
+  color:var(--muted);
+}
+
+.categories,
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.category{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:20px;
+  text-align:center;
+}
+
+.category .icon{
+  font-size:32px;
+}
+
+.category h3{
+  margin:9px 0 4px;
+}
+
+.category p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.6;
+}
+
+.panel{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:26px;
+  padding:24px;
+  box-shadow:0 10px 35px rgba(150,70,100,.06);
+}
+
+.quiz-head{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:center;
+}
+
+.progress{
+  height:9px;
+  background:#f4e7eb;
+  border-radius:99px;
+  overflow:hidden;
+  margin:15px 0 24px;
+}
+
+.progress span{
+  display:block;
+  height:100%;
+  width:0;
+  background:var(--pink);
+  transition:.3s;
+}
+
+.answers{
+  display:grid;
+  gap:11px;
+}
+
+.answer{
+  width:100%;
+  text-align:right;
+  background:#fff;
+  border:2px solid var(--line);
+  padding:15px;
+  border-radius:15px;
+}
+
+.answer.selected{
+  border-color:var(--pink);
+  background:var(--pink3);
+}
+
+.quiz-actions{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
+}
+
+.quiz-actions .btn{
+  flex:1;
+}
+
+.result{
+  background:linear-gradient(135deg,#fff0f5,#fff);
+  border:1px solid var(--pink2);
+  border-radius:22px;
+  padding:22px;
+  margin-top:18px;
+}
+
+/* PRODUCTS */
+
+.products-grid{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.product{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:23px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+.product-img{
+  height:230px;
+  background:linear-gradient(135deg,#ffe8f0,#fff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.product-img img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:15px;
+  display:block;
+}
+
+.product-img.empty{
+  color:#d9b9c5;
+  font-size:14px;
+}
+
+.product-body{
+  padding:18px;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+
+.product h3{
+  margin:0 0 7px;
+  font-size:18px;
+}
+
+.product p{
+  color:var(--muted);
+  line-height:1.7;
+  font-size:14px;
+}
+
+.volume{
+  color:var(--pink);
+  font-size:13px;
+  font-weight:800;
+  margin-top:3px;
+}
+
+.price{
+  font-size:20px;
+  color:var(--pink);
+  font-weight:900;
+  margin:10px 0;
+}
+
+.details{
+  background:var(--pink3);
+  border-radius:15px;
+  padding:13px;
+  font-size:13px;
+  line-height:1.9;
+  margin:12px 0;
+}
+
+.details b{
+  color:#9e4c68;
+}
+
+.product-actions{
+  display:flex;
+  gap:8px;
+  margin-top:auto;
+}
+
+.product-actions .btn{
+  flex:1;
+}
+
+.cart-list{
+  display:grid;
+  gap:10px;
+}
+
+.cart-item{
+  display:grid;
+  grid-template-columns:1fr auto auto;
+  align-items:center;
+  gap:10px;
+  border-bottom:1px solid var(--line);
+  padding:12px 0;
+}
+
+.qty{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+.qty button{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:9px;
+  padding:5px 9px;
+}
+
+.delivery{
+  margin:15px 0;
+  padding:14px;
+  border-radius:15px;
+  text-align:center;
+  background:var(--pink3);
+  color:var(--pink);
+  font-weight:900;
+}
+
+.delivery.free{
+  background:#effaf3;
+  color:var(--green);
+}
+
+.summary{
+  border-top:1px solid var(--line);
+  margin-top:18px;
+  padding-top:15px;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  margin:9px 0;
+}
+
+.grand{
+  font-size:22px;
+  font-weight:900;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+label{
+  font-size:13px;
+  font-weight:800;
+}
+
+.field{
+  display:grid;
+  gap:6px;
+}
+
+input,select,textarea{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:13px;
+  background:#fff;
+  outline:0;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:var(--pink);
+}
+
+textarea{
+  min-height:100px;
+  resize:vertical;
+}
+
+.full{
+  grid-column:1/-1;
+}
+
+.payment{
+  border:1px solid var(--pink2);
+  background:var(--pink3);
+  padding:15px;
+  border-radius:15px;
+  margin:15px 0;
+  font-weight:800;
+}
+
+.success{
+  text-align:center;
+  padding:35px 15px;
+}
+
+.success .check{
+  font-size:55px;
+}
+
+.empty{
+  text-align:center;
+  color:var(--muted);
+  padding:25px;
+}
+
+footer{
+  border-top:1px solid var(--line);
+  padding:30px 0;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.toast{
+  position:fixed;
+  bottom:18px;
+  left:50%;
+  transform:translateX(-50%) translateY(100px);
+  background:#30252a;
+  color:#fff;
+  padding:12px 18px;
+  border-radius:999px;
+  z-index:50;
+  transition:.3s;
+  opacity:0;
+}
+
+.toast.show{
+  transform:translateX(-50%) translateY(0);
+  opacity:1;
+}
+
+.hidden{
+  display:none!important;
+}
+
+@media(max-width:900px){
+  .products-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .categories{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:760px){
+
+  .nav{
+    min-height:64px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .categories{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .products-grid{
+    grid-template-columns:1fr;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+
+  .hero{
+    padding:35px 0;
+  }
+
+  .hero-card{
+    padding:35px 16px;
+  }
+
+  .hero h1{
+    font-size:37px;
+  }
+
+  .cart-item{
+    grid-template-columns:1fr auto;
+  }
+
+  .cart-item .remove{
+    grid-column:2;
+  }
+}
 </style>
 </head>
+
 <body>
 
 <header>
   <div class="container nav">
-    <button class="cart-pill" onclick="showSection('cart')">🛒 السلة <span id="cartCount">0</span></button>
+
+    <button class="cart-pill" onclick="showSection('cart')">
+      🛒 السلة <span id="cartCount">0</span>
+    </button>
+
     <div>
       <div class="logo">عشق</div>
-      <div style="font-size:11px;color:var(--muted)">Glow • Care • Hair • Night</div>
+      <div style="font-size:11px;color:var(--muted)">
+        Glow • Care • Hair • Night
+      </div>
     </div>
+
     <div class="nav-links">
       <button onclick="showSection('home')">الرئيسية</button>
       <button onclick="showSection('quizSection')">الاختبار</button>
       <button onclick="showSection('productsSection')">المنتجات</button>
       <button onclick="showSection('cart')">السلة</button>
     </div>
+
   </div>
 </header>
 
 <main class="container">
 
 <section id="home" class="hero">
+
   <div class="hero-card">
-    <span class="kicker">عناية مصمّمة ليك ✨</span>
-    <h1>اكتشفي الـRoutine المناسب ليك</h1>
-    <p>جاوبي على 5 أسئلة بسيطة، وخلي «عشق» يقترح عليك روتينك بين Glow وCare وHair وNight.</p>
-    <button class="btn btn-primary" onclick="startQuiz()">ابدأ الاختبار ✨</button>
+
+    <span class="kicker">
+      عناية مصمّمة ليك ✨
+    </span>
+
+    <h1>
+      اكتشفي الـRoutine المناسب ليك
+    </h1>
+
+    <p>
+      جاوبي على 5 أسئلة بسيطة، وخلي «عشق» يقترح عليك روتينك بين
+      Glow وCare وHair وNight.
+    </p>
+
+    <button class="btn btn-primary" onclick="startQuiz()">
+      ابدأ الاختبار ✨
+    </button>
+
   </div>
+
 </section>
 
 <section class="section">
+
   <div class="section-title">
     <h2>عالم عشق</h2>
     <p>اختاري العناية اللي تناسب احتياجاتك</p>
   </div>
+
   <div class="categories">
-    <div class="category"><div class="icon">✨</div><h3>Glow</h3><p>للإشراقة والمظهر الصحي</p></div>
-    <div class="category"><div class="icon">💗</div><h3>Care</h3><p>للعناية اليومية والترطيب</p></div>
-    <div class="category"><div class="icon">💆</div><h3>Hair</h3><p>للعناية بالشعر</p></div>
-    <div class="category"><div class="icon">🌙</div><h3>Night</h3><p>لروتين العناية الليلية</p></div>
+
+    <div class="category">
+      <div class="icon">✨</div>
+      <h3>Glow</h3>
+      <p>للإشراقة والمظهر الصحي</p>
+    </div>
+
+    <div class="category">
+      <div class="icon">💗</div>
+      <h3>Care</h3>
+      <p>للعناية اليومية والترطيب</p>
+    </div>
+
+    <div class="category">
+      <div class="icon">💆</div>
+      <h3>Hair</h3>
+      <p>للعناية بالشعر</p>
+    </div>
+
+    <div class="category">
+      <div class="icon">🌙</div>
+      <h3>Night</h3>
+      <p>لروتين العناية الليلية</p>
+    </div>
+
   </div>
+
 </section>
 
 <section id="quizSection" class="section hidden">
+
   <div class="panel">
+
     <div class="quiz-head">
       <strong id="qNumber">السؤال 1 من 5</strong>
       <span id="qPercent" style="color:var(--muted);font-size:13px">20%</span>
     </div>
-    <div class="progress"><span id="progressBar"></span></div>
-    <h2 id="questionText"></h2>
-    <div id="answers" class="answers"></div>
-    <div class="quiz-actions">
-      <button class="btn btn-light" id="prevBtn" onclick="prevQuestion()">السابق</button>
-      <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">التالي</button>
+
+    <div class="progress">
+      <span id="progressBar"></span>
     </div>
+
+    <h2 id="questionText"></h2>
+
+    <div id="answers" class="answers"></div>
+
+    <div class="quiz-actions">
+      <button class="btn btn-light" id="prevBtn" onclick="prevQuestion()">
+        السابق
+      </button>
+
+      <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">
+        التالي
+      </button>
+    </div>
+
     <div id="quizResult" class="result hidden"></div>
+
   </div>
+
 </section>
 
 <section id="productsSection" class="section">
+
   <div class="section-title">
     <h2>منتجات عشق 🛍️</h2>
-    <p>المعلومات التفصيلية للمنتجات الحقيقية نكمّلوها بعد ما تبعثلي المنتجات وتركيباتها.</p>
+    <p>
+      معلومات المنتج تظهر فقط عندما تكون مؤكدة.
+    </p>
   </div>
+
   <div id="productGrid" class="products-grid"></div>
+
 </section>
 
 <section id="cart" class="section">
-  <div class="section-title"><h2>سلة الشراء 🛒</h2><p>راجعي طلبك قبل التأكيد</p></div>
-  <div class="panel">
-    <div id="cartList" class="cart-list"></div>
-    <div id="deliveryBox" class="delivery hidden"></div>
-    <div class="summary">
-      <div class="row"><span>مجموع المنتجات</span><strong id="subtotal">0 د.ت</strong></div>
-      <div class="row"><span>التوصيل</span><strong id="shipping">0 د.ت</strong></div>
-      <div class="row grand"><span>المجموع النهائي</span><strong id="grandTotal">0 د.ت</strong></div>
-    </div>
+
+  <div class="section-title">
+    <h2>سلة الشراء 🛒</h2>
+    <p>راجعي طلبك قبل التأكيد</p>
   </div>
+
+  <div class="panel">
+
+    <div id="cartList" class="cart-list"></div>
+
+    <div id="deliveryBox" class="delivery hidden"></div>
+
+    <div class="summary">
+
+      <div class="row">
+        <span>مجموع المنتجات</span>
+        <strong id="subtotal">0 د.ت</strong>
+      </div>
+
+      <div class="row">
+        <span>التوصيل</span>
+        <strong id="shipping">0 د.ت</strong>
+      </div>
+
+      <div class="row grand">
+        <span>المجموع النهائي</span>
+        <strong id="grandTotal">0 د.ت</strong>
+      </div>
+
+    </div>
+
+    <button
+      class="btn btn-primary"
+      style="width:100%;margin-top:15px"
+      onclick="goCheckout()">
+      متابعة الطلب 📦
+    </button>
+
+  </div>
+
 </section>
 
-<section id="checkout" class="section">
-  <div class="section-title"><h2>تأكيد الطلب 📦</h2><p>الدفع عند الاستلام</p></div>
-  <div class="panel">
-    <div class="form-grid">
-      <div class="field"><label>الاسم واللقب *</label><input id="name" autocomplete="name" placeholder="اكتب اسمك"></div>
-      <div class="field"><label>رقم الهاتف *</label><input id="phone" type="tel" autocomplete="tel" placeholder="رقم الهاتف"></div>
-      <div class="field"><label>الولاية *</label>
-        <select id="gov"><option value="">اختار الولاية</option>
-        <option>تونس</option><option>أريانة</option><option>بن عروس</option><option>منوبة</option><option>نابل</option><option>زغوان</option><option>بنزرت</option><option>باجة</option><option>جندوبة</option><option>الكاف</option><option>سليانة</option><option>القيروان</option><option>القصرين</option><option>سيدي بوزيد</option><option>سوسة</option><option>المنستير</option><option>المهدية</option><option>صفاقس</option><option>قابس</option><option>مدنين</option><option>تطاوين</option><option>قبلي</option><option>توزر</option><option>قفصة</option></select>
-      </div>
-      <div class="field"><label>العنوان *</label><input id="address" placeholder="العنوان بالتفصيل"></div>
-      <div class="field full"><label>ملاحظات (اختياري)</label><textarea id="notes" placeholder="أي ملاحظة على الطلب..."></textarea></div>
-    </div>
-    <div class="payment">💵 طريقة الدفع: <strong>الدفع عند الاستلام</strong></div>
-    <button class="btn btn-primary" style="width:100%" onclick="placeOrder()">تأكيد الطلب ❤️</button>
+<section id="checkout" class="section hidden">
+
+  <div class="section-title">
+    <h2>تأكيد الطلب 📦</h2>
+    <p>الدفع عند الاستلام</p>
   </div>
+
+  <div class="panel">
+
+    <div class="form-grid">
+
+      <div class="field">
+        <label>الاسم واللقب *</label>
+        <input
+          id="name"
+          autocomplete="name"
+          placeholder="اكتب اسمك">
+      </div>
+
+      <div class="field">
+        <label>رقم الهاتف *</label>
+        <input
+          id="phone"
+          type="tel"
+          autocomplete="tel"
+          placeholder="رقم الهاتف">
+      </div>
+
+      <div class="field">
+
+        <label>الولاية *</label>
+
+        <select id="gov">
+
+          <option value="">اختار الولاية</option>
+          <option>تونس</option>
+          <option>أريانة</option>
+          <option>بن عروس</option>
+          <option>منوبة</option>
+          <option>نابل</option>
+          <option>زغوان</option>
+          <option>بنزرت</option>
+          <option>باجة</option>
+          <option>جندوبة</option>
+          <option>الكاف</option>
+          <option>سليانة</option>
+          <option>القيروان</option>
+          <option>القصرين</option>
+          <option>سيدي بوزيد</option>
+          <option>سوسة</option>
+          <option>المنستير</option>
+          <option>المهدية</option>
+          <option>صفاقس</option>
+          <option>قابس</option>
+          <option>مدنين</option>
+          <option>تطاوين</option>
+          <option>قبلي</option>
+          <option>توزر</option>
+          <option>قفصة</option>
+
+        </select>
+
+      </div>
+
+      <div class="field">
+
+        <label>العنوان *</label>
+
+        <input
+          id="address"
+          placeholder="العنوان بالتفصيل">
+
+      </div>
+
+      <div class="field full">
+
+        <label>ملاحظات (اختياري)</label>
+
+        <textarea
+          id="notes"
+          placeholder="أي ملاحظة على الطلب..."></textarea>
+
+      </div>
+
+    </div>
+
+    <div class="payment">
+      💵 طريقة الدفع:
+      <strong>الدفع عند الاستلام</strong>
+    </div>
+
+    <button
+      class="btn btn-primary"
+      style="width:100%"
+      onclick="placeOrder()">
+      تأكيد الطلب ❤️
+    </button>
+
+  </div>
+
 </section>
 
 <section id="success" class="section hidden">
+
   <div class="panel success">
+
     <div class="check">🎉</div>
-    <h2>شكراً على طلبك من عشق!</h2>
-    <p>تم تسجيل الطلب على الموقع. سيتم التواصل معك لتأكيد معلومات التوصيل.</p>
-    <button class="btn btn-primary" onclick="showSection('home')">العودة للرئيسية</button>
+
+    <h2>
+      شكراً على طلبك من عشق!
+    </h2>
+
+    <p>
+      تم تسجيل الطلب على الموقع.
+      سيتم التواصل معك لتأكيد معلومات التوصيل.
+    </p>
+
+    <button
+      class="btn btn-primary"
+      onclick="showSection('home')">
+      العودة للرئيسية
+    </button>
+
   </div>
+
 </section>
 
 </main>
 
 <footer>
-  <div class="container">عشق © 2026 — Glow • Care • Hair • Night</div>
+
+  <div class="container">
+    عشق © 2026 — Glow • Care • Hair • Night
+  </div>
+
 </footer>
 
 <div id="toast" class="toast"></div>
 
 <script>
+
+/* =========================
+   QUESTIONS
+========================= */
+
 const questions=[
- {q:"شنو أكثر حاجة تحبّي تحسّنيها؟",a:["Glow وإشراقة البشرة","Care والعناية اليومية","Hair والعناية بالشعر","Night وروتين الليل"]},
- {q:"كيفاش تصفّي بشرتك؟",a:["عادية","جافة","دهنية","مختلطة","ما نعرفش"]},
- {q:"شنو النتيجة اللي تهمّك أكثر؟",a:["ترطيب ونعومة","إشراقة ومظهر صحي","تنظيف وانتعاش","روتين هادئ قبل النوم"]},
- {q:"قدّاش تحبّي يكون الروتين؟",a:["سريع وبسيط","متوازن","روتين كامل"]},
- {q:"شنو أكثر حاجة تحبّيها في الروتين؟",a:["منتجات قليلة وسهلة","روتين منظم خطوة بخطوة","تجربة عناية كاملة"]}
+
+  {
+    q:"شنو أكثر حاجة تحبّي تحسّنيها؟",
+    a:[
+      "Glow وإشراقة البشرة",
+      "Care والعناية اليومية",
+      "Hair والعناية بالشعر",
+      "Night وروتين الليل"
+    ]
+  },
+
+  {
+    q:"كيفاش تصفّي بشرتك؟",
+    a:[
+      "عادية",
+      "جافة",
+      "دهنية",
+      "مختلطة",
+      "ما نعرفش"
+    ]
+  },
+
+  {
+    q:"شنو النتيجة اللي تهمّك أكثر؟",
+    a:[
+      "ترطيب ونعومة",
+      "إشراقة ومظهر صحي",
+      "تنظيف وانتعاش",
+      "روتين هادئ قبل النوم"
+    ]
+  },
+
+  {
+    q:"قدّاش تحبّي يكون الروتين؟",
+    a:[
+      "سريع وبسيط",
+      "متوازن",
+      "روتين كامل"
+    ]
+  },
+
+  {
+    q:"شنو أكثر حاجة تحبّيها في الروتين؟",
+    a:[
+      "منتجات قليلة وسهلة",
+      "روتين منظم خطوة بخطوة",
+      "تجربة عناية كاملة"
+    ]
+  }
+
 ];
+
+/* =========================
+   PRODUCTS
+========================= */
 
 const products=[
- {id:"glow",name:"Glow",emoji:"✨",price:35,desc:"روتين الإشراقة والعناية اليومية.",benefits:"تُضاف الفوائد الدقيقة بعد اعتماد التركيبة النهائية.",ingredients:"تُضاف قائمة INCI الحقيقية بعد استلام التركيبة.",usage:"تُضاف طريقة الاستعمال الرسمية حسب المنتج النهائي.",suitable:"يُحدد حسب التركيبة النهائية."},
- {id:"care",name:"Care",emoji:"💗",price:35,desc:"روتين العناية اليومية والترطيب.",benefits:"تُضاف الفوائد الدقيقة بعد اعتماد التركيبة النهائية.",ingredients:"تُضاف قائمة INCI الحقيقية بعد استلام التركيبة.",usage:"تُضاف طريقة الاستعمال الرسمية حسب المنتج النهائي.",suitable:"يُحدد حسب التركيبة النهائية."},
- {id:"hair",name:"Hair",emoji:"💆",price:35,desc:"روتين العناية بالشعر.",benefits:"تُضاف الفوائد الدقيقة بعد اعتماد التركيبة النهائية.",ingredients:"تُضاف قائمة INCI الحقيقية بعد استلام التركيبة.",usage:"تُضاف طريقة الاستعمال الرسمية حسب المنتج النهائي.",suitable:"يُحدد حسب التركيبة النهائية."},
- {id:"night",name:"Night",emoji:"🌙",price:35,desc:"روتين العناية الليلية.",benefits:"تُضاف الفوائد الدقيقة بعد اعتماد التركيبة النهائية.",ingredients:"تُضاف قائمة INCI الحقيقية بعد استلام التركيبة.",usage:"تُضاف طريقة الاستعمال الرسمية حسب المنتج النهائي.",suitable:"يُحدد حسب التركيبة النهائية."}
+
+  {
+    id:"balea-cleanser",
+    name:"Balea Crème Nettoyante",
+    volume:"150 ml",
+    category:"Care",
+    price:0,
+
+    /*
+      الصورة متعمدة فارغة حاليا
+      لين نثبت رابط الصورة الرسمي.
+    */
+    image:"",
+
+    desc:"كريم تنظيف لطيف للوجه، مناسب خصوصًا للبشرة الجافة والحساسة. يساعد على تنظيف البشرة من الأوساخ وبقايا المكياج مع المحافظة على توازن الترطيب.",
+
+    benefits:"تنظيف لطيف للوجه والعناية بالبشرة الجافة والحساسة.",
+
+    ingredients:"Aqua, Cetearyl Alcohol, Isopropyl Palmitate, Glycerin, زيت اللوز الحلو ومكونات أخرى حسب تركيبة المنتج الرسمية.",
+
+    usage:"صباحًا ومساءً على بشرة مبللة. تُرغى كمية صغيرة مع قليل من الماء ثم تُشطف بالماء الدافئ.",
+
+    suitable:"خصوصًا للبشرة الجافة والحساسة."
+  },
+
+  {
+    id:"balea-vitamin-c",
+    name:"Balea Vitamine C SPF 15",
+    volume:"50 ml",
+    category:"Glow",
+    price:0,
+    image:"",
+
+    desc:"كريم للوجه بفيتامين C وعامل حماية SPF 15، يساعد على ترطيب البشرة ومنحها مظهرًا أكثر إشراقًا وتجانسًا.",
+
+    benefits:"إشراقة وترطيب مع SPF 15 وحماية من UVA.",
+
+    ingredients:"يحتوي على Sodium Ascorbyl Phosphate ومكونات أخرى حسب التركيبة الرسمية.",
+
+    usage:"صباحًا بعد تنظيف البشرة، يوضع على الوجه والرقبة ومنطقة أعلى الصدر ويدلّك بلطف. تُتجنب منطقة العين.",
+
+    suitable:"جميع أنواع البشرة حسب معلومات الشركة."
+  },
+
+  {
+    id:"nivea-creme",
+    name:"Nivea Crème",
+    volume:"150 ml",
+    category:"Care",
+    price:0,
+    image:"",
+
+    desc:"كريم نيفيا المرطّب الأصلي للعناية اليومية بالبشرة.",
+
+    benefits:"عناية مكثفة، ترطيب وتنعيم البشرة والمساعدة على الحد من الجفاف.",
+
+    ingredients:"توجد قائمة المكونات الرسمية ضمن صفحة المنتج من NIVEA.",
+
+    usage:"للاستعمال الخارجي فقط. يوضع على البشرة حسب الحاجة.",
+
+    suitable:"جميع أنواع البشرة."
+  },
+
+  {
+    id:"nivea-soft",
+    name:"Nivea Soft",
+    volume:"100 ml",
+    category:"Care",
+    price:0,
+    image:"",
+
+    desc:"",
+    benefits:"",
+    ingredients:"",
+    usage:"",
+    suitable:""
+  },
+
+  {
+    id:"garnier-micellar-400",
+    name:"Garnier Eau Micellaire",
+    volume:"400 ml",
+    category:"Care",
+    price:0,
+    image:"",
+
+    desc:"",
+    benefits:"",
+    ingredients:"",
+    usage:"",
+    suitable:""
+  },
+
+  {
+    id:"garnier-micellar-100",
+    name:"Garnier Eau Micellaire",
+    volume:"100 ml",
+    category:"Care",
+    price:0,
+    image:"",
+
+    desc:"",
+    benefits:"",
+    ingredients:"",
+    usage:"",
+    suitable:""
+  },
+
+  {
+    id:"elseve-dream-long",
+    name:"Elseve Dream Long",
+    volume:"200 ml",
+    category:"Hair",
+    price:0,
+    image:"",
+
+    desc:"",
+    benefits:"",
+    ingredients:"",
+    usage:"",
+    suitable:""
+  },
+
+  {
+    id:"elseve-resist",
+    name:"Elseve Resist",
+    volume:"200 ml",
+    category:"Hair",
+    price:0,
+    image:"",
+
+    desc:"",
+    benefits:"",
+    ingredients:"",
+    usage:"",
+    suitable:""
+  },
+
+  {
+    id:"innovaderm-micellar",
+    name:"Innovaderm Eau Micellaire",
+    volume:"",
+    category:"Care",
+    price:0,
+    image:"",
+
+    desc:"",
+    benefits:"",
+    ingredients:"",
+    usage:"",
+    suitable:""
+  },
+
+  {
+    id:"innovaderm-acnebak",
+    name:"Innovaderm Acnebak",
+    volume:"40 ml",
+    category:"Care",
+    price:0,
+    image:"",
+
+    desc:"",
+    benefits:"",
+    ingredients:"",
+    usage:"",
+    suitable:""
+  },
+
+  {
+    id:"innovaderm-vitc-niacinamide",
+    name:"Innovaderm Sérum Vitamine C + Niacinamide",
+    volume:"",
+    category:"Glow",
+    price:0,
+    image:"",
+
+    desc:"",
+    benefits:"",
+    ingredients:"",
+    usage:"",
+    suitable:""
+  },
+
+  {
+    id:"innovaderm-tri-hyaluronique",
+    name:"Innovaderm Tri-Hyaluronique",
+    volume:"50 ml",
+    category:"Care",
+    price:0,
+    image:"",
+
+    desc:"",
+    benefits:"",
+    ingredients:"",
+    usage:"",
+    suitable:""
+  },
+
+  {
+    id:"innovaderm-hair-oil",
+    name:"Innovaderm +Hair Oil SPF50",
+    volume:"",
+    category:"Hair",
+    price:0,
+    image:"",
+
+    desc:"",
+    benefits:"",
+    ingredients:"",
+    usage:"",
+    suitable:""
+  }
+
 ];
 
-let qi=0,answers=Array(questions.length).fill(null);
-let cart=JSON.parse(localStorage.getItem("ashqCart")||"[]");
+/* =========================
+   STATE
+========================= */
+
+let qi=0;
+
+let answers=Array(questions.length).fill(null);
+
+let cart=JSON.parse(
+  localStorage.getItem("ashqCart") || "[]"
+);
+
+/* =========================
+   NAVIGATION
+========================= */
 
 function showSection(id){
-  ["home","quizSection","productsSection","cart","checkout","success"].forEach(x=>document.getElementById(x).classList.add("hidden"));
+
+  [
+    "home",
+    "quizSection",
+    "productsSection",
+    "cart",
+    "checkout",
+    "success"
+  ].forEach(x=>{
+    document.getElementById(x).classList.add("hidden");
+  });
+
   document.getElementById(id).classList.remove("hidden");
-  window.scrollTo({top:0,behavior:"smooth"});
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 }
+
+/* =========================
+   TOAST
+========================= */
+
 function toast(msg){
-  const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");
-  setTimeout(()=>t.classList.remove("show"),1800);
+
+  const t=document.getElementById("toast");
+
+  t.textContent=msg;
+
+  t.classList.add("show");
+
+  setTimeout(()=>{
+    t.classList.remove("show");
+  },1800);
 }
+
+/* =========================
+   QUIZ
+========================= */
+
 function startQuiz(){
-  qi=0;answers=Array(questions.length).fill(null);
-  showSection("quizSection");renderQuestion();
+
+  qi=0;
+
+  answers=Array(questions.length).fill(null);
+
+  showSection("quizSection");
+
+  renderQuestion();
 }
+
 function renderQuestion(){
-  const q=questions[qi],pct=Math.round(((qi+1)/questions.length)*100);
-  document.getElementById("qNumber").textContent=`السؤال ${qi+1} من ${questions.length}`;
-  document.getElementById("qPercent").textContent=pct+"%";
-  document.getElementById("progressBar").style.width=pct+"%";
-  document.getElementById("questionText").textContent=q.q;
-  const box=document.getElementById("answers");box.innerHTML="";
+
+  const q=questions[qi];
+
+  const pct=Math.round(
+    ((qi+1)/questions.length)*100
+  );
+
+  document.getElementById("qNumber").textContent=
+    `السؤال ${qi+1} من ${questions.length}`;
+
+  document.getElementById("qPercent").textContent=
+    pct+"%";
+
+  document.getElementById("progressBar").style.width=
+    pct+"%";
+
+  document.getElementById("questionText").textContent=
+    q.q;
+
+  const box=document.getElementById("answers");
+
+  box.innerHTML="";
+
   q.a.forEach((text,i)=>{
-    const b=document.createElement("button");b.className="answer"+(answers[qi]===i?" selected":"");b.textContent=text;
-    b.onclick=()=>{answers[qi]=i;renderQuestion()};box.appendChild(b);
+
+    const b=document.createElement("button");
+
+    b.className=
+      "answer"+
+      (answers[qi]===i ? " selected":"");
+
+    b.textContent=text;
+
+    b.onclick=()=>{
+      answers[qi]=i;
+      renderQuestion();
+    };
+
+    box.appendChild(b);
+
   });
-  document.getElementById("prevBtn").disabled=qi===0;
-  document.getElementById("nextBtn").textContent=qi===questions.length-1?"شوف النتيجة ✨":"التالي";
+
+  document.getElementById("prevBtn").disabled=
+    qi===0;
+
+  document.getElementById("nextBtn").textContent=
+    qi===questions.length-1
+      ? "شوف النتيجة ✨"
+      : "التالي";
 }
+
 function nextQuestion(){
-  if(answers[qi]===null){toast("اختاري إجابة قبل ما تكملي ❤️");return}
-  if(qi<questions.length-1){qi++;renderQuestion()}else{showResult()}
+
+  if(answers[qi]===null){
+
+    toast("اختاري إجابة قبل ما تكملي ❤️");
+
+    return;
+  }
+
+  if(qi<questions.length-1){
+
+    qi++;
+
+    renderQuestion();
+
+  }else{
+
+    showResult();
+
+  }
 }
-function prevQuestion(){if(qi>0){qi--;renderQuestion()}}
+
+function prevQuestion(){
+
+  if(qi>0){
+
+    qi--;
+
+    renderQuestion();
+
+  }
+}
+
+/* =========================
+   ROUTINE
+========================= */
+
 function calculateRoutine(){
-  const s={Glow:0,Care:0,Hair:0,Night:0};
+
+  const s={
+    Glow:0,
+    Care:0,
+    Hair:0,
+    Night:0
+  };
+
   const a=answers;
-  if(a[0]===0)s.Glow+=6;if(a[0]===1)s.Care+=6;if(a[0]===2)s.Hair+=6;if(a[0]===3)s.Night+=6;
-  if(a[1]===1||a[1]===2||a[1]===3)s.Care+=2;
-  if(a[2]===0)s.Care+=3;if(a[2]===1)s.Glow+=3;if(a[2]===2)s.Care+=2;if(a[2]===3)s.Night+=3;
-  if(a[3]===0)s.Care+=1;if(a[3]===1)s.Glow+=1;if(a[3]===2)s.Night+=1;
-  if(a[4]===0)s.Care+=1;if(a[4]===1)s.Glow+=1;if(a[4]===2)s.Night+=1;
-  return Object.keys(s).sort((x,y)=>s[y]-s[x])[0];
+
+  if(a[0]===0)s.Glow+=6;
+  if(a[0]===1)s.Care+=6;
+  if(a[0]===2)s.Hair+=6;
+  if(a[0]===3)s.Night+=6;
+
+  if(a[1]===1||a[1]===2||a[1]===3)
+    s.Care+=2;
+
+  if(a[2]===0)s.Care+=3;
+  if(a[2]===1)s.Glow+=3;
+  if(a[2]===2)s.Care+=2;
+  if(a[2]===3)s.Night+=3;
+
+  if(a[3]===0)s.Care+=1;
+  if(a[3]===1)s.Glow+=1;
+  if(a[3]===2)s.Night+=1;
+
+  if(a[4]===0)s.Care+=1;
+  if(a[4]===1)s.Glow+=1;
+  if(a[4]===2)s.Night+=1;
+
+  return Object.keys(s)
+    .sort((x,y)=>s[y]-s[x])[0];
 }
+
 function showResult(){
-  const r=calculateRoutine(),data={
-    Glow:["Glow ✨","روتين مقترح للتركيز على الإشراقة والمظهر الصحي.","glow"],
-    Care:["Care 💗","روتين مقترح للعناية اليومية والترطيب.","care"],
-    Hair:["Hair 💆","روتين مقترح للعناية بالشعر.","hair"],
-    Night:["Night 🌙","روتين مقترح للعناية الليلية.","night"]
+
+  const r=calculateRoutine();
+
+  const data={
+
+    Glow:[
+      "Glow ✨",
+      "روتين مقترح للتركيز على الإشراقة والمظهر الصحي."
+    ],
+
+    Care:[
+      "Care 💗",
+      "روتين مقترح للعناية اليومية والترطيب."
+    ],
+
+    Hair:[
+      "Hair 💆",
+      "روتين مقترح للعناية بالشعر."
+    ],
+
+    Night:[
+      "Night 🌙",
+      "روتين مقترح للعناية الليلية."
+    ]
+
   }[r];
-  const p=products.find(x=>x.id===data[2]);
-  document.getElementById("quizResult").innerHTML=`<h2>${data[0]}</h2><p>${data[1]}</p><div class="product" style="margin-top:12px"><div class="product-body"><h3>${p.emoji} ${p.name}</h3><p>${p.desc}</p><strong class="price">${p.price} د.ت</strong><button class="btn btn-primary" onclick="addToCart('${p.id}')">أضف للسلة 🛒</button></div></div>`;
-  document.getElementById("quizResult").classList.remove("hidden");
-  document.getElementById("quizResult").scrollIntoView({behavior:"smooth",block:"center"});
+
+  const recommended=
+    products.find(p=>{
+
+      if(r==="Glow")
+        return p.category==="Glow";
+
+      if(r==="Hair")
+        return p.category==="Hair";
+
+      if(r==="Night")
+        return p.category==="Care";
+
+      return p.category==="Care";
+
+    });
+
+  let html=`
+
+    <h2>${data[0]}</h2>
+
+    <p>${data[1]}</p>
+
+  `;
+
+  if(recommended){
+
+    html+=`
+
+      <div class="product" style="margin-top:12px">
+
+        <div class="product-body">
+
+          <h3>${recommended.name}</h3>
+
+          <div class="volume">
+            ${recommended.volume || ""}
+          </div>
+
+          <p>
+            ${recommended.desc || "تفاصيل المنتج ستضاف بعد التأكد من المعلومات."}
+          </p>
+
+          <button
+            class="btn btn-primary"
+            onclick="addToCart('${recommended.id}')">
+            أضف للسلة 🛒
+          </button>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+  const result=document.getElementById("quizResult");
+
+  result.innerHTML=html;
+
+  result.classList.remove("hidden");
+
+  result.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
 }
+
+/* =========================
+   PRODUCTS
+========================= */
+
 function renderProducts(){
-  const grid=document.getElementById("productGrid");grid.innerHTML="";
+
+  const grid=document.getElementById("productGrid");
+
+  grid.innerHTML="";
+
   products.forEach(p=>{
-    const el=document.createElement("article");el.className="product";
-    el.innerHTML=`<div class="product-img">${p.emoji}</div><div class="product-body"><h3>${p.name}</h3><p>${p.desc}</p><div class="details"><b>✨ الفوائد:</b> ${p.benefits}<br><b>🧪 المكونات:</b> ${p.ingredients}<br><b>📖 طريقة الاستعمال:</b> ${p.usage}<br><b>👤 لمن يناسب:</b> ${p.suitable}</div><div class="price">${p.price} د.ت</div><div class="product-actions"><button class="btn btn-primary" onclick="addToCart('${p.id}')">أضف للسلة</button><button class="btn btn-light" onclick="showSection('cart')">السلة</button></div></div>`;
+
+    const el=document.createElement("article");
+
+    el.className="product";
+
+    let imageHTML="";
+
+    if(p.image){
+
+      imageHTML=`
+        <img
+          src="${p.image}"
+          alt="${p.name}"
+          loading="lazy">
+      `;
+
+    }else{
+
+      imageHTML=`
+        <div class="product-img empty">
+          الصورة ستضاف قريبًا
+        </div>
+      `;
+
+    }
+
+    let details="";
+
+    if(
+      p.benefits ||
+      p.ingredients ||
+      p.usage ||
+      p.suitable
+    ){
+
+      details=`
+
+        <div class="details">
+
+          ${
+            p.benefits
+            ? `<b>✨ الفوائد:</b> ${p.benefits}<br>`
+            : ""
+          }
+
+          ${
+            p.ingredients
+            ? `<b>🧪 المكونات:</b> ${p.ingredients}<br>`
+            : ""
+          }
+
+          ${
+            p.usage
+            ? `<b>📖 طريقة الاستعمال:</b> ${p.usage}<br>`
+            : ""
+          }
+
+          ${
+            p.suitable
+            ? `<b>👤 لمن يناسب:</b> ${p.suitable}`
+            : ""
+          }
+
+        </div>
+
+      `;
+
+    }
+
+    el.innerHTML=`
+
+      <div class="product-img">
+
+        ${
+          p.image
+          ? imageHTML
+          : `<div class="product-img empty">الصورة ستضاف قريبًا</div>`
+        }
+
+      </div>
+
+      <div class="product-body">
+
+        <h3>${p.name}</h3>
+
+        ${
+          p.volume
+          ? `<div class="volume">${p.volume}</div>`
+          : ""
+        }
+
+        <p>
+          ${
+            p.desc
+            || "تفاصيل المنتج سيتم إضافتها بعد التأكد من المعلومات الرسمية."
+          }
+        </p>
+
+        ${details}
+
+        ${
+          p.price>0
+          ? `<div class="price">${p.price} د.ت</div>`
+          : `<div class="price" style="font-size:15px">السعر قريبًا</div>`
+        }
+
+        <div class="product-actions">
+
+          <button
+            class="btn btn-primary"
+            onclick="addToCart('${p.id}')">
+            أضف للسلة 🛒
+          </button>
+
+          <button
+            class="btn btn-light"
+            onclick="showSection('cart')">
+            السلة
+          </button>
+
+        </div>
+
+      </div>
+
+    `;
+
     grid.appendChild(el);
+
   });
+
 }
+
+/* =========================
+   CART
+========================= */
+
 function addToCart(id){
-  const found=cart.find(x=>x.id===id);if(found)found.qty++;else cart.push({id,qty:1});
-  saveCart();toast("تزاد للسلة ❤️");showSection("cart");
+
+  const p=products.find(x=>x.id===id);
+
+  if(!p)return;
+
+  if(p.price<=0){
+
+    toast("السعر متاع المنتج مازال ما تحددش ❤️");
+
+    return;
+  }
+
+  const found=cart.find(x=>x.id===id);
+
+  if(found)
+    found.qty++;
+  else
+    cart.push({
+      id:id,
+      qty:1
+    });
+
+  saveCart();
+
+  toast("تزاد للسلة ❤️");
+
+  showSection("cart");
 }
+
 function changeQty(id,delta){
-  const x=cart.find(v=>v.id===id);if(!x)return;x.qty+=delta;if(x.qty<=0)cart=cart.filter(v=>v.id!==id);saveCart();
+
+  const x=cart.find(v=>v.id===id);
+
+  if(!x)return;
+
+  x.qty+=delta;
+
+  if(x.qty<=0){
+
+    cart=cart.filter(v=>v.id!==id);
+
+  }
+
+  saveCart();
 }
-function saveCart(){localStorage.setItem("ashqCart",JSON.stringify(cart));renderCart()}
+
+function saveCart(){
+
+  localStorage.setItem(
+    "ashqCart",
+    JSON.stringify(cart)
+  );
+
+  renderCart();
+}
+
 function totals(){
-  const subtotal=cart.reduce((sum,x)=>{const p=products.find(v=>v.id===x.id);return sum+p.price*x.qty},0);
-  const shipping=subtotal===0?0:(subtotal>=80?0:8);return {subtotal,shipping,total:subtotal+shipping};
+
+  const subtotal=cart.reduce(
+    (sum,x)=>{
+
+      const p=products.find(
+        v=>v.id===x.id
+      );
+
+      return sum+
+        (p ? p.price*x.qty : 0);
+
+    },
+    0
+  );
+
+  const shipping=
+    subtotal===0
+      ? 0
+      : subtotal>=80
+        ? 0
+        : 8;
+
+  return {
+    subtotal,
+    shipping,
+    total:subtotal+shipping
+  };
 }
+
 function renderCart(){
-  document.getElementById("cartCount").textContent=cart.reduce((s,x)=>s+x.qty,0);
-  const box=document.getElementById("cartList"),t=totals();box.innerHTML="";
-  if(!cart.length){box.innerHTML='<div class="empty">السلة فارغة حاليًا 🛍️<br><button class="btn btn-light" style="margin-top:12px" onclick="showSection(\'productsSection\')">شوفي المنتجات</button></div>'}
-  else cart.forEach(x=>{
-    const p=products.find(v=>v.id===x.id),el=document.createElement("div");el.className="cart-item";
-    el.innerHTML=`<div><strong>${p.emoji} ${p.name}</strong><br><small>${p.price} د.ت للقطعة</small></div><div class="qty"><button onclick="changeQty('${p.id}',-1)">−</button><b>${x.qty}</b><button onclick="changeQty('${p.id}',1)">+</button></div><button class="btn btn-light remove" onclick="cart=cart.filter(v=>v.id!=='${p.id}');saveCart()">حذف</button>`;
-    box.appendChild(el);
-  });
-  document.getElementById("subtotal").textContent=t.subtotal+" د.ت";
-  document.getElementById("shipping").textContent=t.shipping===0?(t.subtotal>=80?"مجاني 🎁":"0 د.ت"):t.shipping+" د.ت";
-  document.getElementById("grandTotal").textContent=t.total+" د.ت";
-  const db=document.getElementById("deliveryBox");
-  if(t.subtotal>0&&t.subtotal<80){db.className="delivery";db.classList.remove("hidden");db.textContent=`🎁 بقالك ${(80-t.subtotal).toFixed(0)} د.ت باش التوصيل يكون علينا`}
-  else if(t.subtotal>=80){db.className="delivery free";db.classList.remove("hidden");db.textContent="🎉 مبروك! التوصيل علينا ❤️"}
-  else db.classList.add("hidden");
+
+  document.getElementById("cartCount").textContent=
+    cart.reduce(
+      (s,x)=>s+x.qty,
+      0
+    );
+
+  const box=document.getElementById("cartList");
+
+  const t=totals();
+
+  box.innerHTML="";
+
+  if(!cart.length){
+
+    box.innerHTML=`
+
+      <div class="empty">
+
+        السلة فارغة حاليًا 🛍️
+
+        <br>
+
+        <button
+          class="btn btn-light"
+          style="margin-top:12px"
+          onclick="showSection('productsSection')">
+
+          شوفي المنتجات
+
+        </button>
+
+      </div>
+
+    `;
+
+  }else{
+
+    cart.forEach(x=>{
+
+      const p=products.find(
+        v=>v.id===x.id
+      );
+
+      if(!p)return;
+
+      const el=document.createElement("div");
+
+      el.className="cart-item";
+
+      el.innerHTML=`
+
+        <div>
+
+          <strong>
+            ${p.name}
+          </strong>
+
+          <br>
+
+          <small>
+            ${p.price} د.ت للقطعة
+          </small>
+
+        </div>
+
+        <div class="qty">
+
+          <button
+            onclick="changeQty('${p.id}',-1)">
+            −
+          </button>
+
+          <b>${x.qty}</b>
+
+          <button
+            onclick="changeQty('${p.id}',1)">
+            +
+          </button>
+
+        </div>
+
+        <button
+          class="btn btn-light remove"
+          onclick="
+            cart=cart.filter(v=>v.id!=='${p.id}');
+            saveCart();
+          ">
+          حذف
+        </button>
+
+      `;
+
+      box.appendChild(el);
+
+    });
+
+  }
+
+  document.getElementById("subtotal").textContent=
+    t.subtotal+" د.ت";
+
+  document.getElementById("shipping").textContent=
+    t.shipping===0
+      ? (
+          t.subtotal>=80
+            ? "مجاني 🎁"
+            : "0 د.ت"
+        )
+      : t.shipping+" د.ت";
+
+  document.getElementById("grandTotal").textContent=
+    t.total+" د.ت";
+
+  const db=
+    document.getElementById("deliveryBox");
+
+  if(t.subtotal>0 && t.subtotal<80){
+
+    db.className="delivery";
+
+    db.classList.remove("hidden");
+
+    db.textContent=
+      `🎁 بقالك ${(80-t.subtotal).toFixed(0)} د.ت باش التوصيل يكون علينا`;
+
+  }
+
+  else if(t.subtotal>=80){
+
+    db.className="delivery free";
+
+    db.classList.remove("hidden");
+
+    db.textContent=
+      "🎉 مبروك! التوصيل علينا ❤️";
+
+  }
+
+  else{
+
+    db.classList.add("hidden");
+
+  }
+
 }
+
+/* =========================
+   CHECKOUT
+========================= */
+
+function goCheckout(){
+
+  if(!cart.length){
+
+    toast("السلة فارغة ❤️");
+
+    showSection("productsSection");
+
+    return;
+  }
+
+  const hasUnavailable=
+    cart.some(x=>{
+
+      const p=products.find(
+        v=>v.id===x.id
+      );
+
+      return !p || p.price<=0;
+
+    });
+
+  if(hasUnavailable){
+
+    toast("بعض المنتجات مازال سعرها غير محدد ❤️");
+
+    return;
+  }
+
+  showSection("checkout");
+}
+
 function placeOrder(){
-  if(!cart.length){toast("السلة فارغة ❤️");showSection("productsSection");return}
-  const name=document.getElementById("name").value.trim(),phone=document.getElementById("phone").value.trim(),gov=document.getElementById("gov").value,address=document.getElementById("address").value.trim();
-  if(!name||!phone||!gov||!address){toast("كمّلي معلومات التوصيل ❤️");return}
-  localStorage.removeItem("ashqCart");cart=[];renderCart();showSection("success");
+
+  if(!cart.length){
+
+    toast("السلة فارغة ❤️");
+
+    showSection("productsSection");
+
+    return;
+  }
+
+  const name=
+    document.getElementById("name")
+      .value.trim();
+
+  const phone=
+    document.getElementById("phone")
+      .value.trim();
+
+  const gov=
+    document.getElementById("gov")
+      .value;
+
+  const address=
+    document.getElementById("address")
+      .value.trim();
+
+  if(
+    !name ||
+    !phone ||
+    !gov ||
+    !address
+  ){
+
+    toast(
+      "كمّلي معلومات التوصيل ❤️"
+    );
+
+    return;
+  }
+
+  localStorage.removeItem(
+    "ashqCart"
+  );
+
+  cart=[];
+
+  renderCart();
+
+  showSection("success");
 }
-renderProducts();renderCart();
+
+/* =========================
+   START
+========================= */
+
+renderProducts();
+
+renderCart();
+
 </script>
+
 </body>
 </html>
