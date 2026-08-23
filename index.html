@@ -1,1465 +1,684 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>عشق | ISHQ Beauty</title>
+<title>عشق | اكتشفي الـRoutine المناسب ليك</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial,sans-serif;
-}
-
-html{scroll-behavior:smooth}
+*{box-sizing:border-box}
 
 body{
-  background:#fffaf8;
-  color:#292323;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-button{
-  cursor:pointer;
+margin:0;
+font-family:Arial,Tahoma,sans-serif;
+background:#fff7fa;
+color:#35252c;
 }
 
 header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(255,255,255,.95);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid #eee;
-}
-
-.navbar{
-  max-width:1200px;
-  margin:auto;
-  height:75px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 20px;
+background:#fff;
+padding:20px 15px;
+text-align:center;
+border-bottom:1px solid #f0dce3;
+position:sticky;
+top:0;
+z-index:10;
 }
 
 .logo{
-  font-size:32px;
-  font-weight:bold;
-  color:#9b5367;
-  letter-spacing:2px;
+font-size:34px;
+font-weight:bold;
+color:#b85c7a;
 }
 
-.logo small{
-  display:block;
-  font-size:9px;
-  text-align:center;
-  letter-spacing:4px;
-  color:#777;
+.subtitle{
+font-size:13px;
+color:#806b74;
+margin-top:5px;
 }
 
-nav{
-  display:flex;
-  gap:25px;
-  font-size:15px;
+main{
+max-width:720px;
+margin:auto;
+padding:25px 15px 50px;
 }
 
-nav a:hover{
-  color:#a5586d;
+.box{
+background:#fff;
+border:1px solid #f0dce3;
+border-radius:24px;
+padding:22px;
+margin-bottom:18px;
+box-shadow:0 8px 30px rgba(184,92,122,.08);
 }
-
-.cart{
-  border:0;
-  background:#f7e9ed;
-  padding:11px 15px;
-  border-radius:50px;
-  font-size:16px;
-}
-
-.menu-btn{
-  display:none;
-  border:0;
-  background:none;
-  font-size:25px;
-}
-
-/* HERO */
 
 .hero{
-  min-height:650px;
-  display:flex;
-  align-items:center;
-  padding:70px 20px;
-  background:
-  radial-gradient(circle at 85% 20%,#f4d9df 0%,transparent 28%),
-  radial-gradient(circle at 10% 80%,#f8e7dd 0%,transparent 30%),
-  #fffaf8;
+text-align:center;
+padding:40px 20px;
 }
 
-.hero-content{
-  max-width:1200px;
-  width:100%;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  gap:60px;
+.hero h1{
+font-size:29px;
+margin:10px 0;
 }
 
-.hero-text span{
-  color:#a5586d;
-  letter-spacing:3px;
-  font-size:14px;
+p{
+line-height:1.7;
+color:#806b74;
 }
 
-.hero-text h1{
-  font-size:clamp(48px,7vw,82px);
-  line-height:1;
-  margin:20px 0;
+button{
+border:0;
+border-radius:15px;
+padding:14px 18px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
 }
 
-.hero-text h1 i{
-  color:#a5586d;
-  font-family:Georgia,serif;
-  font-weight:normal;
+.primary{
+background:#b85c7a;
+color:#fff;
+width:100%;
 }
 
-.hero-text p{
-  max-width:480px;
-  color:#666;
-  line-height:1.8;
-  font-size:17px;
+.secondary{
+background:#fff0f4;
+color:#b85c7a;
 }
 
-.hero-buttons{
-  margin-top:30px;
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  padding:15px 25px;
-  border-radius:50px;
-  border:0;
-  font-weight:bold;
-}
-
-.btn-primary{
-  background:#9b5367;
-  color:white;
-}
-
-.btn-light{
-  background:white;
-  border:1px solid #ddd;
-}
-
-.hero-visual{
-  height:480px;
-  border-radius:250px 250px 30px 30px;
-  background:linear-gradient(145deg,#f4d8de,#ead1c4);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:relative;
-}
-
-.product-display{
-  width:220px;
-  height:310px;
-  background:white;
-  border-radius:25px;
-  box-shadow:0 25px 50px rgba(0,0,0,.12);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  transform:rotate(-5deg);
-}
-
-.product-display .ishq{
-  color:#9b5367;
-  font-size:45px;
-  font-family:Georgia,serif;
-}
-
-.product-display p{
-  font-size:10px;
-  letter-spacing:4px;
-  color:#777;
-}
-
-.floating{
-  position:absolute;
-  background:white;
-  padding:15px 20px;
-  border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,.1);
-}
-
-.floating.one{
-  top:50px;
-  left:20px;
-}
-
-.floating.two{
-  bottom:50px;
-  right:20px;
-}
-
-/* SECTIONS */
-
-section{
-  padding:85px 20px;
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:45px;
-}
-
-.section-title span{
-  color:#a5586d;
-  letter-spacing:3px;
-  font-size:13px;
-}
-
-.section-title h2{
-  font-size:40px;
-  margin-top:10px;
-}
-
-/* CATEGORIES */
-
-.categories{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-
-.category{
-  height:260px;
-  border-radius:25px;
-  padding:25px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  position:relative;
-  transition:.3s;
-}
-
-.category:hover{
-  transform:translateY(-7px);
-}
-
-.category h3{
-  font-size:28px;
-}
-
-.category p{
-  color:#666;
-  margin-top:7px;
-}
-
-.category-icon{
-  position:absolute;
-  top:25px;
-  right:25px;
-  font-size:50px;
-}
-
-.glow{
-  background:linear-gradient(145deg,#f7dfe2,#fff1e5);
-}
-
-.care{
-  background:linear-gradient(145deg,#dcecea,#eef8f4);
-}
-
-.hair{
-  background:linear-gradient(145deg,#e7dccd,#f7efe4);
-}
-
-.night{
-  background:linear-gradient(145deg,#d9d5e8,#efedf7);
-}
-
-/* PRODUCTS */
-
-.products-section{
-  background:white;
-}
-
-.products{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-
-.product-card{
-  background:#fffaf8;
-  border:1px solid #eee;
-  border-radius:22px;
-  padding:15px;
-  transition:.3s;
-}
-
-.product-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 15px 35px rgba(0,0,0,.08);
-}
-
-.product-image{
-  height:220px;
-  border-radius:18px;
-  background:#f5e8e8;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:65px;
-  margin-bottom:18px;
-}
-
-.product-card h3{
-  margin-bottom:8px;
-}
-
-.product-card p{
-  color:#777;
-  font-size:13px;
-  margin-bottom:12px;
-}
-
-.price{
-  color:#9b5367;
-  font-size:19px;
-  font-weight:bold;
-}
-
-.add-cart{
-  float:right;
-  border:0;
-  background:#9b5367;
-  color:white;
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  font-size:20px;
-}
-
-/* ROUTINE */
-
-.routine{
-  max-width:1100px;
-  margin:auto;
-  background:linear-gradient(135deg,#9b5367,#c37c8f);
-  border-radius:35px;
-  padding:60px;
-  color:white;
-  display:grid;
-  grid-template-columns:1fr auto;
-  align-items:center;
-  gap:30px;
-}
-
-.routine h2{
-  font-size:42px;
-  margin-bottom:15px;
-}
-
-.routine p{
-  max-width:600px;
-  line-height:1.8;
-  opacity:.9;
-}
-
-.scan{
-  width:150px;
-  height:150px;
-  background:white;
-  color:#9b5367;
-  border-radius:20px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  font-weight:bold;
-}
-
-/* QUIZ */
-
-.quiz-section{
-  background:#fff;
-}
-
-.quiz{
-  max-width:700px;
-  margin:auto;
-  background:#fffaf8;
-  border:1px solid #eee;
-  border-radius:30px;
-  padding:35px;
-  box-shadow:0 15px 40px rgba(0,0,0,.06);
-}
-
-.progress{
-  height:7px;
-  background:#eee;
-  border-radius:20px;
-  overflow:hidden;
-  margin-bottom:30px;
-}
-
-.progress-bar{
-  height:100%;
-  width:25%;
-  background:#9b5367;
-  transition:.3s;
+.hidden{
+display:none!important;
 }
 
 .question-number{
-  color:#9b5367;
-  font-size:13px;
-  letter-spacing:2px;
+font-size:13px;
+color:#806b74;
 }
 
-.question{
-  font-size:27px;
-  margin:15px 0 25px;
+.progress{
+height:8px;
+background:#f4e5ea;
+border-radius:10px;
+overflow:hidden;
+margin:12px 0 25px;
 }
 
-.options{
-  display:grid;
-  gap:12px;
+.progress-bar{
+height:100%;
+width:0;
+background:#b85c7a;
+transition:.3s;
 }
 
-.option{
-  padding:17px;
-  border:1px solid #ddd;
-  background:white;
-  border-radius:15px;
-  text-align:left;
-  font-size:16px;
-  transition:.2s;
+.answers{
+display:grid;
+gap:11px;
 }
 
-.option:hover{
-  border-color:#9b5367;
-  background:#fdf1f4;
+.answer{
+width:100%;
+background:#fff;
+border:2px solid #f0dce3;
+text-align:right;
+color:#35252c;
 }
 
-.option.selected{
-  background:#9b5367;
-  color:white;
-  border-color:#9b5367;
+.answer.selected{
+border-color:#b85c7a;
+background:#fff0f4;
 }
 
-.quiz-buttons{
-  margin-top:25px;
-  display:flex;
-  justify-content:space-between;
+.navigation{
+display:flex;
+gap:10px;
+margin-top:20px;
 }
 
-.quiz-buttons button{
-  border:0;
-  border-radius:50px;
-  padding:13px 22px;
+.navigation button{
+flex:1;
 }
 
-.next-btn{
-  background:#9b5367;
-  color:white;
+.badge{
+display:inline-block;
+background:#fff0f4;
+color:#b85c7a;
+padding:8px 13px;
+border-radius:30px;
+font-size:13px;
+font-weight:bold;
 }
 
-.back-btn{
-  background:#eee;
+.product{
+border:1px solid #f0dce3;
+border-radius:18px;
+padding:16px;
+margin:12px 0;
 }
 
-/* RESULT */
-
-.result{
-  display:none;
-  max-width:700px;
-  margin:30px auto 0;
-  background:#f7e9ed;
-  border-radius:30px;
-  padding:35px;
-  text-align:center;
+.product h3{
+margin-top:0;
 }
 
-.result-icon{
-  font-size:60px;
+.price{
+color:#b85c7a;
+font-size:18px;
+font-weight:bold;
 }
 
-.result h2{
-  color:#9b5367;
-  font-size:34px;
-  margin:10px 0;
+.product button{
+width:100%;
+margin-top:12px;
 }
 
-.result p{
-  color:#666;
-  line-height:1.7;
+.details{
+background:#fff7fa;
+border-radius:14px;
+padding:14px;
+margin-top:12px;
+font-size:14px;
 }
 
-.result-products{
-  margin-top:20px;
-  display:grid;
-  gap:10px;
+.cart-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:8px;
+padding:13px 0;
+border-bottom:1px solid #f0dce3;
 }
 
-.result-product{
-  background:white;
-  border-radius:15px;
-  padding:15px;
-  text-align:left;
+.cart-item button{
+padding:8px 12px;
+font-size:13px;
 }
 
-/* FEATURES */
-
-.features{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:25px;
-  text-align:center;
+.total{
+font-size:21px;
+font-weight:bold;
+margin:18px 0;
 }
 
-.feature{
-  padding:25px;
+.delivery{
+background:#fff0f4;
+border-radius:16px;
+padding:15px;
+margin:15px 0;
+color:#b85c7a;
+font-weight:bold;
+text-align:center;
 }
 
-.feature-icon{
-  font-size:35px;
-  margin-bottom:15px;
+.free{
+background:#f3fff7;
+color:#28784c;
 }
 
-.feature p{
-  color:#777;
-  line-height:1.6;
-  font-size:14px;
+input,select,textarea{
+width:100%;
+padding:14px;
+margin:6px 0;
+border:1px solid #ead5dd;
+border-radius:13px;
+font-size:16px;
+font-family:inherit;
 }
 
-/* NEWSLETTER */
-
-.newsletter{
-  background:#f5e8e8;
-  text-align:center;
+textarea{
+min-height:90px;
+resize:vertical;
 }
-
-.newsletter h2{
-  font-size:35px;
-  margin-bottom:12px;
-}
-
-.newsletter p{
-  color:#666;
-  margin-bottom:25px;
-}
-
-.newsletter-form{
-  max-width:500px;
-  margin:auto;
-  display:flex;
-  background:white;
-  padding:6px;
-  border-radius:50px;
-}
-
-.newsletter-form input{
-  flex:1;
-  border:0;
-  outline:0;
-  padding:12px 18px;
-}
-
-.newsletter-form button{
-  border:0;
-  background:#9b5367;
-  color:white;
-  padding:12px 22px;
-  border-radius:50px;
-}
-
-/* FOOTER */
 
 footer{
-  background:#292323;
-  color:white;
-  padding:60px 20px 25px;
+text-align:center;
+color:#806b74;
+font-size:12px;
+padding:25px;
 }
 
-.footer-content{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr 1fr;
-  gap:40px;
+.success{
+text-align:center;
+padding:25px;
 }
 
-.footer-logo{
-  font-size:40px;
-  color:#e8a9b9;
-  font-family:Georgia,serif;
+.success h2{
+color:#b85c7a;
 }
-
-footer h3{
-  margin-bottom:15px;
-}
-
-footer p,
-footer a{
-  color:#bbb;
-  line-height:2;
-  font-size:14px;
-}
-
-.copyright{
-  max-width:1100px;
-  margin:40px auto 0;
-  padding-top:20px;
-  border-top:1px solid #444;
-  text-align:center;
-  color:#888;
-  font-size:13px;
-}
-
-/* CART MESSAGE */
-
-.cart-message{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  background:#292323;
-  color:white;
-  padding:15px 20px;
-  border-radius:15px;
-  opacity:0;
-  transform:translateY(20px);
-  pointer-events:none;
-  transition:.3s;
-  z-index:2000;
-}
-
-.cart-message.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-nav{
-  display:none;
-}
-
-.menu-btn{
-  display:block;
-}
-
-.hero-content{
-  grid-template-columns:1fr;
-  text-align:center;
-}
-
-.hero-text p{
-  margin:auto;
-}
-
-.hero-buttons{
-  justify-content:center;
-}
-
-.categories,
-.products{
-  grid-template-columns:repeat(2,1fr);
-}
-
-.features{
-  grid-template-columns:repeat(2,1fr);
-}
-
-.footer-content{
-  grid-template-columns:repeat(2,1fr);
-}
-
-.routine{
-  grid-template-columns:1fr;
-  text-align:center;
-}
-
-.routine p{
-  margin:auto;
-}
-
-.scan{
-  margin:auto;
-}
-
-}
-
-@media(max-width:550px){
-
-.logo{
-  font-size:27px;
-}
-
-.hero{
-  padding-top:50px;
-}
-
-.hero-text h1{
-  font-size:52px;
-}
-
-.hero-visual{
-  height:350px;
-}
-
-.categories,
-.products,
-.features{
-  grid-template-columns:1fr;
-}
-
-.footer-content{
-  grid-template-columns:1fr;
-}
-
-.quiz{
-  padding:25px 18px;
-}
-
-.question{
-  font-size:23px;
-}
-
-.routine{
-  padding:40px 25px;
-}
-
-.routine h2{
-  font-size:32px;
-}
-
-.newsletter-form{
-  flex-direction:column;
-  background:transparent;
-  gap:10px;
-}
-
-.newsletter-form input{
-  background:white;
-  border-radius:50px;
-}
-
-.newsletter-form button{
-  width:100%;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
 <header>
-
-<div class="navbar">
-
-<a href="#home" class="logo">
-عشق
-<small>ISHQ BEAUTY</small>
-</a>
-
-<nav>
-<a href="#home">Accueil</a>
-<a href="#categories">Catégories</a>
-<a href="#products">Produits</a>
-<a href="#routine">Ma Routine</a>
-<a href="#contact">Contact</a>
-</nav>
-
-<div>
-
-<button class="cart">
-🛒 <span id="cartCount">0</span>
-</button>
-
-<button class="menu-btn">☰</button>
-
-</div>
-
-</div>
-
+<div class="logo">عشق</div>
+<div class="subtitle">Glow • Care • Hair • Night</div>
 </header>
 
+<main>
 
-<!-- HERO -->
+<!-- HOME -->
 
-<section class="hero" id="home">
+<section id="home" class="box hero">
 
-<div class="hero-content">
-
-<div class="hero-text">
-
-<span>ISHQ BEAUTY</span>
-
-<h1>
-Ta beauté.<br>
-Ton <i>rituel.</i>
-</h1>
+<h1>اكتشفي الـRoutine المناسب ليك ✨</h1>
 
 <p>
-Bienvenue chez عشق. Découvrez une sélection de produits
-beauté pour prendre soin de votre peau, vos cheveux
-et votre bien-être au quotidien.
+جاوبي على 5 أسئلة بسيطة،
+واكتشفي الـRoutine المقترح ليك حسب اختياراتك.
 </p>
 
-<div class="hero-buttons">
-
-<a href="#products" class="btn btn-primary">
-Découvrir les produits
-</a>
-
-<a href="#routine" class="btn btn-light">
-Trouver ma routine
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-visual">
-
-<div class="floating one">
-✨ Glow
-</div>
-
-<div class="product-display">
-
-<div class="ishq">
-عشق
-</div>
-
-<p>ISHQ BEAUTY</p>
-
-</div>
-
-<div class="floating two">
-🌙 Night Care
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CATEGORIES -->
-
-<section id="categories">
-
-<div class="section-title">
-
-<span>Découvrir</span>
-
-<h2>Nos univers beauté</h2>
-
-</div>
-
-<div class="categories">
-
-<a href="#" class="category glow">
-
-<div class="category-icon">✨</div>
-
-<h3>Glow</h3>
-
-<p>Pour une peau lumineuse</p>
-
-</a>
-
-<a href="#" class="category care">
-
-<div class="category-icon">💧</div>
-
-<h3>Care</h3>
-
-<p>Prendre soin de ta peau</p>
-
-</a>
-
-<a href="#" class="category hair">
-
-<div class="category-icon">💆</div>
-
-<h3>Hair</h3>
-
-<p>Des cheveux soignés</p>
-
-</a>
-
-<a href="#" class="category night">
-
-<div class="category-icon">🌙</div>
-
-<h3>Night</h3>
-
-<p>Ton rituel du soir</p>
-
-</a>
-
-</div>
-
-</section>
-
-
-<!-- PRODUCTS -->
-
-<section class="products-section" id="products">
-
-<div class="section-title">
-
-<span>Nos favoris</span>
-
-<h2>Produits populaires</h2>
-
-</div>
-
-<div class="products">
-
-<div class="product-card">
-
-<div class="product-image">
-✨
-</div>
-
-<h3>Garnier SkinActive</h3>
-
-<p>Routine éclat & hydratation</p>
-
-<span class="price">24,900 DT</span>
-
-<button class="add-cart"
-onclick="addToCart('Garnier SkinActive')">
-+
+<button class="primary" onclick="startQuiz()">
+ابدأ الاختبار ✨
 </button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-image">
-🌸
-</div>
-
-<h3>NIVEA Soft</h3>
-
-<p>Crème hydratante</p>
-
-<span class="price">12,900 DT</span>
-
-<button class="add-cart"
-onclick="addToCart('NIVEA Soft')">
-+
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-image">
-💆
-</div>
-
-<h3>Elseve Dream Long</h3>
-
-<p>Soin cheveux</p>
-
-<span class="price">18,900 DT</span>
-
-<button class="add-cart"
-onclick="addToCart('Elseve Dream Long')">
-+
-</button>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-image">
-🌙
-</div>
-
-<h3>Balea Night Care</h3>
-
-<p>Soin de nuit</p>
-
-<span class="price">21,900 DT</span>
-
-<button class="add-cart"
-onclick="addToCart('Balea Night Care')">
-+
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ROUTINE INTRO -->
-
-<section id="routine">
-
-<div class="routine">
-
-<div>
-
-<h2>
-اكتشفي الـRoutine متاعك ✨
-</h2>
-
-<p>
-جاوبي على 4 أسئلة بسيطة، وعشق يقترح عليك
-الـRoutine الأقرب لاحتياجاتك.
-</p>
-
-<br>
-
-<a href="#quiz" class="btn btn-light">
-ابدئي الآن →
-</a>
-
-</div>
-
-<div class="scan">
-SCAN<br>
-TON CODE<br>
-💗
-</div>
-
-</div>
 
 </section>
 
 
 <!-- QUIZ -->
 
-<section class="quiz-section" id="quiz">
+<section id="quiz" class="box hidden">
 
-<div class="section-title">
-
-<span>ISHQ ROUTINE</span>
-
-<h2>اكتشفي روتينك</h2>
-
-</div>
-
-<div class="quiz">
+<div id="questionNumber" class="question-number"></div>
 
 <div class="progress">
-
-<div class="progress-bar" id="progressBar"></div>
-
+<div id="progressBar" class="progress-bar"></div>
 </div>
 
-<div class="question-number"
-id="questionNumber">
-QUESTION 1 / 4
-</div>
+<h2 id="question"></h2>
 
-<h3 class="question" id="question">
-شنوّة تحبّي تركّزي عليه أكثر؟
-</h3>
+<div id="answers" class="answers"></div>
 
-<div class="options" id="options"></div>
+<div class="navigation">
 
-<div class="quiz-buttons">
-
-<button class="back-btn"
-onclick="previousQuestion()">
-← Retour
+<button class="secondary" onclick="previousQuestion()">
+السابق
 </button>
 
-<button class="next-btn"
-onclick="nextQuestion()">
-Suivant →
+<button class="primary" id="nextButton" onclick="nextQuestion()">
+التالي
 </button>
 
 </div>
 
-</div>
+</section>
 
 
 <!-- RESULT -->
 
-<div class="result" id="result">
+<section id="result" class="box hidden">
 
-<div class="result-icon" id="resultIcon">
-✨
+<span class="badge">
+Routine مناسب ليك ✨
+</span>
+
+<h2 id="routineTitle"></h2>
+
+<p id="routineDescription"></p>
+
+<div id="recommendedProducts"></div>
+
+<button class="primary" onclick="openProducts()">
+شوفي المنتجات 🛍️
+</button>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section id="products" class="box hidden">
+
+<h2>منتجات عشق 🛍️</h2>
+
+<div id="productList"></div>
+
+</section>
+
+
+<!-- CART -->
+
+<section id="cart" class="box hidden">
+
+<h2>السلة 🛒</h2>
+
+<div id="cartList"></div>
+
+<div id="deliveryMessage" class="delivery hidden"></div>
+
+<div id="total" class="total">
+المجموع: 0 د.ت
 </div>
 
-<h2 id="resultTitle">
-Ton Routine
-</h2>
+<h3>معلومات التوصيل 📦</h3>
 
-<p id="resultText">
+<input id="customerName" placeholder="الاسم واللقب">
+
+<input id="customerPhone" type="tel" placeholder="رقم الهاتف">
+
+<select id="customerGovernorate">
+<option value="">اختار الولاية</option>
+<option>تونس</option>
+<option>أريانة</option>
+<option>بن عروس</option>
+<option>منوبة</option>
+<option>نابل</option>
+<option>زغوان</option>
+<option>بنزرت</option>
+<option>باجة</option>
+<option>جندوبة</option>
+<option>الكاف</option>
+<option>سليانة</option>
+<option>القيروان</option>
+<option>القصرين</option>
+<option>سيدي بوزيد</option>
+<option>سوسة</option>
+<option>المنستير</option>
+<option>المهدية</option>
+<option>صفاقس</option>
+<option>قابس</option>
+<option>مدنين</option>
+<option>تطاوين</option>
+<option>قبلي</option>
+<option>توزر</option>
+<option>قفصة</option>
+</select>
+
+<input id="customerAddress" placeholder="العنوان بالتفصيل">
+
+<textarea id="customerNotes" placeholder="ملاحظات إضافية (اختياري)"></textarea>
+
+<h3>💳 طريقة الدفع</h3>
+
+<div class="details">
+✓ الدفع عند الاستلام
+</div>
+
+<button class="primary" onclick="confirmOrder()">
+تأكيد الطلب
+</button>
+
+</section>
+
+
+<!-- SUCCESS -->
+
+<section id="success" class="box success hidden">
+
+<h2>🎉 شكراً على طلبك من عشق!</h2>
+
+<p>
+تم تسجيل معلومات طلبك بنجاح.
 </p>
 
-<div class="result-products"
-id="resultProducts">
-</div>
+<p>
+سنتواصل معك لتأكيد معلومات التوصيل.
+</p>
 
+<button class="primary" onclick="goHome()">
+العودة للرئيسية
+</button>
+
+</section>
+
+</main>
+
+
+<footer>
+عشق © 2026
 <br>
-
-<button class="btn btn-primary"
-onclick="restartQuiz()">
-Refaire le test
-</button>
-
-</div>
-
-</section>
-
-
-<!-- FEATURES -->
-
-<section>
-
-<div class="section-title">
-
-<span>Pourquoi عشق ?</span>
-
-<h2>Une beauté simple</h2>
-
-</div>
-
-<div class="features">
-
-<div class="feature">
-
-<div class="feature-icon">💗</div>
-
-<h3>Sélection</h3>
-
-<p>
-Des produits sélectionnés avec soin.
-</p>
-
-</div>
-
-<div class="feature">
-
-<div class="feature-icon">🚚</div>
-
-<h3>Livraison</h3>
-
-<p>
-Livraison partout en Tunisie.
-</p>
-
-</div>
-
-<div class="feature">
-
-<div class="feature-icon">💰</div>
-
-<h3>Prix accessibles</h3>
-
-<p>
-Une beauté accessible à tous.
-</p>
-
-</div>
-
-<div class="feature">
-
-<div class="feature-icon">✨</div>
-
-<h3>Routine</h3>
-
-<p>
-Des conseils pour mieux choisir.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- NEWSLETTER -->
-
-<section class="newsletter">
-
-<h2>
-Rejoins la communauté عشق
-</h2>
-
-<p>
-Découvre nos nouveautés et offres exclusives.
-</p>
-
-<form class="newsletter-form"
-onsubmit="subscribe(event)">
-
-<input
-type="email"
-placeholder="Ton adresse email"
-required
->
-
-<button type="submit">
-S'inscrire
-</button>
-
-</form>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer id="contact">
-
-<div class="footer-content">
-
-<div>
-
-<div class="footer-logo">
-عشق
-</div>
-
-<p>
-Ton univers beauté tunisien.
-Glow, Care, Hair & Night.
-</p>
-
-</div>
-
-<div>
-
-<h3>Navigation</h3>
-
-<a href="#home">Accueil</a><br>
-<a href="#categories">Catégories</a><br>
-<a href="#products">Produits</a><br>
-<a href="#routine">Routine</a>
-
-</div>
-
-<div>
-
-<h3>Catégories</h3>
-
-<a href="#">Glow</a><br>
-<a href="#">Care</a><br>
-<a href="#">Hair</a><br>
-<a href="#">Night</a>
-
-</div>
-
-<div>
-
-<h3>Contact</h3>
-
-<p>📍 Tunisie</p>
-<p>📱 WhatsApp</p>
-<p>📸 Instagram</p>
-<p>✉️ contact@ishq.tn</p>
-
-</div>
-
-</div>
-
-<div class="copyright">
-
-© 2026 عشق | ISHQ BEAUTY — Tous droits réservés.
-
-</div>
-
+Glow • Care • Hair • Night
 </footer>
-
-
-<!-- CART MESSAGE -->
-
-<div class="cart-message" id="cartMessage">
-Produit ajouté au panier 🛒
-</div>
 
 
 <script>
 
-/* ================= CART ================= */
+/* =========================
+   QUESTIONS
+========================= */
 
-let cartCount = 0;
-
-function addToCart(product){
-
-cartCount++;
-
-document.getElementById("cartCount").textContent = cartCount;
-
-const message =
-document.getElementById("cartMessage");
-
-message.textContent =
-product + " ajouté au panier 🛒";
-
-message.classList.add("show");
-
-setTimeout(()=>{
-
-message.classList.remove("show");
-
-},2500);
-
-}
-
-
-/* ================= QUIZ ================= */
-
-const questions = [
+const questions=[
 
 {
-question:"شنوّة تحبّي تركّزي عليه أكثر؟",
-options:[
-"✨ Glow / إشراقة",
-"💧 Care / روتين متكامل",
-"💆 Hair / الشعر",
-"🌙 Night / الليل"
+question:"شنو أكثر حاجة تحبّي تحسّنيها؟",
+answers:[
+"Glow وإشراقة البشرة",
+"Care والعناية اليومية",
+"Hair والعناية بالشعر",
+"Night وروتين الليل"
 ]
 },
 
 {
-question:"شنوّة نوع الـRoutine اللي تحبّيه؟",
-options:[
-"⚡ سريع وبسيط",
-"🌸 متوازن",
-"✨ كامل ومتكامل"
+question:"كيفاش تصفّي بشرتك؟",
+answers:[
+"عادية",
+"جافة",
+"دهنية",
+"مختلطة",
+"ما نعرفش"
 ]
 },
 
 {
-question:"قدّاش عندك وقت للعناية؟",
-options:[
-"⏱️ 5 دقايق",
-"🕐 10–15 دقيقة",
-"💆 نحب ناخذ وقتي"
+question:"شنو النتيجة اللي تهمّك أكثر؟",
+answers:[
+"ترطيب ونعومة",
+"إشراقة ومظهر صحي",
+"تنظيف وانتعاش",
+"روتين هادئ قبل النوم"
 ]
 },
 
 {
-question:"وقتاش تحبّي تعملي الـRoutine؟",
-options:[
-"☀️ الصباح",
-"🌙 الليل",
-"☀️🌙 الصباح والليل"
+question:"قدّاش تحبّي يكون الروتين؟",
+answers:[
+"سريع وبسيط",
+"متوازن",
+"روتين كامل"
+]
+},
+
+{
+question:"شنو أكثر حاجة تحبّيها في الروتين؟",
+answers:[
+"منتجات قليلة وسهلة",
+"روتين منظم خطوة بخطوة",
+"تجربة عناية كاملة"
 ]
 }
 
 ];
 
 
-let currentQuestion = 0;
+/* =========================
+   PRODUCTS
+========================= */
 
-let answers = [];
+const products=[
+
+{
+id:1,
+name:"Glow",
+description:"روتين الإشراقة والعناية اليومية",
+price:35,
+benefits:"سيتم إضافة الفوائد الدقيقة بعد تحديد التركيبة النهائية.",
+ingredients:"سيتم إضافة المكونات الحقيقية بعد استلام تركيبة المنتج.",
+usage:"سيتم إضافة طريقة الاستعمال بعد تحديد المنتج النهائي.",
+suitable:"سيتم تحديده حسب التركيبة النهائية."
+},
+
+{
+id:2,
+name:"Care",
+description:"روتين العناية والترطيب",
+price:35,
+benefits:"سيتم إضافة الفوائد الدقيقة بعد تحديد التركيبة النهائية.",
+ingredients:"سيتم إضافة المكونات الحقيقية بعد استلام تركيبة المنتج.",
+usage:"سيتم إضافة طريقة الاستعمال بعد تحديد المنتج النهائي.",
+suitable:"سيتم تحديده حسب التركيبة النهائية."
+},
+
+{
+id:3,
+name:"Hair",
+description:"روتين العناية بالشعر",
+price:35,
+benefits:"سيتم إضافة الفوائد الدقيقة بعد تحديد التركيبة النهائية.",
+ingredients:"سيتم إضافة المكونات الحقيقية بعد استلام تركيبة المنتج.",
+usage:"سيتم إضافة طريقة الاستعمال بعد تحديد المنتج النهائي.",
+suitable:"سيتم تحديده حسب التركيبة النهائية."
+},
+
+{
+id:4,
+name:"Night",
+description:"روتين العناية الليلية",
+price:35,
+benefits:"سيتم إضافة الفوائد الدقيقة بعد تحديد التركيبة النهائية.",
+ingredients:"سيتم إضافة المكونات الحقيقية بعد استلام تركيبة المنتج.",
+usage:"سيتم إضافة طريقة الاستعمال بعد تحديد المنتج النهائي.",
+suitable:"سيتم تحديده حسب التركيبة النهائية."
+}
+
+];
 
 
-function loadQuestion(){
+/* =========================
+   VARIABLES
+========================= */
 
-const q = questions[currentQuestion];
+let currentQuestion=0;
 
-document.getElementById("question").textContent =
-q.question;
+let userAnswers=[];
 
-document.getElementById("questionNumber").textContent =
-"QUESTION " + (currentQuestion+1) + " / 4";
-
-document.getElementById("progressBar").style.width =
-((currentQuestion+1)/4*100)+"%";
-
-const options =
-document.getElementById("options");
-
-options.innerHTML = "";
+let cart=[];
 
 
-q.options.forEach((option,index)=>{
+/* =========================
+   START QUIZ
+========================= */
 
-const button =
-document.createElement("button");
+function startQuiz(){
 
-button.className="option";
+document.getElementById("home").classList.add("hidden");
 
-button.textContent=option;
+document.getElementById("quiz").classList.remove("hidden");
+
+document.getElementById("result").classList.add("hidden");
+
+document.getElementById("products").classList.add("hidden");
+
+document.getElementById("cart").classList.add("hidden");
+
+document.getElementById("success").classList.add("hidden");
+
+currentQuestion=0;
+
+userAnswers=[];
+
+renderQuestion();
+
+window.scrollTo(0,0);
+
+}
 
 
-if(answers[currentQuestion]===index){
+/* =========================
+   RENDER QUESTION
+========================= */
+
+function renderQuestion(){
+
+const q=questions[currentQuestion];
+
+document.getElementById("questionNumber").textContent=
+"السؤال "+(currentQuestion+1)+" من "+questions.length;
+
+document.getElementById("question").textContent=q.question;
+
+const container=document.getElementById("answers");
+
+container.innerHTML="";
+
+q.answers.forEach((answer,index)=>{
+
+const button=document.createElement("button");
+
+button.className="answer";
+
+button.textContent=answer;
+
+if(userAnswers[currentQuestion]===index){
 
 button.classList.add("selected");
 
 }
 
+button.onclick=function(){
 
-button.onclick=()=>{
-
-answers[currentQuestion]=index;
-
-document.querySelectorAll(".option")
-.forEach(btn=>btn.classList.remove("selected"));
-
-button.classList.add("selected");
+selectAnswer(index);
 
 };
 
-
-options.appendChild(button);
+container.appendChild(button);
 
 });
+
+
+const progress=
+((currentQuestion+1)/questions.length)*100;
+
+document.getElementById("progressBar").style.width=
+progress+"%";
+
+
+if(currentQuestion===questions.length-1){
+
+document.getElementById("nextButton").textContent=
+"شوف النتيجة ✨";
+
+}else{
+
+document.getElementById("nextButton").textContent=
+"التالي";
+
+}
 
 }
 
 
+/* =========================
+   SELECT ANSWER
+========================= */
+
+function selectAnswer(index){
+
+userAnswers[currentQuestion]=index;
+
+renderQuestion();
+
+}
+
+
+/* =========================
+   NEXT
+========================= */
+
 function nextQuestion(){
 
-if(answers[currentQuestion]===undefined){
+if(userAnswers[currentQuestion]===undefined){
 
-alert("اختاري إجابة قبل ما تكمّلي 💗");
+alert("اختار إجابة قبل ما تكمل ❤️");
 
 return;
 
 }
 
-if(currentQuestion < questions.length-1){
+if(currentQuestion<questions.length-1){
 
 currentQuestion++;
 
-loadQuestion();
+renderQuestion();
 
 }else{
 
@@ -1470,140 +689,470 @@ showResult();
 }
 
 
+/* =========================
+   PREVIOUS
+========================= */
+
 function previousQuestion(){
 
 if(currentQuestion>0){
 
 currentQuestion--;
 
-loadQuestion();
+renderQuestion();
 
 }
 
 }
 
+
+/* =========================
+   CALCULATE ROUTINE
+========================= */
+
+function calculateRoutine(){
+
+let scores={
+Glow:0,
+Care:0,
+Hair:0,
+Night:0
+};
+
+
+/* السؤال الأول */
+
+if(userAnswers[0]===0) scores.Glow+=5;
+if(userAnswers[0]===1) scores.Care+=5;
+if(userAnswers[0]===2) scores.Hair+=5;
+if(userAnswers[0]===3) scores.Night+=5;
+
+
+/* السؤال الثاني */
+
+if(userAnswers[1]===1) scores.Care+=2;
+if(userAnswers[1]===2) scores.Care+=2;
+if(userAnswers[1]===3) scores.Care+=2;
+
+
+/* السؤال الثالث */
+
+if(userAnswers[2]===0) scores.Care+=3;
+if(userAnswers[2]===1) scores.Glow+=3;
+if(userAnswers[2]===2) scores.Care+=2;
+if(userAnswers[2]===3) scores.Night+=3;
+
+
+/* السؤال الرابع */
+
+if(userAnswers[3]===0) scores.Care+=1;
+if(userAnswers[3]===1) scores.Glow+=1;
+if(userAnswers[3]===2) scores.Night+=1;
+
+
+/* السؤال الخامس */
+
+if(userAnswers[4]===0) scores.Care+=1;
+if(userAnswers[4]===1) scores.Glow+=1;
+if(userAnswers[4]===2) scores.Night+=1;
+
+
+let best="Glow";
+
+for(let routine in scores){
+
+if(scores[routine]>scores[best]){
+
+best=routine;
+
+}
+
+}
+
+return best;
+
+}
+
+
+/* =========================
+   SHOW RESULT
+========================= */
 
 function showResult(){
 
-document.querySelector(".quiz").style.display="none";
+document.getElementById("quiz").classList.add("hidden");
 
-const result =
-document.getElementById("result");
+document.getElementById("result").classList.remove("hidden");
 
-result.style.display="block";
+const routine=calculateRoutine();
 
+const data={
 
-let focus = answers[0];
+Glow:{
+title:"Glow Routine ✨",
+description:"روتين مقترح للتركيز على الإشراقة والعناية اليومية.",
+products:[1,2]
+},
 
-let title;
-let icon;
-let text;
-let products;
+Care:{
+title:"Care Routine 💗",
+description:"روتين مقترح للعناية والترطيب والاهتمام اليومي.",
+products:[2,1]
+},
 
+Hair:{
+title:"Hair Routine 💆",
+description:"روتين مقترح للعناية بالشعر.",
+products:[3,2]
+},
 
-if(focus===0){
-
-title="Glow Routine ✨";
-
-icon="✨";
-
-text=
-"روتينك يركّز على الإشراقة والعناية اليومية باش تعطي بشرتك مظهر أكثر حيوية.";
-
-products=[
-"Garnier SkinActive",
-"NIVEA Soft"
-];
-
+Night:{
+title:"Night Routine 🌙",
+description:"روتين مقترح للعناية الليلية.",
+products:[4,2]
 }
 
-else if(focus===1){
-
-title="Care Routine 💧";
-
-icon="💧";
-
-text=
-"روتين متوازن للعناية اليومية والترطيب والمحافظة على نعومة البشرة.";
-
-products=[
-"NIVEA Soft",
-"Garnier SkinActive"
-];
-
-}
-
-else if(focus===2){
-
-title="Hair Routine 💆";
-
-icon="💆";
-
-text=
-"روتين مخصّص أكثر للعناية بالشعر والحفاظ على مظهره الصحي.";
-
-products=[
-"Elseve Dream Long"
-];
-
-}
-
-else{
-
-title="Night Routine 🌙";
-
-icon="🌙";
-
-text=
-"روتين مسائي هادئ للعناية بالبشرة قبل النوم.";
-
-products=[
-"Balea Night Care",
-"NIVEA Soft"
-];
-
-}
+};
 
 
-document.getElementById("resultIcon").textContent=icon;
+document.getElementById("routineTitle").textContent=
+data[routine].title;
 
-document.getElementById("resultTitle").textContent=title;
-
-document.getElementById("resultText").textContent=text;
-
-
-const productsBox =
-document.getElementById("resultProducts");
-
-productsBox.innerHTML="";
+document.getElementById("routineDescription").textContent=
+data[routine].description;
 
 
-products.forEach(product=>{
+const container=
+document.getElementById("recommendedProducts");
+
+container.innerHTML="";
+
+
+data[routine].products.forEach(id=>{
+
+const p=products.find(product=>product.id===id);
 
 const div=document.createElement("div");
 
-div.className="result-product";
+div.className="product";
 
-div.innerHTML=
-"🛍️ <strong>"+product+"</strong>";
+div.innerHTML=`
 
-productsBox.appendChild(div);
+<h3>${p.name}</h3>
+
+<p>${p.description}</p>
+
+<div class="price">
+${p.price} د.ت
+</div>
+
+`;
+
+container.appendChild(div);
 
 });
 
-result.scrollIntoView({
-behavior:"smooth"
+window.scrollTo(0,0);
+
+}
+
+
+/* =========================
+   OPEN PRODUCTS
+========================= */
+
+function openProducts(){
+
+document.getElementById("result").classList.add("hidden");
+
+document.getElementById("products").classList.remove("hidden");
+
+document.getElementById("cart").classList.remove("hidden");
+
+renderProducts();
+
+renderCart();
+
+window.scrollTo(0,0);
+
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+function renderProducts(){
+
+const container=
+document.getElementById("productList");
+
+container.innerHTML="";
+
+
+products.forEach(p=>{
+
+const div=document.createElement("div");
+
+div.className="product";
+
+div.innerHTML=`
+
+<h3>${p.name}</h3>
+
+<p>${p.description}</p>
+
+<div class="details">
+
+<strong>✨ الفوائد</strong>
+
+<p>${p.benefits}</p>
+
+<strong>🧪 المكونات</strong>
+
+<p>${p.ingredients}</p>
+
+<strong>📖 طريقة الاستعمال</strong>
+
+<p>${p.usage}</p>
+
+<strong>👤 لمن يناسب</strong>
+
+<p>${p.suitable}</p>
+
+</div>
+
+<div class="price">
+${p.price} د.ت
+</div>
+
+<button
+class="secondary"
+onclick="addToCart(${p.id})">
+
+أضف للسلة 🛒
+
+</button>
+
+`;
+
+container.appendChild(div);
+
 });
 
 }
 
 
-function restartQuiz(){
+/* =========================
+   ADD TO CART
+========================= */
 
-currentQuestion=0;
+function addToCart(id){
 
-answers=[];
+cart.push(id);
 
-document.querySelector(".quiz").style.display="block";
+renderCart();
 
-document.getEle
+alert("تمت إضافة المنتج للسلة ❤️");
+
+}
+
+
+/* =========================
+   REMOVE
+========================= */
+
+function removeFromCart(index){
+
+cart.splice(index,1);
+
+renderCart();
+
+}
+
+
+/* =========================
+   CART
+========================= */
+
+function renderCart(){
+
+const container=
+document.getElementById("cartList");
+
+const deliveryMessage=
+document.getElementById("deliveryMessage");
+
+let productsTotal=0;
+
+
+if(cart.length===0){
+
+container.innerHTML=
+"<p>السلة فارغة حاليًا.</p>";
+
+deliveryMessage.classList.add("hidden");
+
+document.getElementById("total").textContent=
+"المجموع: 0 د.ت";
+
+return;
+
+}
+
+
+container.innerHTML="";
+
+
+cart.forEach((id,index)=>{
+
+const product=
+products.find(p=>p.id===id);
+
+productsTotal+=product.price;
+
+
+const div=document.createElement("div");
+
+div.className="cart-item";
+
+div.innerHTML=`
+
+<span>${product.name}</span>
+
+<strong>${product.price} د.ت</strong>
+
+<button
+class="secondary"
+onclick="removeFromCart(${index})">
+
+حذف
+
+</button>
+
+`;
+
+container.appendChild(div);
+
+});
+
+
+let delivery=0;
+
+if(productsTotal<80){
+
+delivery=8;
+
+let remaining=80-productsTotal;
+
+deliveryMessage.className="delivery";
+
+deliveryMessage.classList.remove("hidden");
+
+deliveryMessage.innerHTML=
+`🎁 بقالك ${remaining} د.ت باش التوصيل يكون علينا`;
+
+}else{
+
+delivery=0;
+
+deliveryMessage.className="delivery free";
+
+deliveryMessage.classList.remove("hidden");
+
+deliveryMessage.innerHTML=
+"🎉 مبروك! التوصيل علينا ❤️";
+
+}
+
+
+let total=productsTotal+delivery;
+
+
+document.getElementById("total").innerHTML=
+`
+المنتجات: ${productsTotal} د.ت
+<br>
+التوصيل: ${
+delivery===0
+? "مجاني 🎁"
+: "8 د.ت"
+}
+<br><br>
+المجموع: ${total} د.ت
+`;
+
+}
+
+
+/* =========================
+   CONFIRM ORDER
+========================= */
+
+function confirmOrder(){
+
+if(cart.length===0){
+
+alert("السلة فارغة ❤️");
+
+return;
+
+}
+
+
+const name=
+document.getElementById("customerName").value.trim();
+
+const phone=
+document.getElementById("customerPhone").value.trim();
+
+const governorate=
+document.getElementById("customerGovernorate").value;
+
+const address=
+document.getElementById("customerAddress").value.trim();
+
+
+if(!name||!phone||!governorate||!address){
+
+alert(
+"عمّر الاسم ورقم الهاتف والولاية والعنوان ❤️"
+);
+
+return;
+
+}
+
+
+/*
+WhatsApp غير مربوط حاليًا.
+*/
+
+
+document.getElementById("cart").classList.add("hidden");
+
+document.getElementById("products").classList.add("hidden");
+
+document.getElementById("success").classList.remove("hidden");
+
+window.scrollTo(0,0);
+
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+function goHome(){
+
+document.getElementById("success").classList.add("hidden");
+
+document.getElementById("home").classList.remove("hidden");
+
+}
+
+</script>
+
+</body>
+</html>
