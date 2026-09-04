@@ -1,0 +1,2064 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7d9df">
+
+<title>عشق | Glow • Care • Hair • Night</title>
+
+<style>
+:root{
+  --rose:#c96f86;
+  --dark:#3b2630;
+  --soft:#fff3f6;
+  --cream:#fffaf8;
+  --white:#fff;
+  --border:#ead8dd;
+  --green:#25d366;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:Arial,"Tahoma",sans-serif;
+  background:var(--cream);
+  color:var(--dark);
+}
+
+button,input,select,textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,250,248,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav{
+  max-width:1150px;
+  margin:auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.logo{
+  font-size:30px;
+  font-weight:bold;
+  color:var(--rose);
+  text-decoration:none;
+}
+
+.logo small{
+  display:block;
+  font-size:10px;
+  letter-spacing:2px;
+  color:#8b6872;
+  text-align:center;
+}
+
+.nav-links{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.nav-links button,
+.cart-btn{
+  border:0;
+  background:transparent;
+  color:var(--dark);
+  padding:9px 12px;
+  border-radius:20px;
+}
+
+.nav-links button:hover,
+.cart-btn:hover{
+  background:var(--soft);
+}
+
+.cart-btn{
+  background:var(--soft);
+  font-weight:bold;
+}
+
+.hero{
+  max-width:1150px;
+  margin:auto;
+  padding:55px 18px 35px;
+  text-align:center;
+}
+
+.hero-box{
+  background:linear-gradient(135deg,#fff0f4,#fffaf8);
+  border:1px solid var(--border);
+  border-radius:30px;
+  padding:50px 20px;
+}
+
+.hero h1{
+  font-size:50px;
+  margin:0 0 10px;
+  color:var(--rose);
+}
+
+.hero h2{
+  margin:0 0 15px;
+  font-size:24px;
+}
+
+.hero p{
+  max-width:650px;
+  margin:0 auto 25px;
+  line-height:1.8;
+  color:#765963;
+}
+
+.primary{
+  background:var(--rose);
+  color:white;
+  border:0;
+  border-radius:25px;
+  padding:12px 22px;
+  font-weight:bold;
+}
+
+.primary:hover{
+  opacity:.9;
+}
+
+section{
+  max-width:1150px;
+  margin:auto;
+  padding:35px 18px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.section-title h2{
+  margin:0 0 7px;
+  color:var(--rose);
+}
+
+.section-title p{
+  color:#80636c;
+}
+
+.categories{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.category{
+  border:1px solid var(--border);
+  background:white;
+  border-radius:20px;
+  padding:22px;
+  text-align:center;
+  transition:.2s;
+}
+
+.category:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 25px rgba(80,40,50,.08);
+}
+
+.category button{
+  width:100%;
+  border:0;
+  background:transparent;
+}
+
+.category-icon{
+  font-size:35px;
+  display:block;
+  margin-bottom:8px;
+}
+
+.chips{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:25px;
+}
+
+.chip{
+  border:1px solid var(--border);
+  background:white;
+  color:var(--dark);
+  border-radius:22px;
+  padding:9px 18px;
+}
+
+.chip.active{
+  background:var(--rose);
+  color:white;
+  border-color:var(--rose);
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.product{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:22px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+.product-img{
+  height:245px;
+  background:#faf4f5;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.product-img img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:12px;
+}
+
+.product-info{
+  padding:17px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.product-category{
+  color:var(--rose);
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:5px;
+}
+
+.product h3{
+  margin:5px 0;
+  font-size:17px;
+}
+
+.product p{
+  color:#80636c;
+  font-size:13px;
+  line-height:1.6;
+  flex:1;
+}
+
+.price{
+  font-size:20px;
+  font-weight:bold;
+  margin:10px 0;
+}
+
+.add{
+  width:100%;
+  border:0;
+  background:var(--dark);
+  color:white;
+  border-radius:14px;
+  padding:11px;
+}
+
+.add:hover{
+  background:var(--rose);
+}
+
+/* QUIZ */
+
+.quiz-box{
+  max-width:750px;
+  margin:auto;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:25px;
+  padding:25px;
+}
+
+.progress{
+  height:8px;
+  background:#f0e3e7;
+  border-radius:10px;
+  overflow:hidden;
+  margin-bottom:25px;
+}
+
+.progress-bar{
+  height:100%;
+  width:20%;
+  background:var(--rose);
+  transition:.3s;
+}
+
+.q{
+  display:none;
+}
+
+.q.active{
+  display:block;
+}
+
+.q h3{
+  line-height:1.7;
+}
+
+.answers{
+  display:grid;
+  gap:10px;
+}
+
+.answer{
+  text-align:right;
+  background:#fffafc;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:13px;
+}
+
+.answer.selected{
+  background:var(--soft);
+  border-color:var(--rose);
+}
+
+.quiz-controls{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  margin-top:22px;
+}
+
+.secondary{
+  background:white;
+  color:var(--dark);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:10px 18px;
+}
+
+.quiz-result{
+  display:none;
+  margin-top:20px;
+  padding:20px;
+  background:var(--soft);
+  border-radius:18px;
+  text-align:center;
+}
+
+/* CART */
+
+.cart-box,
+.checkout-box{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:20px;
+}
+
+.cart-row{
+  display:grid;
+  grid-template-columns:70px 1fr auto auto;
+  gap:12px;
+  align-items:center;
+  padding:12px 0;
+  border-bottom:1px solid #f1e7e9;
+}
+
+.cart-thumb{
+  width:65px;
+  height:65px;
+  background:#faf4f5;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.cart-thumb img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.qty{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.qty button{
+  border:1px solid var(--border);
+  background:white;
+  border-radius:8px;
+  width:30px;
+  height:30px;
+}
+
+.remove{
+  border:0;
+  background:#fff0f2;
+  color:#b64e67;
+  border-radius:10px;
+  padding:7px 10px;
+}
+
+.summary{
+  margin-top:20px;
+}
+
+.sumline{
+  display:flex;
+  justify-content:space-between;
+  padding:8px 0;
+}
+
+.total{
+  font-size:21px;
+  border-top:1px solid var(--border);
+  margin-top:8px;
+  padding-top:14px;
+}
+
+.shipping-note{
+  padding:10px;
+  background:#fff7e8;
+  border-radius:10px;
+  color:#8a6a34;
+  margin:8px 0;
+}
+
+.shipping-note.free{
+  background:#effbf3;
+  color:#27804b;
+}
+
+/* FORM */
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+.field input,
+.field select,
+.field textarea{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px;
+  background:white;
+  outline:none;
+}
+
+.field textarea{
+  min-height:100px;
+  resize:vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:var(--rose);
+}
+
+.empty{
+  text-align:center;
+  padding:35px;
+  color:#80636c;
+}
+
+/* FOOTER */
+
+footer{
+  margin-top:45px;
+  background:#3b2630;
+  color:white;
+  text-align:center;
+  padding:30px 18px;
+}
+
+footer .brand{
+  color:#f3b8c7;
+  font-size:25px;
+  font-weight:bold;
+}
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:25px;
+  transform:translateX(-50%);
+  background:#3b2630;
+  color:white;
+  padding:12px 20px;
+  border-radius:25px;
+  display:none;
+  z-index:3000;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+  .categories{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .nav-links{
+    display:none;
+  }
+}
+
+@media(max-width:600px){
+  .hero h1{
+    font-size:40px;
+  }
+
+  .products{
+    grid-template-columns:1fr;
+  }
+
+  .categories{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+
+  .cart-row{
+    grid-template-columns:55px 1fr;
+  }
+
+  .cart-row .qty,
+  .cart-row .remove{
+    grid-column:auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+
+    <a href="#" class="logo">
+      عشق
+      <small>GLOW • CARE • HAIR • NIGHT</small>
+    </a>
+
+    <div class="nav-links">
+      <button onclick="go('home')">الرئيسية</button>
+      <button onclick="go('products')">المنتجات</button>
+      <button onclick="go('quiz')">اكتشفي الـRoutine</button>
+      <button onclick="go('cart')">السلة</button>
+    </div>
+
+    <button class="cart-btn" onclick="go('cart')">
+      🛍️ السلة <span id="cartCount">0</span>
+    </button>
+
+  </div>
+</header>
+
+<!-- HOME -->
+
+<div id="home">
+
+  <div class="hero">
+    <div class="hero-box">
+
+      <h1>عشق ❤️</h1>
+
+      <h2>روتينك يبدأ من هنا</h2>
+
+      <p>
+        اكتشفي منتجات العناية بالبشرة والشعر واختاري الـRoutine
+        المناسب ليك مع عشق.
+      </p>
+
+      <button class="primary" onclick="go('quiz')">
+        اكتشفي الـRoutine متاعك ✨
+      </button>
+
+    </div>
+  </div>
+
+  <section>
+
+    <div class="section-title">
+      <h2>اختاري عالمك</h2>
+      <p>كل فئة عندها لمستها الخاصة 💗</p>
+    </div>
+
+    <div class="categories">
+
+      <div class="category">
+        <button onclick="setCat('Glow');go('products')">
+          <span class="category-icon">✨</span>
+          <b>Glow</b>
+          <p>إشراقة وترطيب</p>
+        </button>
+      </div>
+
+      <div class="category">
+        <button onclick="setCat('Care');go('products')">
+          <span class="category-icon">🫧</span>
+          <b>Care</b>
+          <p>تنظيف وعناية</p>
+        </button>
+      </div>
+
+      <div class="category">
+        <button onclick="setCat('Hair');go('products')">
+          <span class="category-icon">💇‍♀️</span>
+          <b>Hair</b>
+          <p>عناية بالشعر</p>
+        </button>
+      </div>
+
+      <div class="category">
+        <button onclick="setCat('Night');go('products')">
+          <span class="category-icon">🌙</span>
+          <b>Night</b>
+          <p>روتين المساء</p>
+        </button>
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+<!-- PRODUCTS -->
+
+<section id="products">
+
+  <div class="section-title">
+    <h2>منتجات عشق 🛍️</h2>
+    <p>اختاري اللي يناسب روتينك</p>
+  </div>
+
+  <div class="chips">
+
+    <button class="chip active" onclick="setCat('All',this)">
+      الكل
+    </button>
+
+    <button class="chip" onclick="setCat('Glow',this)">
+      ✨ Glow
+    </button>
+
+    <button class="chip" onclick="setCat('Care',this)">
+      🫧 Care
+    </button>
+
+    <button class="chip" onclick="setCat('Hair',this)">
+      💇‍♀️ Hair
+    </button>
+
+    <button class="chip" onclick="setCat('Night',this)">
+      🌙 Night
+    </button>
+
+  </div>
+
+  <div class="products" id="productGrid"></div>
+
+</section>
+
+<!-- QUIZ -->
+
+<section id="quiz">
+
+  <div class="section-title">
+    <h2>اكتشفي الـRoutine متاعك ✨</h2>
+    <p>جاوبي على 5 أسئلة بسيطة</p>
+  </div>
+
+  <div class="quiz-box">
+
+    <div class="progress">
+      <div class="progress-bar" id="quizBar"></div>
+    </div>
+
+    <div id="questions"></div>
+
+    <div class="quiz-controls">
+      <button class="secondary" id="prevQ" onclick="prevQuestion()">
+        السابق
+      </button>
+
+      <button class="primary" id="nextQ" onclick="nextQuestion()">
+        التالي
+      </button>
+    </div>
+
+    <div class="quiz-result" id="quizResult"></div>
+
+  </div>
+
+</section>
+
+<!-- CART -->
+
+<section id="cart">
+
+  <div class="section-title">
+    <h2>السلة 🛍️</h2>
+    <p>راجعي منتجاتك قبل الطلب</p>
+  </div>
+
+  <div class="cart-box" id="cartBox"></div>
+
+</section>
+
+<!-- CHECKOUT -->
+
+<section id="checkout">
+
+  <div class="section-title">
+    <h2>إتمام الطلب 💗</h2>
+    <p>بعد الضغط على الطلب باش يتحل WhatsApp</p>
+  </div>
+
+  <div class="checkout-box">
+
+    <form onsubmit="sendOrder(event)">
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label>الاسم واللقب *</label>
+          <input id="customerName" required>
+        </div>
+
+        <div class="field">
+          <label>رقم الهاتف *</label>
+          <input id="customerPhone" type="tel" required>
+        </div>
+
+        <div class="field">
+          <label>الولاية *</label>
+          <select id="governorate" required></select>
+        </div>
+
+        <div class="field">
+          <label>العنوان *</label>
+          <input id="address" required>
+        </div>
+
+        <div class="field full">
+          <label>ملاحظات</label>
+          <textarea id="notes" placeholder="مثلاً: وقت مناسب للتوصيل..."></textarea>
+        </div>
+
+        <div class="field full">
+
+          <div class="summary" id="checkoutSummary"></div>
+
+          <button class="primary" type="submit" style="width:100%;margin-top:15px">
+            تأكيد الطلب عبر WhatsApp 💚
+          </button>
+
+        </div>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</section>
+
+<!-- SUCCESS -->
+
+<section id="success" style="display:none">
+
+  <div class="section-title">
+    <h2>شكراً ليك ❤️</h2>
+    <p>تم تجهيز طلبك، وتوا باش يتحل WhatsApp لإرسال التفاصيل.</p>
+  </div>
+
+</section>
+
+<footer>
+
+  <div class="brand">عشق ❤️</div>
+
+  <p>
+    Glow • Care • Hair • Night
+  </p>
+
+  <small>
+    © <span id="year"></span> عشق — جميع الحقوق محفوظة
+  </small>
+
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+/* =========================
+   SETTINGS
+========================= */
+
+const WHATSAPP = "21627748272";
+
+const SITE_URL =
+"https://hajjiiheb12-a11y.github.io/ashq-beauty/";
+
+const SHIPPING_FEE = 8;
+
+const SHIPPING_LIMIT = 80;
+
+
+/* =========================
+   IMAGES FROM YOUR GITHUB
+========================= */
+
+const GITHUB =
+"https://hajjiiheb12-a11y.github.io/ashq-beauty/";
+
+
+const images = {
+
+  img1:
+  GITHUB + "20faaa6b-5017-4f90-b2a0-b6fcdfdeb431.jpeg",
+
+  img2:
+  GITHUB + "28518e33-dc8b-4252-b65a-fed3029642c4.jpeg",
+
+  img3:
+  GITHUB + "3600541358447.jpg",
+
+  img4:
+  GITHUB + "5a359d53-26b9-41f9-8c55-6674004a4bdb.jpeg",
+
+  img5:
+  GITHUB + "87f518cd-de3c-4337-821a-108ffb5fa458.jpeg",
+
+  img6:
+  GITHUB + "9563222e-895b-44b6-9bf4-ea9e885e0c33.jpeg",
+
+  img7:
+  GITHUB + "988dddd0-214f-4306-8d1b-9ac1a3bc32ea.jpeg",
+
+  img8:
+  GITHUB + "ELSEVE-SHAMPOING-200ML-FULL-RESIST.png",
+
+  img9:
+  GITHUB + "cOpFApgZBDrf1VQhNmdk4JuBvErPBRxn033ebCMh.webp",
+
+  img10:
+  GITHUB + "f4c81179-3a7e-4894-918d-478537952ecc.jpeg"
+
+};
+
+
+/* =========================
+   PRODUCTS — 15
+========================= */
+
+const PRODUCTS = [
+
+  {
+    id:"p1",
+    name:"Balea Crème Nettoyante 150 ml",
+    brand:"Balea",
+    category:"Care",
+    price:12.9,
+    image:images.img1,
+    desc:"كريم تنظيف لطيف للبشرة."
+  },
+
+  {
+    id:"p2",
+    name:"Nivea Soft",
+    brand:"Nivea",
+    category:"Care",
+    price:14.9,
+    image:images.img2,
+    desc:"كريم مرطب للاستعمال اليومي."
+  },
+
+  {
+    id:"p3",
+    name:"Garnier Vitamin C",
+    brand:"Garnier",
+    category:"Glow",
+    price:24.9,
+    image:images.img3,
+    desc:"عناية يومية لإطلالة أكثر إشراقة."
+  },
+
+  {
+    id:"p4",
+    name:"Garnier Eau Micellaire",
+    brand:"Garnier",
+    category:"Care",
+    price:18.9,
+    image:images.img4,
+    desc:"تنظيف وإزالة آثار المكياج."
+  },
+
+  {
+    id:"p5",
+    name:"Nivea Lait Corps",
+    brand:"Nivea",
+    category:"Care",
+    price:19.9,
+    image:images.img5,
+    desc:"ترطيب يومي للجسم."
+  },
+
+  {
+    id:"p6",
+    name:"Balea Serum",
+    brand:"Balea",
+    category:"Glow",
+    price:22.9,
+    image:images.img6,
+    desc:"سيروم خفيف ضمن روتين العناية."
+  },
+
+  {
+    id:"p7",
+    name:"Garnier SkinActive",
+    brand:"Garnier",
+    category:"Glow",
+    price:21.9,
+    image:images.img7,
+    desc:"منتج عناية مناسب لروتين Glow."
+  },
+
+  {
+    id:"p8",
+    name:"Elseve Full Resist Shampoo 200 ml",
+    brand:"Elseve",
+    category:"Hair",
+    price:13.9,
+    image:images.img8,
+    desc:"شامبو للعناية بالشعر."
+  },
+
+  {
+    id:"p9",
+    name:"Elseve Hair Care",
+    brand:"Elseve",
+    category:"Hair",
+    price:16.9,
+    image:images.img9,
+    desc:"منتج للعناية اليومية بالشعر."
+  },
+
+  {
+    id:"p10",
+    name:"Innovaderm Care",
+    brand:"Innovaderm",
+    category:"Care",
+    price:27.9,
+    image:images.img10,
+    desc:"منتج عناية بالبشرة."
+  },
+
+  {
+    id:"p11",
+    name:"Balea Nacht Creme",
+    brand:"Balea",
+    category:"Night",
+    price:18.9,
+    image:images.img1,
+    desc:"كريم ضمن روتين المساء."
+  },
+
+  {
+    id:"p12",
+    name:"Nivea Night Care",
+    brand:"Nivea",
+    category:"Night",
+    price:21.9,
+    image:images.img2,
+    desc:"ترطيب مناسب لروتين الليل."
+  },
+
+  {
+    id:"p13",
+    name:"Garnier Glow Care",
+    brand:"Garnier",
+    category:"Glow",
+    price:26.9,
+    image:images.img3,
+    desc:"إضافة بسيطة لروتين الإشراقة."
+  },
+
+  {
+    id:"p14",
+    name:"Elseve Dream Long",
+    brand:"Elseve",
+    category:"Hair",
+    price:17.9,
+    image:images.img8,
+    desc:"عناية للشعر ضمن روتين Hair."
+  },
+
+  {
+    id:"p15",
+    name:"Routine Night Hydration",
+    brand:"عشق",
+    category:"Night",
+    price:29.9,
+    image:images.img6,
+    desc:"اختيار مناسب لروتين المساء."
+  }
+
+];
+
+
+/* =========================
+   GOVERNORATES
+========================= */
+
+const govs = [
+
+"أريانة",
+"باجة",
+"بن عروس",
+"بنزرت",
+"قابس",
+"قفصة",
+"جندوبة",
+"القيروان",
+"القصرين",
+"قبلي",
+"الكاف",
+"المهدية",
+"منوبة",
+"مدنين",
+"المنستير",
+"نابل",
+"صفاقس",
+"سيدي بوزيد",
+"سليانة",
+"سوسة",
+"تطاوين",
+"توزر",
+"تونس",
+"زغوان"
+
+];
+
+
+/* =========================
+   CART
+========================= */
+
+let cart =
+JSON.parse(localStorage.getItem("ashqCart") || "[]");
+
+let currentCategory = "All";
+
+
+function saveCart(){
+
+  localStorage.setItem(
+    "ashqCart",
+    JSON.stringify(cart)
+  );
+
+  updateCart();
+
+}
+
+
+function money(n){
+
+  return Number(n).toFixed(2) + " د.ت";
+
+}
+
+
+function toast(message){
+
+  const el =
+  document.getElementById("toast");
+
+  el.textContent = message;
+
+  el.style.display = "block";
+
+  setTimeout(()=>{
+    el.style.display = "none";
+  },2200);
+
+}
+
+
+function addToCart(id){
+
+  const item =
+  cart.find(x=>x.id===id);
+
+  if(item){
+
+    item.qty++;
+
+  }else{
+
+    cart.push({
+      id:id,
+      qty:1
+    });
+
+  }
+
+  saveCart();
+
+  toast("تزاد المنتج للسلة ❤️");
+
+}
+
+
+function changeQty(id,delta){
+
+  const item =
+  cart.find(x=>x.id===id);
+
+  if(!item)return;
+
+  item.qty += delta;
+
+  if(item.qty<=0){
+
+    cart =
+    cart.filter(x=>x.id!==id);
+
+  }
+
+  saveCart();
+
+}
+
+
+function removeItem(id){
+
+  cart =
+  cart.filter(x=>x.id!==id);
+
+  saveCart();
+
+  toast("تحذف المنتج");
+
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+function imageHtml(p){
+
+  return `
+    <img
+      src="${p.image}"
+      alt="${p.name}"
+      loading="lazy"
+      onerror="this.onerror=null;this.src='${GITHUB}3600541358447.jpg';"
+    >
+  `;
+
+}
+
+
+function renderProducts(){
+
+  const grid =
+  document.getElementById("productGrid");
+
+  const list =
+  currentCategory==="All"
+  ? PRODUCTS
+  : PRODUCTS.filter(
+      p=>p.category===currentCategory
+    );
+
+  grid.innerHTML =
+  list.map(p=>`
+
+    <article class="product">
+
+      <div class="product-img">
+        ${imageHtml(p)}
+      </div>
+
+      <div class="product-info">
+
+        <div class="product-category">
+          ${p.category}
+        </div>
+
+        <h3>${p.name}</h3>
+
+        <small>${p.brand}</small>
+
+        <p>${p.desc}</p>
+
+        <div class="price">
+          ${money(p.price)}
+        </div>
+
+        <button
+          class="add"
+          onclick="addToCart('${p.id}')"
+        >
+          أضف للسلة 🛍️
+        </button>
+
+      </div>
+
+    </article>
+
+  `).join("");
+
+}
+
+
+function setCat(cat,button){
+
+  currentCategory = cat;
+
+  if(button){
+
+    document
+    .querySelectorAll(".chip")
+    .forEach(x=>x.classList.remove("active"));
+
+    button.classList.add("active");
+
+  }else{
+
+    document
+    .querySelectorAll(".chip")
+    .forEach(x=>{
+
+      x.classList.toggle(
+        "active",
+        x.textContent.includes(cat)
+      );
+
+    });
+
+  }
+
+  renderProducts();
+
+}
+
+
+/* =========================
+   CART DISPLAY
+========================= */
+
+function totals(){
+
+  const subtotal =
+  cart.reduce((sum,item)=>{
+
+    const p =
+    PRODUCTS.find(x=>x.id===item.id);
+
+    return sum +
+    (p ? p.price * item.qty : 0);
+
+  },0);
+
+  const shipping =
+  subtotal===0
+  ? 0
+  : subtotal>=SHIPPING_LIMIT
+  ? 0
+  : SHIPPING_FEE;
+
+  return {
+
+    subtotal,
+    shipping,
+    total:subtotal+shipping
+
+  };
+
+}
+
+
+function updateCart(){
+
+  const count =
+  cart.reduce(
+    (sum,item)=>sum+item.qty,
+    0
+  );
+
+  document.getElementById(
+    "cartCount"
+  ).textContent = count;
+
+
+  const box =
+  document.getElementById("cartBox");
+
+
+  if(!cart.length){
+
+    box.innerHTML = `
+
+      <div class="empty">
+
+        السلة فارغة 🛍️
+
+        <br>
+
+        <button
+          class="primary"
+          onclick="go('products')"
+          style="margin-top:15px"
+        >
+          شوفي المنتجات
+        </button>
+
+      </div>
+
+    `;
+
+    updateCheckoutSummary();
+
+    return;
+
+  }
+
+
+  const t = totals();
+
+
+  box.innerHTML =
+
+  cart.map(item=>{
+
+    const p =
+    PRODUCTS.find(x=>x.id===item.id);
+
+    if(!p)return "";
+
+    return `
+
+      <div class="cart-row">
+
+        <div class="cart-thumb">
+          ${imageHtml(p)}
+        </div>
+
+        <div>
+          <b>${p.name}</b>
+          <div class="brand">
+            ${money(p.price)}
+          </div>
+        </div>
+
+        <div class="qty">
+
+          <button
+            onclick="changeQty('${p.id}',-1)"
+          >
+            −
+          </button>
+
+          <b>${item.qty}</b>
+
+          <button
+            onclick="changeQty('${p.id}',1)"
+          >
+            +
+          </button>
+
+        </div>
+
+        <button
+          class="remove"
+          onclick="removeItem('${p.id}')"
+        >
+          حذف
+        </button>
+
+      </div>
+
+    `;
+
+  }).join("");
+
+
+  box.innerHTML += `
+
+    <div class="summary">
+
+      <div class="sumline">
+        <span>المجموع الفرعي</span>
+        <b>${money(t.subtotal)}</b>
+      </div>
+
+      <div class="shipping-note ${t.shipping===0?"free":""}">
+
+        ${
+          t.subtotal < SHIPPING_LIMIT
+          ? `كمّل ${money(SHIPPING_LIMIT-t.subtotal)}
+             والتوصيل علينا 🎁`
+          : `🎉 التوصيل علينا`
+        }
+
+      </div>
+
+      <div class="sumline">
+
+        <span>التوصيل</span>
+
+        <b>
+          ${
+            t.shipping===0
+            ? "مجاني"
+            : money(t.shipping)
+          }
+        </b>
+
+      </div>
+
+      <div class="sumline total">
+
+        <span>المجموع النهائي</span>
+
+        <b>${money(t.total)}</b>
+
+      </div>
+
+      <button
+        class="primary"
+        onclick="go('checkout')"
+        style="width:100%;margin-top:12px"
+      >
+        كمّل الطلب 💗
+      </button>
+
+    </div>
+
+  `;
+
+  updateCheckoutSummary();
+
+}
+
+
+/* =========================
+   CHECKOUT SUMMARY
+========================= */
+
+function updateCheckoutSummary(){
+
+  const el =
+  document.getElementById(
+    "checkoutSummary"
+  );
+
+  if(!el)return;
+
+  if(!cart.length){
+
+    el.innerHTML =
+    "<p>السلة فارغة.</p>";
+
+    return;
+
+  }
+
+  const t=totals();
+
+  el.innerHTML = `
+
+    <div class="sumline">
+      <span>المجموع الفرعي</span>
+      <b>${money(t.subtotal)}</b>
+    </div>
+
+    <div class="sumline">
+      <span>التوصيل</span>
+      <b>
+        ${
+          t.shipping===0
+          ? "مجاني"
+          : money(t.shipping)
+        }
+      </b>
+    </div>
+
+    <div class="sumline total">
+      <span>المجموع</span>
+      <b>${money(t.total)}</b>
+    </div>
+
+  `;
+
+}
+
+
+/* =========================
+   WHATSAPP ORDER
+========================= */
+
+function sendOrder(e){
+
+  e.preventDefault();
+
+  if(!cart.length){
+
+    toast("السلة فارغة");
+
+    go("products");
+
+    return;
+
+  }
+
+
+  const name =
+  document.getElementById(
+    "customerName"
+  ).value.trim();
+
+  const phone =
+  document.getElementById(
+    "customerPhone"
+  ).value.trim();
+
+  const gov =
+  document.getElementById(
+    "governorate"
+  ).value;
+
+  const address =
+  document.getElementById(
+    "address"
+  ).value.trim();
+
+  const notes =
+  document.getElementById(
+    "notes"
+  ).value.trim();
+
+
+  const t=totals();
+
+
+  let lines = [
+
+    "طلب جديد من موقع عشق ❤️",
+
+    "",
+
+    "🛍️ المنتجات:"
+
+  ];
+
+
+  cart.forEach(item=>{
+
+    const p =
+    PRODUCTS.find(x=>x.id===item.id);
+
+    if(!p)return;
+
+    lines.push(
+
+      `• ${p.name} — ${item.qty} × ${money(p.price)} = ${money(p.price*item.qty)}`
+
+    );
+
+  });
+
+
+  lines.push(
+
+    "",
+
+    `المجموع الفرعي: ${money(t.subtotal)}`,
+
+    `التوصيل: ${
+      t.shipping===0
+      ? "مجاني"
+      : money(t.shipping)
+    }`,
+
+    `المجموع النهائي: ${money(t.total)}`,
+
+    "",
+
+    "👤 معلومات الحريف:",
+
+    `الاسم: ${name}`,
+
+    `الهاتف: ${phone}`,
+
+    `الولاية: ${gov}`,
+
+    `العنوان: ${address}`,
+
+    `ملاحظات: ${notes || "—"}`
+
+  );
+
+
+  const url =
+  "https://wa.me/" +
+  WHATSAPP +
+  "?text=" +
+  encodeURIComponent(
+    lines.join("\n")
+  );
+
+
+  window.open(
+    url,
+    "_blank"
+  );
+
+
+  document.getElementById(
+    "success"
+  ).style.display="block";
+
+
+  cart=[];
+
+  saveCart();
+
+  go("success");
+
+}
+
+
+/* =========================
+   QUIZ
+========================= */
+
+const quiz = [
+
+  {
+    q:"شنوّة أكثر حاجة تحبّي تركّزي عليها؟",
+
+    a:[
+      ["Glow","إشراقة وترطيب ✨"],
+      ["Care","تنظيف وترطيب 🫧"],
+      ["Hair","العناية بالشعر 💇‍♀️"],
+      ["Night","روتين المساء 🌙"]
+    ]
+
+  },
+
+  {
+    q:"شنوّة الروتين اللي تحبّيه؟",
+
+    a:[
+      ["Care","بسيط وسهل"],
+      ["Glow","إشراقة صباحية"],
+      ["Hair","روتين شعر"],
+      ["Night","عناية ليلية"]
+    ]
+
+  },
+
+  {
+    q:"شنوّة المنتج اللي يهمّك أكثر؟",
+
+    a:[
+      ["Glow","سيروم / فيتامين C"],
+      ["Care","منظف أو كريم"],
+      ["Hair","منتجات الشعر"],
+      ["Night","كريم المساء"]
+    ]
+
+  },
+
+  {
+    q:"وقتاش تحبّي تستعملي الروتين؟",
+
+    a:[
+      ["Glow","الصباح"],
+      ["Care","أي وقت"],
+      ["Hair","بعد الدوش"],
+      ["Night","قبل النوم"]
+    ]
+
+  },
+
+  {
+    q:"اختاري الـVibe متاعك 💗",
+
+    a:[
+      ["Glow","Fresh & Glowy"],
+      ["Care","Clean & Soft"],
+      ["Hair","Healthy Hair"],
+      ["Night","Calm Night"]
+    ]
+
+  }
+
+];
+
+
+let qi=0;
+
+let qanswers=[];
+
+
+function renderQuiz(){
+
+  document.getElementById(
+    "questions"
+  ).innerHTML =
+
+  quiz.map((item,index)=>`
+
+    <div
+      class="q ${index===0?"active":""}"
+      data-q="${index}"
+    >
+
+      <h3>
+        ${index+1}. ${item.q}
+      </h3>
+
+      <div class="answers">
+
+        ${item.a.map((answer,index2)=>`
+
+          <button
+            class="answer"
+            onclick="
+              pickAnswer(
+                ${index},
+                '${answer[0]}',
+                this
+              )
+            "
+          >
+            ${answer[1]}
+          </button>
+
+        `).join("")}
+
+      </div>
+
+    </div>
+
+  `).join("");
+
+
+  updateQuiz();
+
+}
+
+
+function pickAnswer(i,val,btn){
+
+  qanswers[i]=val;
+
+  btn.parentElement
+  .querySelectorAll(".answer")
+  .forEach(x=>{
+
+    x.classList.remove(
+      "selected"
+    );
+
+  });
+
+  btn.classList.add("selected");
+
+}
+
+
+function updateQuiz(){
+
+  document
+  .querySelectorAll(".q")
+  .forEach((x,index)=>{
+
+    x.classList.toggle(
+      "active",
+      index===qi
+    );
+
+  });
+
+
+  document.getElementById(
+    "quizBar"
+  ).style.width =
+
+  ((qi+1)/quiz.length*100)+"%";
+
+
+  document.getElementById(
+    "prevQ"
+  ).style.visibility =
+
+  qi===0
+  ? "hidden"
+  : "visible";
+
+
+  document.getElementById(
+    "nextQ"
+  ).textContent =
+
+  qi===quiz.length-1
+  ? "شوفي النتيجة ✨"
+  : "التالي";
+
+}
+
+
+function nextQuestion(){
+
+  if(!qanswers[qi]){
+
+    toast(
+      "اختاري إجابة أولاً ❤️"
+    );
+
+    return;
+
+  }
+
+
+  if(qi<quiz.length-1){
+
+    qi++;
+
+    updateQuiz();
+
+  }else{
+
+    showResult();
+
+  }
+
+}
+
+
+function prevQuestion(){
+
+  if(qi>0){
+
+    qi--;
+
+    updateQuiz();
+
+  }
+
+}
+
+
+function showResult(){
+
+  const scores = {
+
+    Glow:0,
+    Care:0,
+    Hair:0,
+    Night:0
+
+  };
+
+
+  qanswers.forEach(answer=>{
+
+    if(scores[answer]!==undefined){
+
+      scores[answer]++;
+
+    }
+
+  });
+
+
+  const best =
+  Object.keys(scores)
+  .sort(
+    (a,b)=>
+    scores[b]-scores[a]
+  )[0];
+
+
+  const text={
+
+    Glow:
+    "روتين Glow ✨ — ركّزي على التنظيف اللطيف والترطيب ومنتجات الإشراقة.",
+
+    Care:
+    "روتين Care 🫧 — ابدئي بالتنظيف والترطيب وخلي الروتين بسيط.",
+
+    Hair:
+    "روتين Hair 💇‍♀️ — ركّزي على العناية بالشعر واستعمال المنتجات حسب تعليمات العبوة.",
+
+    Night:
+    "روتين Night 🌙 — خلي العناية المسائية وقت هادئ للتنظيف والترطيب."
+
+  };
+
+
+  const result =
+  document.getElementById(
+    "quizResult"
+  );
+
+
+  result.style.display="block";
+
+
+  result.innerHTML = `
+
+    <h3>
+      النتيجة: ${best}
+    </h3>
+
+    <p>
+      ${text[best]}
+    </p>
+
+    <button
+      class="primary"
+      onclick="
+        setCat('${best}');
+        go('products')
+      "
+    >
+      شوفي منتجات ${best}
+    </button>
+
+  `;
+
+
+  document.getElementById(
+    "nextQ"
+  ).style.display="none";
+
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+function go(id){
+
+  const el =
+  document.getElementById(id);
+
+  if(!el)return;
+
+  if(id==="checkout"){
+
+    updateCheckoutSummary();
+
+  }
+
+  window.scrollTo({
+
+    top:el.offsetTop-75,
+
+    behavior:"smooth"
+
+  });
+
+}
+
+
+/* =========================
+   INIT
+========================= */
+
+function initGovs(){
+
+  document.getElementById(
+    "governorate"
+  ).innerHTML =
+
+  '<option value="">اختاري الولاية</option>' +
+
+  govs.map(
+    g=>`<option value="${g}">${g}</option>`
+  ).join("");
+
+}
+
+
+document.getElementById(
+  "year"
+).textContent =
+new Date().getFullYear();
+
+
+initGovs();
+
+renderQuiz();
+
+renderProducts();
+
+updateCart();
+
+</script>
+
+</body>
+</html>
+```
