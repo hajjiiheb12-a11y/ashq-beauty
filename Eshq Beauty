@@ -1,0 +1,1789 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#8b3158">
+<title>عشق | Glow • Care • Hair • Night</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+:root{
+  --rose:#8b3158;
+  --rose2:#b94c78;
+  --light:#fff8fb;
+  --cream:#fffdfb;
+  --dark:#2b2025;
+  --muted:#766a70;
+  --border:#eadde3;
+  --shadow:0 12px 35px rgba(93,38,61,.10);
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:linear-gradient(180deg,#fffafd,#fff);
+  color:var(--dark);
+  font-family:"Cairo",sans-serif;
+}
+
+button{
+  font-family:inherit;
+  cursor:pointer;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  font-family:"Playfair Display",serif;
+  font-size:34px;
+  font-weight:700;
+  color:var(--rose);
+  letter-spacing:1px;
+}
+
+.logo span{
+  display:block;
+  font-family:"Cairo",sans-serif;
+  font-size:10px;
+  letter-spacing:3px;
+  color:#9b858e;
+  text-align:center;
+  margin-top:-7px;
+}
+
+.navlinks{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.navlinks button{
+  border:0;
+  background:transparent;
+  color:#5d5057;
+  padding:8px 12px;
+  border-radius:20px;
+  font-weight:700;
+}
+
+.navlinks button:hover{
+  background:#fff0f5;
+  color:var(--rose);
+}
+
+.cartBtn{
+  border:0;
+  background:var(--rose);
+  color:#fff;
+  padding:11px 16px;
+  border-radius:25px;
+  font-weight:800;
+  box-shadow:0 7px 18px rgba(139,49,88,.22);
+}
+
+.cartBtn:hover{
+  background:#702541;
+}
+
+#cartCount{
+  display:inline-flex;
+  min-width:22px;
+  height:22px;
+  padding:0 6px;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  color:var(--rose);
+  border-radius:20px;
+  margin-right:5px;
+}
+
+/* HERO */
+.hero{
+  max-width:1200px;
+  margin:25px auto 0;
+  padding:65px 25px;
+  min-height:470px;
+  border-radius:35px;
+  overflow:hidden;
+  position:relative;
+  display:flex;
+  align-items:center;
+  background:
+    radial-gradient(circle at 10% 20%,rgba(255,255,255,.95),transparent 32%),
+    linear-gradient(135deg,#f9dce7,#fff7fa 55%,#f5e5ec);
+  box-shadow:var(--shadow);
+}
+
+.hero:after{
+  content:"♥";
+  position:absolute;
+  left:5%;
+  bottom:-50px;
+  font-size:260px;
+  color:rgba(139,49,88,.06);
+  transform:rotate(-12deg);
+}
+
+.heroContent{
+  position:relative;
+  z-index:2;
+  max-width:650px;
+}
+
+.badge{
+  display:inline-block;
+  background:#fff;
+  color:var(--rose);
+  padding:8px 15px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:800;
+  box-shadow:0 7px 20px rgba(0,0,0,.06);
+}
+
+.hero h1{
+  font-family:"Playfair Display","Cairo",serif;
+  font-size:58px;
+  line-height:1.1;
+  margin:18px 0 12px;
+  color:#542237;
+}
+
+.hero h1 span{
+  color:var(--rose2);
+}
+
+.hero p{
+  color:#6e5d65;
+  font-size:18px;
+  line-height:2;
+  margin:0 0 25px;
+}
+
+.mainBtn{
+  border:0;
+  background:var(--rose);
+  color:white;
+  padding:14px 25px;
+  border-radius:30px;
+  font-size:16px;
+  font-weight:800;
+  box-shadow:0 10px 25px rgba(139,49,88,.25);
+}
+
+.mainBtn:hover{
+  transform:translateY(-2px);
+  background:#702541;
+}
+
+/* SECTION */
+section{
+  max-width:1200px;
+  margin:75px auto;
+  padding:0 18px;
+}
+
+.sectionTitle{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.sectionTitle h2{
+  font-family:"Playfair Display","Cairo",serif;
+  font-size:38px;
+  color:#542237;
+  margin:0;
+}
+
+.sectionTitle p{
+  color:var(--muted);
+  margin:7px 0 0;
+}
+
+/* CATEGORIES */
+.categories{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.category{
+  border:1px solid var(--border);
+  background:#fff;
+  padding:28px 18px;
+  border-radius:25px;
+  text-align:center;
+  box-shadow:var(--shadow);
+  transition:.25s;
+}
+
+.category:hover{
+  transform:translateY(-5px);
+  border-color:#d8a5b9;
+}
+
+.categoryIcon{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.category h3{
+  margin:5px 0;
+  color:#542237;
+}
+
+.category p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* FILTER */
+.filters{
+  display:flex;
+  gap:9px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:28px;
+}
+
+.filter{
+  border:1px solid var(--border);
+  background:white;
+  color:#6c5a63;
+  padding:9px 17px;
+  border-radius:30px;
+  font-weight:700;
+}
+
+.filter.active,
+.filter:hover{
+  background:var(--rose);
+  color:#fff;
+  border-color:var(--rose);
+}
+
+/* PRODUCTS */
+.products{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.product{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:25px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:.25s;
+}
+
+.product:hover{
+  transform:translateY(-5px);
+  box-shadow:0 18px 40px rgba(93,38,61,.14);
+}
+
+.productImage{
+  height:255px;
+  background:linear-gradient(145deg,#fff5f8,#f8e9ef);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.productImage img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:12px;
+  transition:.3s;
+}
+
+.product:hover .productImage img{
+  transform:scale(1.04);
+}
+
+.tag{
+  position:absolute;
+  top:12px;
+  right:12px;
+  z-index:2;
+  background:#fff;
+  color:var(--rose);
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:800;
+  box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.productInfo{
+  padding:18px;
+}
+
+.productInfo h3{
+  margin:0 0 5px;
+  font-size:18px;
+  color:#3b2930;
+}
+
+.productInfo p{
+  margin:0 0 12px;
+  color:var(--muted);
+  font-size:13px;
+  min-height:40px;
+}
+
+.productBottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.price{
+  color:var(--rose);
+  font-size:20px;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+.addBtn{
+  border:0;
+  background:#f8e6ed;
+  color:var(--rose);
+  padding:10px 14px;
+  border-radius:22px;
+  font-weight:800;
+  transition:.2s;
+}
+
+.addBtn:hover{
+  background:var(--rose);
+  color:#fff;
+}
+
+.addBtn.added{
+  background:#e8f5ec;
+  color:#23703b;
+}
+
+/* QUIZ */
+.quizBox{
+  background:linear-gradient(145deg,#fff3f7,#fff);
+  border:1px solid var(--border);
+  border-radius:30px;
+  padding:35px;
+  box-shadow:var(--shadow);
+  max-width:850px;
+  margin:auto;
+}
+
+.question{
+  display:none;
+}
+
+.question.active{
+  display:block;
+}
+
+.questionNumber{
+  color:var(--rose);
+  font-weight:800;
+  font-size:13px;
+}
+
+.question h3{
+  font-size:23px;
+  margin:10px 0 20px;
+}
+
+.answers{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.answer{
+  border:1px solid var(--border);
+  background:#fff;
+  padding:15px;
+  border-radius:18px;
+  text-align:right;
+  font-weight:700;
+  color:#55444c;
+  transition:.2s;
+}
+
+.answer:hover{
+  border-color:var(--rose2);
+  background:#fff5f8;
+  color:var(--rose);
+}
+
+.answer.selected{
+  background:var(--rose);
+  color:#fff;
+  border-color:var(--rose);
+}
+
+.quizActions{
+  margin-top:25px;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.quizBtn{
+  border:0;
+  background:var(--rose);
+  color:#fff;
+  padding:11px 20px;
+  border-radius:25px;
+  font-weight:800;
+}
+
+.quizBtn.secondary{
+  background:#f2e6eb;
+  color:var(--rose);
+}
+
+.quizResult{
+  display:none;
+  text-align:center;
+  padding:25px;
+}
+
+.quizResult.show{
+  display:block;
+}
+
+.resultIcon{
+  font-size:55px;
+}
+
+/* CART DRAWER */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(25,15,20,.42);
+  z-index:1500;
+  display:none;
+}
+
+.overlay.show{
+  display:block;
+}
+
+.cartDrawer{
+  position:fixed;
+  top:0;
+  left:0;
+  width:min(430px,94vw);
+  height:100vh;
+  background:#fff;
+  z-index:1600;
+  transform:translateX(-110%);
+  transition:.3s;
+  box-shadow:15px 0 50px rgba(0,0,0,.18);
+  display:flex;
+  flex-direction:column;
+}
+
+.cartDrawer.show{
+  transform:translateX(0);
+}
+
+.cartHeader{
+  padding:20px;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.cartHeader h2{
+  margin:0;
+  color:#542237;
+}
+
+.closeCart{
+  border:0;
+  background:#f7e8ee;
+  color:var(--rose);
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  font-size:20px;
+}
+
+.cartItems{
+  padding:18px;
+  overflow:auto;
+  flex:1;
+}
+
+.empty{
+  text-align:center;
+  color:var(--muted);
+  padding:60px 20px;
+}
+
+.cartItem{
+  display:flex;
+  gap:12px;
+  padding:12px 0;
+  border-bottom:1px solid #f0e6ea;
+}
+
+.cartItem img{
+  width:70px;
+  height:70px;
+  object-fit:contain;
+  border-radius:14px;
+  background:#fff6f9;
+}
+
+.cartItemInfo{
+  flex:1;
+}
+
+.cartItemInfo h4{
+  margin:0 0 4px;
+  font-size:14px;
+}
+
+.cartItemPrice{
+  color:var(--rose);
+  font-weight:800;
+}
+
+.qty{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin-top:7px;
+}
+
+.qty button{
+  border:0;
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  background:#f5e8ed;
+  color:var(--rose);
+  font-weight:800;
+}
+
+.remove{
+  border:0;
+  background:transparent;
+  color:#a05b75;
+  font-size:12px;
+}
+
+.cartFooter{
+  border-top:1px solid var(--border);
+  padding:18px;
+  background:#fff;
+}
+
+.totalLine{
+  display:flex;
+  justify-content:space-between;
+  margin:7px 0;
+}
+
+.totalLine.final{
+  font-size:21px;
+  color:var(--rose);
+  font-weight:800;
+}
+
+.checkoutBtn{
+  width:100%;
+  border:0;
+  background:#25d366;
+  color:#fff;
+  padding:14px;
+  border-radius:28px;
+  font-weight:800;
+  margin-top:12px;
+}
+
+/* CHECKOUT */
+.checkoutBox{
+  max-width:650px;
+  margin:auto;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:28px;
+  padding:28px;
+  box-shadow:var(--shadow);
+}
+
+.formGroup{
+  margin-bottom:15px;
+}
+
+.formGroup label{
+  display:block;
+  margin-bottom:6px;
+  font-weight:700;
+  font-size:14px;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea{
+  width:100%;
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:13px;
+  font-family:inherit;
+  outline:none;
+  background:#fff;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus{
+  border-color:var(--rose2);
+}
+
+.whatsappBtn{
+  width:100%;
+  border:0;
+  background:#25d366;
+  color:#fff;
+  padding:15px;
+  border-radius:28px;
+  font-size:16px;
+  font-weight:800;
+}
+
+/* TOAST */
+.toast{
+  position:fixed;
+  bottom:25px;
+  right:50%;
+  transform:translate(50%,120px);
+  background:#33232a;
+  color:#fff;
+  padding:13px 20px;
+  border-radius:30px;
+  z-index:3000;
+  opacity:0;
+  transition:.3s;
+  box-shadow:0 10px 30px rgba(0,0,0,.18);
+}
+
+.toast.show{
+  opacity:1;
+  transform:translate(50%,0);
+}
+
+/* FOOTER */
+footer{
+  background:#33232a;
+  color:#fff;
+  text-align:center;
+  padding:35px 20px;
+  margin-top:70px;
+}
+
+footer .brand{
+  font-family:"Playfair Display",serif;
+  font-size:32px;
+  color:#f4b5ca;
+}
+
+footer p{
+  color:#d8cbd0;
+  margin:7px 0;
+}
+
+.heart{
+  color:#e77da5;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .categories{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .navlinks{
+    display:none;
+  }
+
+  .hero{
+    margin:12px;
+  }
+
+  section{
+    margin:55px auto;
+  }
+}
+
+@media(max-width:600px){
+  .logo{
+    font-size:28px;
+  }
+
+  .hero{
+    min-height:400px;
+    padding:40px 22px;
+    border-radius:25px;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .categories{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .category{
+    padding:20px 10px;
+  }
+
+  .products{
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+
+  .productImage{
+    height:190px;
+  }
+
+  .productInfo{
+    padding:12px;
+  }
+
+  .productInfo h3{
+    font-size:14px;
+  }
+
+  .productInfo p{
+    font-size:11px;
+  }
+
+  .productBottom{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .price{
+    text-align:center;
+  }
+
+  .addBtn{
+    width:100%;
+  }
+
+  .answers{
+    grid-template-columns:1fr;
+  }
+
+  .quizBox{
+    padding:22px 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#" class="logo">
+      عشق
+      <span>GLOW • CARE • HAIR • NIGHT</span>
+    </a>
+
+    <nav class="navlinks">
+      <button onclick="showCategory('all')">الرئيسية</button>
+      <button onclick="showCategory('Glow')">Glow</button>
+      <button onclick="showCategory('Care')">Care</button>
+      <button onclick="showCategory('Hair')">Hair</button>
+      <button onclick="showCategory('Night')">Night</button>
+      <button onclick="goTo('quiz')">اختبار الروتين</button>
+    </nav>
+
+    <button class="cartBtn" onclick="openCart()">
+      🛒 السلة
+      <span id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="heroContent">
+    <span class="badge">♥ روتينك يبدأ من عشق</span>
+
+    <h1>
+      اكتشفي جمالك<br>
+      مع <span>عشق</span>
+    </h1>
+
+    <p>
+      منتجات مختارة بعناية لروتينك اليومي،
+      من العناية بالبشرة إلى الشعر والـ Glow والـ Night.
+    </p>
+
+    <button class="mainBtn" onclick="goTo('quiz')">
+      اكتشفي الـ Routine المناسب ليك ♥
+    </button>
+  </div>
+</section>
+
+<section>
+  <div class="sectionTitle">
+    <h2>اختاري عالمك</h2>
+    <p>كل مجموعة معمولة باش تكون جزء من روتينك</p>
+  </div>
+
+  <div class="categories">
+    <div class="category" onclick="showCategory('Glow')">
+      <div class="categoryIcon">✨</div>
+      <h3>Glow</h3>
+      <p>إشراقة ونضارة</p>
+    </div>
+
+    <div class="category" onclick="showCategory('Care')">
+      <div class="categoryIcon">🌸</div>
+      <h3>Care</h3>
+      <p>العناية اليومية</p>
+    </div>
+
+    <div class="category" onclick="showCategory('Hair')">
+      <div class="categoryIcon">💆‍♀️</div>
+      <h3>Hair</h3>
+      <p>عناية بالشعر</p>
+    </div>
+
+    <div class="category" onclick="showCategory('Night')">
+      <div class="categoryIcon">🌙</div>
+      <h3>Night</h3>
+      <p>روتين المساء</p>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="sectionTitle">
+    <h2>منتجات عشق</h2>
+    <p>اختاري اللي يناسب روتينك</p>
+  </div>
+
+  <div class="filters">
+    <button class="filter active" onclick="showCategory('all',this)">الكل</button>
+    <button class="filter" onclick="showCategory('Glow',this)">✨ Glow</button>
+    <button class="filter" onclick="showCategory('Care',this)">🌸 Care</button>
+    <button class="filter" onclick="showCategory('Hair',this)">💆‍♀️ Hair</button>
+    <button class="filter" onclick="showCategory('Night',this)">🌙 Night</button>
+  </div>
+
+  <div class="products" id="productGrid"></div>
+</section>
+
+<section id="quiz">
+  <div class="sectionTitle">
+    <h2>اختبار عشق ♥</h2>
+    <p>جاوبي على 5 أسئلة ونقترح عليك الروتين الأقرب ليك</p>
+  </div>
+
+  <div class="quizBox">
+
+    <div class="question active" data-q="1">
+      <div class="questionNumber">السؤال 1 من 5</div>
+      <h3>شنوّة أكثر حاجة تحبي تحسّنيها؟</h3>
+
+      <div class="answers">
+        <button class="answer" onclick="answer(this,'Glow')">✨ نضارة البشرة</button>
+        <button class="answer" onclick="answer(this,'Care')">🌸 العناية اليومية</button>
+        <button class="answer" onclick="answer(this,'Hair')">💆‍♀️ الشعر</button>
+        <button class="answer" onclick="answer(this,'Night')">🌙 روتين الليل</button>
+      </div>
+    </div>
+
+    <div class="question" data-q="2">
+      <div class="questionNumber">السؤال 2 من 5</div>
+      <h3>وقتاش أكثر وقت تهتمي بروتينك؟</h3>
+
+      <div class="answers">
+        <button class="answer" onclick="answer(this,'Glow')">☀️ الصباح</button>
+        <button class="answer" onclick="answer(this,'Care')">🌸 خلال النهار</button>
+        <button class="answer" onclick="answer(this,'Hair')">💆‍♀️ وقت العناية بالشعر</button>
+        <button class="answer" onclick="answer(this,'Night')">🌙 قبل النوم</button>
+      </div>
+    </div>
+
+    <div class="question" data-q="3">
+      <div class="questionNumber">السؤال 3 من 5</div>
+      <h3>شنوّة أكثر حاجة تحبيها في منتجك؟</h3>
+
+      <div class="answers">
+        <button class="answer" onclick="answer(this,'Glow')">✨ يعطي إشراقة</button>
+        <button class="answer" onclick="answer(this,'Care')">💧 ترطيب وراحة</button>
+        <button class="answer" onclick="answer(this,'Hair')">💇‍♀️ يقوي الشعر</button>
+        <button class="answer" onclick="answer(this,'Night')">🌙 عناية عميقة</button>
+      </div>
+    </div>
+
+    <div class="question" data-q="4">
+      <div class="questionNumber">السؤال 4 من 5</div>
+      <h3>شنوّة الروتين اللي يشبهلك أكثر؟</h3>
+
+      <div class="answers">
+        <button class="answer" onclick="answer(this,'Glow')">✨ بسيط ومشرق</button>
+        <button class="answer" onclick="answer(this,'Care')">🌸 يومي وناعم</button>
+        <button class="answer" onclick="answer(this,'Hair')">💆‍♀️ مركز على الشعر</button>
+        <button class="answer" onclick="answer(this,'Night')">🌙 هادئ قبل النوم</button>
+      </div>
+    </div>
+
+    <div class="question" data-q="5">
+      <div class="questionNumber">السؤال 5 من 5</div>
+      <h3>اختاري الـ vibe متاعك ♥</h3>
+
+      <div class="answers">
+        <button class="answer" onclick="answer(this,'Glow')">✨ Fresh Glow</button>
+        <button class="answer" onclick="answer(this,'Care')">🌸 Soft Care</button>
+        <button class="answer" onclick="answer(this,'Hair')">💆‍♀️ Hair Love</button>
+        <button class="answer" onclick="answer(this,'Night')">🌙 Night Love</button>
+      </div>
+    </div>
+
+    <div class="quizResult" id="quizResult">
+      <div class="resultIcon">♥</div>
+      <h3 id="resultTitle">روتينك من عشق</h3>
+      <p id="resultText"></p>
+      <button class="mainBtn" onclick="goTo('products')">
+        شوفي المنتجات المناسبة
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<section id="checkout">
+  <div class="sectionTitle">
+    <h2>إتمام الطلب</h2>
+    <p>بعد ما تختاري منتجاتك، عمّري معلومات التوصيل</p>
+  </div>
+
+  <div class="checkoutBox">
+
+    <div class="formGroup">
+      <label>الاسم واللقب</label>
+      <input id="customerName" type="text" placeholder="اكتب اسمك">
+    </div>
+
+    <div class="formGroup">
+      <label>رقم الهاتف</label>
+      <input id="customerPhone" type="tel" placeholder="رقم الهاتف">
+    </div>
+
+    <div class="formGroup">
+      <label>الولاية</label>
+      <select id="governorate">
+        <option value="">اختاري الولاية</option>
+        <option>تونس</option>
+        <option>أريانة</option>
+        <option>بن عروس</option>
+        <option>منوبة</option>
+        <option>نابل</option>
+        <option>زغوان</option>
+        <option>بنزرت</option>
+        <option>باجة</option>
+        <option>جندوبة</option>
+        <option>الكاف</option>
+        <option>سليانة</option>
+        <option>القيروان</option>
+        <option>القصرين</option>
+        <option>سوسة</option>
+        <option>المنستير</option>
+        <option>المهدية</option>
+        <option>صفاقس</option>
+        <option>سيدي بوزيد</option>
+        <option>قابس</option>
+        <option>مدنين</option>
+        <option>تطاوين</option>
+        <option>قفصة</option>
+        <option>توزر</option>
+        <option>قبلي</option>
+      </select>
+    </div>
+
+    <div class="formGroup">
+      <label>العنوان</label>
+      <textarea id="customerAddress" rows="3" placeholder="العنوان بالتفصيل"></textarea>
+    </div>
+
+    <button class="whatsappBtn" onclick="sendOrder()">
+      💚 تأكيد الطلب عبر WhatsApp
+    </button>
+
+  </div>
+</section>
+
+</main>
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+<div class="cartDrawer" id="cartDrawer">
+
+  <div class="cartHeader">
+    <h2>🛒 سلّة عشق</h2>
+    <button class="closeCart" onclick="closeCart()">×</button>
+  </div>
+
+  <div class="cartItems" id="cartItems"></div>
+
+  <div class="cartFooter">
+    <div class="totalLine">
+      <span>المجموع</span>
+      <strong id="subtotal">0.00 د.ت</strong>
+    </div>
+
+    <div class="totalLine">
+      <span>التوصيل</span>
+      <strong id="shipping">8.00 د.ت</strong>
+    </div>
+
+    <div class="totalLine final">
+      <span>الإجمالي</span>
+      <strong id="total">0.00 د.ت</strong>
+    </div>
+
+    <button class="checkoutBtn" onclick="goCheckout()">
+      متابعة الطلب ♥
+    </button>
+  </div>
+</div>
+
+<div class="toast" id="toast">تمت إضافة المنتج ♥</div>
+
+<footer>
+  <div class="brand">عشق</div>
+  <p>Glow • Care • Hair • Night</p>
+  <p>صُنع بحب <span class="heart">♥</span></p>
+</footer>
+
+<script>
+
+/* =========================================================
+   IMAGES
+   الصور مربوطة مباشرة من GitHub
+========================================================= */
+
+const RAW = "https://raw.githubusercontent.com/hajjiiheb12-a11y/ashq-beauty/main/";
+
+const images = {
+  img1: RAW + "20faaa6b-5017-4f90-b2a0-b6fcdfdeb431.jpeg",
+  img2: RAW + "28518e33-dc8b-4252-b65a-fed3029642c4.jpeg",
+  img3: RAW + "3600541358447.jpg",
+  img4: RAW + "5a359d53-26b9-41f9-8c55-6674004a4bdb.jpeg",
+  img5: RAW + "87f518cd-de3c-4337-821a-108ffb5fa458.jpeg",
+  img6: RAW + "9563222e-895b-44b6-9bf4-ea9e885e0c33.jpeg",
+  img7: RAW + "988dddd0-214f-4306-8d1b-9ac1a3bc32ea.jpeg",
+  img8: RAW + "ELSEVE-SHAMPOING-200ML-FULL-RESIST.png",
+  img9: RAW + "cOpFApgZBDrf1VQhNmdk4JuBvErPBRxn033ebCMh.webp",
+  img10: RAW + "f4c81179-3a7e-4894-918d-478537952ecc.jpeg"
+};
+
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+const products = [
+
+  {
+    id:1,
+    name:"Balea Crème Nettoyante 150 ml",
+    category:"Care",
+    price:12.9,
+    image:images.img1,
+    desc:"تنظيف لطيف للبشرة"
+  },
+
+  {
+    id:2,
+    name:"Nivea Soft",
+    category:"Care",
+    price:14.9,
+    image:images.img2,
+    desc:"ترطيب يومي للبشرة"
+  },
+
+  {
+    id:3,
+    name:"Garnier Vitamin C",
+    category:"Glow",
+    price:24.9,
+    image:images.img3,
+    desc:"إشراقة وانتعاش للبشرة"
+  },
+
+  {
+    id:4,
+    name:"Garnier Eau Micellaire",
+    category:"Care",
+    price:18.9,
+    image:images.img4,
+    desc:"تنظيف وإزالة المكياج"
+  },
+
+  {
+    id:5,
+    name:"Nivea Lait Corps",
+    category:"Care",
+    price:19.9,
+    image:images.img5,
+    desc:"ترطيب الجسم"
+  },
+
+  {
+    id:6,
+    name:"Balea Serum",
+    category:"Glow",
+    price:22.9,
+    image:images.img6,
+    desc:"سيروم للعناية والإشراقة"
+  },
+
+  {
+    id:7,
+    name:"Garnier SkinActive",
+    category:"Glow",
+    price:21.9,
+    image:images.img7,
+    desc:"عناية ونضارة للبشرة"
+  },
+
+  {
+    id:8,
+    name:"Elseve Full Resist Shampoo 200 ml",
+    category:"Hair",
+    price:13.9,
+    image:images.img8,
+    desc:"شامبو للعناية بالشعر"
+  },
+
+  {
+    id:9,
+    name:"Elseve Hair Care",
+    category:"Hair",
+    price:16.9,
+    image:images.img9,
+    desc:"عناية يومية بالشعر"
+  },
+
+  {
+    id:10,
+    name:"Innovaderm Care",
+    category:"Care",
+    price:27.9,
+    image:images.img10,
+    desc:"عناية متقدمة بالبشرة"
+  },
+
+  {
+    id:11,
+    name:"Balea Nacht Creme",
+    category:"Night",
+    price:18.9,
+    image:images.img1,
+    desc:"كريم عناية ليلية"
+  },
+
+  {
+    id:12,
+    name:"Nivea Night Care",
+    category:"Night",
+    price:21.9,
+    image:images.img2,
+    desc:"ترطيب للبشرة أثناء الليل"
+  },
+
+  {
+    id:13,
+    name:"Garnier Glow Care",
+    category:"Glow",
+    price:26.9,
+    image:images.img3,
+    desc:"روتين لإشراقة البشرة"
+  },
+
+  {
+    id:14,
+    name:"Elseve Dream Long",
+    category:"Hair",
+    price:17.9,
+    image:images.img8,
+    desc:"عناية للشعر الطويل"
+  },
+
+  {
+    id:15,
+    name:"Routine Night Hydration",
+    category:"Night",
+    price:29.9,
+    image:images.img6,
+    desc:"روتين ترطيب مسائي"
+  }
+
+];
+
+
+/* =========================================================
+   CART
+========================================================= */
+
+let cart = JSON.parse(localStorage.getItem("ashqCart") || "[]");
+
+function saveCart(){
+  localStorage.setItem("ashqCart",JSON.stringify(cart));
+}
+
+function addToCart(id){
+
+  const product = products.find(p => p.id === id);
+
+  if(!product) return;
+
+  const existing = cart.find(item => item.id === id);
+
+  if(existing){
+    existing.qty++;
+  }else{
+    cart.push({
+      id:id,
+      qty:1
+    });
+  }
+
+  saveCart();
+  updateCart();
+
+  showToast("تمت إضافة " + product.name + " للسلة ♥");
+
+  /*
+    مهم:
+    ما فماش openCart() هنا
+    يعني المستخدم يبقى في نفس الصفحة
+  */
+}
+
+function changeQty(id,change){
+
+  const item = cart.find(x => x.id === id);
+
+  if(!item) return;
+
+  item.qty += change;
+
+  if(item.qty <= 0){
+    cart = cart.filter(x => x.id !== id);
+  }
+
+  saveCart();
+  updateCart();
+}
+
+function removeFromCart(id){
+
+  cart = cart.filter(x => x.id !== id);
+
+  saveCart();
+  updateCart();
+}
+
+function cartCount(){
+
+  return cart.reduce((sum,item) => sum + item.qty,0);
+}
+
+function updateCart(){
+
+  document.getElementById("cartCount").textContent = cartCount();
+
+  const box = document.getElementById("cartItems");
+
+  if(cart.length === 0){
+
+    box.innerHTML = `
+      <div class="empty">
+        <div style="font-size:50px">🛍️</div>
+        <h3>السلة فارغة</h3>
+        <p>اختاري منتجاتك وخلي الباقي علينا ♥</p>
+      </div>
+    `;
+
+  }else{
+
+    box.innerHTML = cart.map(item => {
+
+      const p = products.find(x => x.id === item.id);
+
+      return `
+        <div class="cartItem">
+
+          <img src="${p.image}" alt="${p.name}">
+
+          <div class="cartItemInfo">
+
+            <h4>${p.name}</h4>
+
+            <div class="cartItemPrice">
+              ${(p.price * item.qty).toFixed(2)} د.ت
+            </div>
+
+            <div class="qty">
+              <button onclick="changeQty(${p.id},1)">+</button>
+              <strong>${item.qty}</strong>
+              <button onclick="changeQty(${p.id},-1)">−</button>
+
+              <button class="remove" onclick="removeFromCart(${p.id})">
+                حذف
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      `;
+
+    }).join("");
+  }
+
+  calculateTotals();
+}
+
+function calculateTotals(){
+
+  const subtotal = cart.reduce((sum,item) => {
+
+    const p = products.find(x => x.id === item.id);
+
+    return sum + (p.price * item.qty);
+
+  },0);
+
+  const shipping = subtotal === 0 ? 0 : (subtotal >= 80 ? 0 : 8);
+
+  const total = subtotal + shipping;
+
+  document.getElementById("subtotal").textContent =
+    subtotal.toFixed(2) + " د.ت";
+
+  document.getElementById("shipping").textContent =
+    shipping === 0 ? "مجاني" : shipping.toFixed(2) + " د.ت";
+
+  document.getElementById("total").textContent =
+    total.toFixed(2) + " د.ت";
+}
+
+
+/* =========================================================
+   CART OPEN / CLOSE
+========================================================= */
+
+function openCart(){
+
+  document.getElementById("cartDrawer").classList.add("show");
+  document.getElementById("overlay").classList.add("show");
+
+  updateCart();
+}
+
+function closeCart(){
+
+  document.getElementById("cartDrawer").classList.remove("show");
+  document.getElementById("overlay").classList.remove("show");
+}
+
+function goCheckout(){
+
+  closeCart();
+
+  setTimeout(() => {
+    document.getElementById("checkout").scrollIntoView({
+      behavior:"smooth"
+    });
+  },200);
+}
+
+
+/* =========================================================
+   PRODUCTS DISPLAY
+========================================================= */
+
+let currentCategory = "all";
+
+function showCategory(category,button){
+
+  currentCategory = category;
+
+  document.querySelectorAll(".filter").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  if(button){
+    button.classList.add("active");
+  }else{
+
+    document.querySelectorAll(".filter").forEach(btn => {
+
+      const text = btn.textContent.toLowerCase();
+
+      if(
+        (category === "all" && text.includes("الكل")) ||
+        text.includes(category.toLowerCase())
+      ){
+        btn.classList.add("active");
+      }
+
+    });
+
+  }
+
+  renderProducts();
+
+  if(category !== "all"){
+    goTo("products");
+  }
+}
+
+function renderProducts(){
+
+  const grid = document.getElementById("productGrid");
+
+  const filtered = currentCategory === "all"
+    ? products
+    : products.filter(p => p.category === currentCategory);
+
+  grid.innerHTML = filtered.map(p => {
+
+    const inCart = cart.find(x => x.id === p.id);
+
+    return `
+      <article class="product">
+
+        <div class="productImage">
+
+          <span class="tag">${p.category}</span>
+
+          <img
+            src="${p.image}"
+            alt="${p.name}"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='${images.img3}'"
+          >
+
+        </div>
+
+        <div class="productInfo">
+
+          <h3>${p.name}</h3>
+
+          <p>${p.desc}</p>
+
+          <div class="productBottom">
+
+            <span class="price">
+              ${p.price.toFixed(2)} د.ت
+            </span>
+
+            <button
+              class="addBtn ${inCart ? "added" : ""}"
+              onclick="addToCart(${p.id})"
+            >
+              ${inCart ? "✓ زيد للسلة" : "أضف للسلة"}
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+    `;
+
+  }).join("");
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+let toastTimer;
+
+function showToast(message){
+
+  const toast = document.getElementById("toast");
+
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(() => {
+    toast.classList.remove("show");
+  },2200);
+}
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+let quizStep = 1;
+
+let quizScores = {
+  Glow:0,
+  Care:0,
+  Hair:0,
+  Night:0
+};
+
+function answer(button,category){
+
+  const parent = button.closest(".question");
+
+  parent.querySelectorAll(".answer").forEach(btn => {
+    btn.classList.remove("selected");
+  });
+
+  button.classList.add("selected");
+
+  quizScores[category]++;
+
+  setTimeout(() => {
+
+    if(quizStep < 5){
+
+      document
+        .querySelector(`.question[data-q="${quizStep}"]`)
+        .classList.remove("active");
+
+      quizStep++;
+
+      document
+        .querySelector(`.question[data-q="${quizStep}"]`)
+        .classList.add("active");
+
+    }else{
+
+      finishQuiz();
+
+    }
+
+  },250);
+}
+
+function finishQuiz(){
+
+  document.querySelectorAll(".question").forEach(q => {
+    q.classList.remove("active");
+  });
+
+  const categories = Object.keys(quizScores);
+
+  categories.sort((a,b) => quizScores[b] - quizScores[a]);
+
+  const result = categories[0];
+
+  const names = {
+    Glow:"Glow ✨",
+    Care:"Care 🌸",
+    Hair:"Hair 💆‍♀️",
+    Night:"Night 🌙"
+  };
+
+  const texts = {
+    Glow:"يظهر اللي روتينك يميل للإشراقة والنضارة. شوفي منتجات Glow المختارة من عشق.",
+    Care:"روتينك يحب العناية والترطيب. منتجات Care تنجم تكون البداية المناسبة.",
+    Hair:"واضح إن الشعر عندو بلاصة مهمة في روتينك. اكتشفي مجموعة Hair.",
+    Night:"روتين الليل هو الـ vibe متاعك. اكتشفي مجموعة Night."
+  };
+
+  document.getElementById("resultTitle").textContent =
+    "روتينك هو " + names[result];
+
+  document.getElementById("resultText").textContent =
+    texts[result];
+
+  document.getElementById("quizResult").classList.add("show");
+
+  currentCategory = result;
+
+  renderProducts();
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+function goTo(id){
+
+  const el = document.getElementById(id);
+
+  if(el){
+    el.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+  }
+}
+
+
+/* =========================================================
+   WHATSAPP ORDER
+========================================================= */
+
+function sendOrder(){
+
+  if(cart.length === 0){
+
+    showToast("السلة فارغة ♥");
+    openCart();
+    return;
+  }
+
+  const name = document.getElementById("customerName").value.trim();
+  const phone = document.getElementById("customerPhone").value.trim();
+  const governorate = document.getElementById("governorate").value;
+  const address = document.getElementById("customerAddress").value.trim();
+
+  if(!name || !phone || !governorate || !address){
+
+    showToast("كمّل معلومات الطلب أولاً");
+    return;
+  }
+
+  let message = "❤️ *طلب جديد من عشق*%0A%0A";
+
+  message += "*الاسم:* " + encodeURIComponent(name) + "%0A";
+  message += "*الهاتف:* " + encodeURIComponent(phone) + "%0A";
+  message += "*الولاية:* " + encodeURIComponent(governorate) + "%0A";
+  message += "*العنوان:* " + encodeURIComponent(address) + "%0A%0A";
+
+  message += "*المنتجات:*%0A";
+
+  cart.forEach(item => {
+
+    const p = products.find(x => x.id === item.id);
+
+    message +=
+      "• " +
+      encodeURIComponent(p.name) +
+      " × " +
+      item.qty +
+      " = " +
+      (p.price * item.qty).toFixed(2) +
+      " د.ت%0A";
+
+  });
+
+  const subtotal = cart.reduce((sum,item) => {
+
+    const p = products.find(x => x.id === item.id);
+
+    return sum + (p.price * item.qty);
+
+  },0);
+
+  const shipping = subtotal >= 80 ? 0 : 8;
+  const total = subtotal + shipping;
+
+  message += "%0A*المجموع:* " +
+    subtotal.toFixed(2) +
+    " د.ت%0A";
+
+  message += "*التوصيل:* " +
+    (shipping === 0 ? "مجاني" : shipping.toFixed(2) + " د.ت") +
+    "%0A";
+
+  message += "*الإجمالي:* " +
+    total.toFixed(2) +
+    " د.ت%0A%0A";
+
+  message += "شكراً لاختياركم عشق ❤️";
+
+  const whatsappNumber = "21627748272";
+
+  const url =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    message;
+
+  window.location.href = url;
+}
+
+
+/* =========================================================
+   START
+========================================================= */
+
+renderProducts();
+updateCart();
+
+</script>
+
+</body>
+</html>
+```
